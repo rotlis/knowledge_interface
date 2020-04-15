@@ -1,18 +1,100 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-@prefix chrs: <http://chronos/rdf-schema#> .
-@prefix chr: <http://chronos/data-lake/> .
+@prefix kbs: <http://example/rdf-schema#> .
+@prefix kb: <http://example/knowledge-base/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/>
 
-@prefix fls: <http://chronos/data-lake/fls/> .
-
-fls:fls
-    a chrs:DataSet ;
-	rdfs:label "fls" ;
-	rdfs:comment "fls" ;
+kb:marilena
+    a foaf:Person ;
+    foaf:firstName Marilena;
+    foaf:lastName Sayfullina;
     .
 
-fls:fls
-    chrs:hasDistribution fls:fls_thor_s3 ;
+kb:karina
+    a foaf:Person ;
+    foaf:firstName Karina;
+    foaf:lastName Karamova;
+    .
+
+kb:robert
+    a foaf:Person;
+    foaf:firstName Robert;
+    foaf:lastName Sayfullin;
+    .
+
+kb:maya
+    a foaf:Person;
+    foaf:firstName Maya;
+    foaf:lastName Ibragimova;
+    .
+kb:janalie
+    a foaf:Person;
+    foaf:firstName Janalie;
+    foaf:lastName Tang;
+    .
+kb:emma
+    a foaf:Person;
+    foaf:firstName Emma;
+    foaf:lastName Hornigold;
+    .
+kb:sophia
+    a foaf:Person;
+    foaf:firstName Sophia;
+    foaf:lastName Kristensen;
+    .
+
+kb:charlie
+    a foaf:Person;
+    foaf:firstName Charlie;
+    foaf:lastName Coussens;
+    .
+
+kb:jamie
+    a foaf:Person;
+    foaf:firstName Jamie;
+    foaf:lastName Coman;
+    .
+
+kb:evie
+    a foaf:Person;
+    foaf:firstName Evie;
+    foaf:lastName Morris;
+    .
+
+kb:celine
+    a foaf:Person;
+    foaf:firstName Celine;
+    foaf:lastName Valtchev;
+    .
+
+kb:matthew
+    a foaf:Person;
+    foaf:firstName Matthew;
+    foaf:lastName Garberg;
+    .
+
+kb:diana
+    a foaf:Person;
+    foaf:firstName Diana;
+    foaf:lastName Sayfullina;
+    .
+
+kb:timur
+    a foaf:Person;
+    foaf:firstName Timur;
+    foaf:lastName Ibragimov;
+    .
+
+kb:arthur
+    a foaf:Person;
+    foaf:firstName Arthur;
+    foaf:lastName Ibragimov;
+    .
+
+kb:ludmila
+    a foaf:Person;
+    foaf:firstName Ludmila;
+    foaf:lastName Gorbatova;
     .
 
