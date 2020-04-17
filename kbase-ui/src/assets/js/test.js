@@ -6,4 +6,8 @@ function test() {
 
 
 console.log("beep");
-test();
+
+
+
+
+

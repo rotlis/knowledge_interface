@@ -12,4 +12,8 @@ export class Component1Component implements OnInit {
   ngOnInit(): void {
   }
 
+  yep() {
+    alert("Hi people");
+  }
+
 }
