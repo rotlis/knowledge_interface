@@ -1,5 +1,5 @@
 /.idea/
 /tmp/*
-
+node_modules/
 !/.idea/knowledge_interface.iml
 !/.idea/vcs.xml

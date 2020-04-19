@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- vim: set ts=2 sts=2 sw=2 et: -->
+<html lang="en" class="no-js" ng-app="Test">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="rdflib.min.js"></script>
+	<script>
+		function tryme(){
+			var RDF = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+			var RDFS = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#")
+			var FOAF = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
+			var XSD = $rdf.Namespace("http://www.w3.org/2001/XMLSchema#")
+
+			var url="http://localhost:63342/knowledge_interface/tmp/rdflib_test/sample.ttl";
+			let store  = $rdf.graph();
+			let fetcher =new $rdf.Fetcher(store, 5000);
+
+			fetcher.nowOrWhenFetched(url, function(isOk, body, xhr) {
+				if (!isOk) {
+					alert("Oops, something happened and couldn't fetch data");
+				} else {
+					// var me = $rdf.sym('https://www.w3.org/People/Berners-Lee/card#i');
+					// var knows = FOAF('knows')
+					let triples = store.match();
+					for (let i=0; i < triples.length; i++) {
+						let triple = triples[i];
+						console.log("------------");
+						console.log(triple.subject);
+						console.log(triple.predicate);
+						console.log(triple.object);
+
+					}
+				}
+			})
+
+			// result = store.parse("http://www.w3.org/People/Berners-Lee/card")
+
+			// # prints graph has 79 statements.
+
+			// 	for subj, pred, obj in g:
+			// if (subj, pred, obj) not in g:
+			// raise Exception("It better be!")
+			//
+			// s = g.serialize(format='n3')
+
+			// let text = '<#this>  a  <#Example> .';
+
+			// let doc = $rdf.sym("https://example.com/alice/card");
+			// $rdf.parse(text, store, doc.uri, "text/turtle");  // pass base URI
+			//
+			// console.log(store.toNT());
+
+			// ==================
+
+			// fetcher.load(profile).then(response => {
+			// 	let name = store.any(me, VCARD(‘fn’));
+			// 	console.log(`Loaded {$name || ‘wot no name?’}`);
+			// }, err => {
+			// 	console.log(“Load failed “ +  err);
+			// });
+
+		};
+		window.onload = function() {
+			tryme();
+		};
+		// kb = $rdf.graph();
+		// fetch = $rdf.fetcher(kb);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
