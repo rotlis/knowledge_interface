@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+@prefix kbs: <http://example/rdf-schema#>.
+@prefix kb: <http://example/knowledge-base/>.
+@prefix foaf: <http://xmlns.com/foaf/spec/>.
+
+kb:maya
+    foaf:nick "Mays";
+    foaf:topic_interest "Singing", "Dancing", "Gardening", "Taro";
+    foaf:age 49;
+    foaf:myersBriggs "ENFJ-A";
+    foaf:gender "female";
+    foaf:mbox "maya.ibragimova@gmail.com";
+    .

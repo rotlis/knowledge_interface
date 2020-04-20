@@ -12,7 +12,7 @@ export class Component1Component implements OnInit {
   store = $rdf.graph();
   fetcher = new $rdf.Fetcher(this.store, 5000);
   ttl_url = "http://localhost:4200/assets/ttl/";
-  ttls = ["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "sample.ttl"];
+  ttls = ["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl"];
 
   triples = [];
   combined_triples = [];

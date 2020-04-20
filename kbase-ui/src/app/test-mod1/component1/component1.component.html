@@ -15,16 +15,12 @@ Own props
   <tr>
     <th>Subject</th>
     <th>Predicate</th>
-    <th>Object/Subject</th>
-    <th>Predicate</th>
     <th>Object</th>
   </tr>
   <tr *ngFor="let triple of own_triples">
-    <td></td>
-    <td></td>
-    <th (click)="onNodeClick(triple.subject)">{{triple.subject}}</th>
+    <th >{{triple.subject}}</th>
     <th >{{getShortValue(triple.predicate)}}</th>
-    <th (click)="onNodeClick(triple.object)">{{triple.object}}</th>
+    <th >{{triple.object}}</th>
   </tr>
 </table>
 
