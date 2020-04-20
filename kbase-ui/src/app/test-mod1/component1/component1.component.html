@@ -1,2 +1,65 @@
-<button (click)= "yep()">component1 works!</button>
-<h1 (click)= "yep()">component1 works!</h1>
+<h1>RDF store</h1>
+
+<button (click)= "showAllTriples()">show all triples</button>
+All triples
+<table border="1">
+  <tr *ngFor="let triple of triples">
+    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td >{{triple.predicate}}</td>
+    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+  </tr>
+</table>
+Navigable triples
+Own props
+<table border="1">
+  <tr>
+    <th>Subject</th>
+    <th>Predicate</th>
+    <th>Object/Subject</th>
+    <th>Predicate</th>
+    <th>Object</th>
+  </tr>
+  <tr *ngFor="let triple of own_triples">
+    <td></td>
+    <td></td>
+    <th (click)="onNodeClick(triple.subject)">{{triple.subject}}</th>
+    <th >{{getShortValue(triple.predicate)}}</th>
+    <th (click)="onNodeClick(triple.object)">{{triple.object}}</th>
+  </tr>
+</table>
+
+<hr>
+Combined triples
+
+<table border="1">
+  <tr *ngFor="let triple of combined_triples">
+    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td >{{getShortValuesAndDirection(triple.links)}}</td>
+    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+  </tr>
+</table>
+
+<hr>
+<!--
+Incoming and outgoing triples
+
+<table border="1">
+  <tr *ngFor="let triple of incoming_triples">
+    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td >{{getShortValue(triple.predicate)}}  →</td>
+    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let triple of outgoing_triples">
+    <td></td>
+    <td></td>
+    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td >{{getShortValue(triple.predicate)}} → </td>
+    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+  </tr>
+
+</table>
+
+-->
+

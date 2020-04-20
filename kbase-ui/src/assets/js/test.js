@@ -2,10 +2,7 @@ function test() {
   alert("Hello World");
 }
 
-
-
-
-console.log("beep");
+console.log("on load");
 
 
 
