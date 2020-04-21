@@ -1,7 +1,4 @@
-<h1>RDF store</h1>
-
 <button (click)= "showAllTriples()">show all triples</button>
-All triples
 <table border="1">
   <tr *ngFor="let triple of triples">
     <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
@@ -11,7 +8,10 @@ All triples
 </table>
 
 
-<h1>{{current_node}} ({{getTypeOrEmptyString(current_node)}})</h1>
+<h1>{{getShortValue(current_node)}} ({{getTypeOrEmptyString(current_node)}})</h1>
+{{current_node}}
+<br/>
+<br/>
 <table border="1">
   <tr *ngFor="let triple of own_triples">
     <td >{{getShortValue(triple.predicate)}}</td>
@@ -24,33 +24,12 @@ Combined triples
 
 <table border="1">
   <tr *ngFor="let triple of combined_triples">
-    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
     <td >{{getShortValuesAndDirection(triple.links)}}</td>
-    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+    <td (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>
   </tr>
 </table>
 
 <hr>
-<!--
-Incoming and outgoing triples
 
-<table border="1">
-  <tr *ngFor="let triple of incoming_triples">
-    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
-    <td >{{getShortValue(triple.predicate)}}  →</td>
-    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr *ngFor="let triple of outgoing_triples">
-    <td></td>
-    <td></td>
-    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
-    <td >{{getShortValue(triple.predicate)}} → </td>
-    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
-  </tr>
-
-</table>
-
--->
-
+<div id="svg-body" class="panel-body"></div>

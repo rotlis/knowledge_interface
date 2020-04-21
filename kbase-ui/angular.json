@@ -28,7 +28,8 @@
             ],
             "scripts": [
               "src/assets/js/test.js",
-              "src/assets/js/rdflib.min.js"
+              "src/assets/js/rdflib.min.js",
+              "src/assets/js/d3_triples.js"
             ]
           },
           "configurations": {
