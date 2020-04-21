@@ -66,6 +66,7 @@ kb:sophia
     rel:friendOf kb:jamie ;
     rel:friendOf kb:evie ;
     rel:friendOf kb:matthew ;
+    rel:friendOf kb:celine ;
     .
 
 kb:charlie
@@ -144,7 +145,9 @@ kb:diana
 kb:ludmila
     rel:parentOf kb:maya ;
     .
+
 kb:celine
-    rel:friendOf kb: Karina;
-    rel:friendOf kb: Marilena;
-    rel:friendOf kb: Sophia;
+    rel:friendOf kb:karina;
+    rel:friendOf kb:marilena;
+    rel:friendOf kb:sophia;
+    .
