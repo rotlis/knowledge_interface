@@ -144,5 +144,7 @@ kb:diana
 kb:ludmila
     rel:parentOf kb:maya ;
     .
-
-
+kb:celine
+    rel:friendOf kb: Karina;
+    rel:friendOf kb: Marilena;
+    rel:friendOf kb: Sophia;

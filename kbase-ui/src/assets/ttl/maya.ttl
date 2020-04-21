@@ -7,7 +7,7 @@
 
 kb:maya
     foaf:nick "Mays";
-    foaf:topic_interest "Singing", "Dancing", "Gardening", "Taro";
+    foaf:topic_interest "Singing", "Dancing", "Gardening", "Tarot";
     foaf:age 49;
     foaf:myersBriggs "ENFJ-A";
     foaf:gender "female";
