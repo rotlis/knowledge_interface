@@ -1,0 +1,227 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Fileds doc from https://confluence.nbnco.net.au/display/NAA/AMS+Documentation?preview=%2F134769422%2F142908320%2F3JL06120RSAAPCZZA_V1_5529+SDC+Release+9.5+7302733073567360+ISAM+Release+4.5+NE+Support+Plug-in+Parameters+Guide.pdf
+
+sdc:schema_v0
+    a chrs:DataSchema ;
+    .
+
+sdc:schema_v0
+    chrs:hasAttribute sdc:ObjectID,
+        sdc:avcid,
+        sdc:cpid,
+        sdc:dslam,
+        sdc:ifAdminStatus,
+        sdc:ifOperStatus,
+        sdc:macaddress,
+        sdc:metrics_timestamp,
+        sdc:xdslChannelActualNetDataRateUpstream,
+        sdc:xdslChannelAttainableNetDataRateUpstream,
+        sdc:xdslChannelPreviousIntervalRetransmDtuCounterDS,
+        sdc:xdslChannelPreviousIntervalUnCorrDtuCounterUS,
+        sdc:xdslFarEndChannelActualNetDataRateDownstream,
+        sdc:xdslFarEndChannelAttainableNetDataRateDownstream,
+        sdc:xdslFarEndChannelPreviousIntervalRetransmDtuCounterUS,
+        sdc:xdslFarEndChannelPreviousIntervalUnCorrDtuCounterDS,
+        sdc:xdslFarEndLineLoopAttenuationDownstream,
+        sdc:xdslFarEndLinePreviousIntervalLPRCounter,
+        sdc:xdslFarEndLinePreviousIntervalSESCounter,
+        sdc:xdslLinePreviousIntervalReInitCounter,
+        sdc:xdslLinePreviousIntervalSESCounter,
+        sdc:xdslLinePreviousIntervalUASCounter,
+        sdc:correctedAttainableNetDataRateUpstream,
+        sdc:correctedAttainableNetDataRateDownstream ;
+    .
+
+sdc:ObjectID
+    a chrs:AttributeSpecification ;
+    rdfs:comment "unique id for record. Formed as concatenation of dslam, port, timestamp" ;
+	.
+
+sdc:avcid
+    a chrs:AttributeSpecification ;
+    rdfs:comment "Access virtual circuit id associated with active service" ;
+    chrs:hasFormat "AVC\\d{12}" ;
+    .
+
+sdc:cpid
+    a chrs:AttributeSpecification ;
+    rdfs:comment "Copper pair id" ;
+    chrs:hasFormat "CPI\\d{12}" ;
+    .
+
+sdc:dslam
+    a chrs:AttributeSpecification ;
+    rdfs:comment "unique name of physical dslam converting fiber into copper" ;
+    chrs:hasFormat "SWDSL\\d{7}" ;
+    .
+
+sdc:ifAdminStatus
+    a chrs:AttributeSpecification ;
+    rdfs:comment '''
+up(1),       -- ready to pass packets\n
+down(2),\n
+testing(3)   -- in some test mode\n\n
+
+The desired state of the interface.  The testing(3) state
+indicates that no operational packets can be passed.  When a
+managed system initializes, all interfaces start with
+ifAdminStatus in the down(2) state.  As a result of either
+explicit management action or per configuration information
+retained by the managed system, ifAdminStatus is then
+changed to either the up(1) or testing(3) states (or remains
+in the down(2) state)
+     ''';
+    chrs:hasFormat "" ;
+    .
+
+sdc:ifOperStatus
+    a chrs:AttributeSpecification ;
+    rdfs:comment '''
+up(1),        -- ready to pass packets
+down(2),
+testing(3),   -- in some test mode
+unknown(4),   -- status can not be determined
+			  -- for some reason.
+dormant(5)
+
+
+The current operational state of the interface.  The
+testing(3) state indicates that no operational packets can
+be passed.  If ifAdminStatus is down(2) then ifOperStatus
+should be down(2).  If ifAdminStatus is changed to up(1)
+then ifOperStatus should change to up(1) if the interface is
+ready to transmit and receive network traffic; it should
+change to dormant(5) if the interface is waiting for
+external actions (such as a serial line waiting for an
+incoming connection); it should remain in the down(2) state
+if and only if there is a fault that prevents it from going
+to the up(1) state;
+    ''' ;
+    chrs:hasFormat "" ;
+    .
+
+sdc:macaddress
+    a chrs:AttributeSpecification ;
+    rdfs:comment "mac address of CPE" ;
+    chrs:hasFormat "^([0-9A-F]{2}:){5}([0-9A-F]{2})$" ;
+    .
+
+sdc:metrics_timestamp
+    a chrs:AttributeSpecification ;
+    rdfs:comment "timestamp at the measurement. Synchronised across network to round 15 min" ;
+    chrs:hasFormat "TODO" ;
+    .
+
+sdc:xdslChannelActualNetDataRateUpstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "TODO" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:xdslChannelAttainableNetDataRateUpstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:xdslChannelPreviousIntervalRetransmDtuCounterDS
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslChannelPreviousIntervalUnCorrDtuCounterUS
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslFarEndChannelActualNetDataRateDownstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:xdslFarEndChannelAttainableNetDataRateDownstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:xdslFarEndChannelPreviousIntervalRetransmDtuCounterUS
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslFarEndChannelPreviousIntervalUnCorrDtuCounterDS
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslFarEndLineLoopAttenuationDownstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:xdslFarEndLinePreviousIntervalLPRCounter
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslFarEndLinePreviousIntervalSESCounter
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslLinePreviousIntervalReInitCounter
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslLinePreviousIntervalSESCounter
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:xdslLinePreviousIntervalUASCounter
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+sdc:correctedAttainableNetDataRateUpstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+sdc:correctedAttainableNetDataRateDownstream
+    a chrs:AttributeSpecification ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    chrs:unitOfMeasure "kbps" ;
+    .
+
+

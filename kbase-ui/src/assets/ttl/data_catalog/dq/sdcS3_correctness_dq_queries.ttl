@@ -1,0 +1,188 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+
+
+sdc:sdcS3DslamValidationQuery
+    a dqv:QualityMeasurement ;
+    rdfs:comment "Percentage where dslam name is not like SWDSL1234567.  Note that both 'null' and '' are possible outliers " ;
+	chrs:query '''select 100.0 * avg(dslam_is_valid) from
+                  (
+                    select
+                     dt, dslam,
+                     IF(regexp_like(dslam, 'SWDSL\\d{7}'),1,0) AS dslam_is_valid
+                    FROM sdc_full
+                    where dt=date('${dt}')
+                  )
+''' ;
+	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+	chrs:weight 20 ;
+	.
+
+# there is an argument that a null DSLAM field will never be found but this should never happen
+sdc:sdcS3DslamNotNullQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "DSLAM should never be null" ;
+    	chrs:query '''select 100 * avg(dslam_is_null) from
+                                       (
+                                         select
+                                            dt, dslam,
+                                            IF(dslam is not null,0,1) AS dslam_is_null
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 40 ;
+    	.
+
+sdc:sdcS3MACnotvalidQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "mac addresses should follow standard format" ;
+    	chrs:query '''select 100 * avg(mac_is_valid) from
+                                       (
+                                         select
+                                          IF((regexp_like(macaddress, '^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$') or macaddress = '' or macaddress is null),1,0) AS mac_is_valid
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+sdc:sdcS3MACbadOperStatusQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "Field is an enumeration" ;
+    	chrs:query '''select 100 * avg(bad_operstatus) from
+                                       (
+                                         select
+                                         IF(ifoperstatus in ('up', 'down', 'testing', 'unknown', 'dormant'),1,0) as bad_operstatus
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+sdc:sdcS3MACbadAdminStatusQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "Field is an enumeration" ;
+    	chrs:query '''select 100 * avg(bad_adminstatus) from
+                                       (
+                                         select
+                                         IF(ifadminstatus in ('up', 'down', 'testing', 'unknown', 'dormant'),1,0) as bad_adminstatus
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:sdcS3badCPIDQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "Should be 'CPI' followed by 12 digits " ;
+    	chrs:query '''select 100 * avg(cpid_is_valid) from
+                                       (
+                                         select
+                                          IF((regexp_like(cpid, '^CPI\\d{12}$') or cpid = '' or cpid is null),1,0) AS cpid_is_valid
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+sdc:sdcS3MetricsTimestampNotNumericQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "metrics timestamp should be all numeric" ;
+    	chrs:query '''select 100 * avg(metrics_timestamp_numeric) from
+                                       (
+                                         select
+                                          IF(regexp_like(metrics_timestamp, '\\D*'),1,0) AS metrics_timestamp_numeric
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:sdcS3TimestampGoodMillisecondsQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "Timestamp is a good epoch milliseconds" ;
+    	chrs:query '''select 100 * avg(good_timestamp) from
+                                       (
+                                         select
+                                          IF(CAST(metrics_timestamp as bigint) between ${epochmsfrom} and ${epochmsto}, 1,0) AS good_timestamp
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldValidValue ;
+    	chrs:weight 10 ;
+    	.
+
+sdc:sdcS3DtMatchesMetricsTS
+        a dqv:QualityMeasurement ;
+        rdfs:comment "timestamp matches datetime" ;
+    	chrs:query '''select 100 * avg(dates_match) from
+                             (
+                             select metrics_timestamp, dt,
+                             if(date(from_unixtime(cast(metrics_timestamp as bigint) / 1000)) = dt, 1, 0) as dates_match
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldValidValue ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:sdcobjectIDisValidQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "object id should look like R1.S1.LT1.P37" ;
+    	chrs:query '''select 100.0 * avg(id_is_valid) from
+                                       (
+                                         select
+                                          IF(regexp_like(objectid, 'R\\d+\\.S\\d+\\.LT\\d+\\.P\\d+'),1,0) AS id_is_valid
+                                            FROM sdc_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:sdcFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+
+
+sdc:sdcFieldFormatValidation
+	a dqv:Metric ;
+	dqv:inDimension sdc:Correctness ;
+	chrs:weight 20 ;
+	.
+
+sdc:sdcFieldValidValue
+	a dqv:Metric ;
+	dqv:inDimension sdc:Correctness ;
+	chrs:weight 20 ;
+	.
+
+sdc:Correctness
+	a dqv:Dimension ;
+	dqv:inCategory sdc:Accuracy ;
+	chrs:weight 50 ;
+	.
+
+
+sdc:Accuracy
+	a dqv:Category ;
+	.
+
+
+
+

@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix nac_ports: <http://chronos/data-lake/nac_ports/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+nac_ports:nac_ports_S3
+    a chrs:Distribution ;
+    chrs:conformsToSchema nac_ports:nac_ports_schema_v0 ;
+	rdfs:label "NAC_ports@S3" ;
+	rdfs:comment "NAC_ports  in AWS S3 bucket" ;
+    .
+
+nac_ports:nac_ports_S3
+	chrs:glueTable "NAC_ports_full" ;
+	chrs:exposedWith chr:athenaProxy ;
+	.
+
+nac_ports:nac_ports_S3
+	chrs:coversTimePeriod "7y" ;
+	chrs:lags "1d" ;
+	chrs:updateFrequency "1d" ;
+    .
+

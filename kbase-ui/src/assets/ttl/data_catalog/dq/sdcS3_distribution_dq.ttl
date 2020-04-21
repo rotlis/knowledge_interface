@@ -1,0 +1,40 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+
+
+# correctness
+sdc:sdcS3
+	dqv:hasQualityMeasurement
+		sdc:sdcS3DslamValidationQuery,
+		sdc:sdcS3DslamNotNullQuery,
+		sdc:sdcS3MACnotvalidQuery,
+		sdc:sdcS3MACbadOperStatusQuery,
+		sdc:sdcS3MACbadAdminStatusQuery,
+		sdc:sdcS3badCPIDQuery,
+		sdc:sdcS3MetricsTimestampNotNumericQuery,
+		sdc:sdcS3TimestampGoodMillisecondsQuery,
+		sdc:sdcS3DtMatchesMetricsTS,
+		sdc:sdcobjectIDisValidQuery;
+		.
+
+# completeness
+sdc:sdcS3
+	dqv:hasQualityMeasurement
+		sdc:sdcMACpopulatedQuery,
+		sdc:sdcDSLAMpopulatedQuery,
+		sdc:sdcTimestampPopulatedQuery,
+		sdc:sdcAVCidPopulatedQuery,
+		sdc:sdcCPIdPopulatedQuery,
+		sdc:sdcfullDSLAMQuery,
+		sdc:sdcfullportQuery;
+		.
+

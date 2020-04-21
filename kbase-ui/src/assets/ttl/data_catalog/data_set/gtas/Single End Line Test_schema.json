@@ -1,0 +1,857 @@
+{
+    "type": {
+        "type": "string",
+        "samples": [
+            "Single End Line Test"
+        ]
+    },
+    "status": {
+        "type": "string",
+        "samples": [
+            "Cancelled",
+            "Completed"
+        ]
+    },
+    "result": {
+        "type": "string",
+        "samples": [
+            "",
+            "Failed",
+            "Passed"
+        ]
+    },
+    "executionTimestamp": {
+        "type": "number",
+        "samples": [
+            1572681803925,
+            1572846920002,
+            1572865694135,
+            1573027153859,
+            1573026602885,
+            1573011925649,
+            1573028598601,
+            1573085941471,
+            1572906803622,
+            1572846570639,
+            1572849317938,
+            1572932855175,
+            1572946454498,
+            1573015799847,
+            1572678599368,
+            1572846758867,
+            1572997746087,
+            1573026880464,
+            1572847918346,
+            1572832015593,
+            1572858562718,
+            1572857343495,
+            1572857246251,
+            1572905142732,
+            1572921872531,
+            1572945787806,
+            1572948362978,
+            1573017732246,
+            1573031969580,
+            1572832503101,
+            1572865402275,
+            1572908998957,
+            1572922456554,
+            1572925583586,
+            1572928396022,
+            1572936175935,
+            1572937077199,
+            1572945365456,
+            1573015998869,
+            1573013333521,
+            1573034895713,
+            1573007867594
+        ]
+    },
+    "testId": {
+        "type": "string",
+        "samples": [
+            "TRI000009398692",
+            "TRI000009414143",
+            "TRI000009417391",
+            "TRI000009435810",
+            "TRI000009430242",
+            "TRI000009412185",
+            "TRI000009430337",
+            "TRI000009431481",
+            "TRI000009408169",
+            "TRI000009405789",
+            "TRI000009414812",
+            "TRI000009420347",
+            "TRI000009421191",
+            "TRI000009427813",
+            "TRI000009403823",
+            "TRI000009414039",
+            "TRI000009423949",
+            "TRI000009430300",
+            "TRI000009406049",
+            "TRI000009400831",
+            "TRI000009416379",
+            "TRI000009406650",
+            "TRI000009406621",
+            "TRI000009407879",
+            "TRI000009418500",
+            "TRI000009421018",
+            "TRI000009421307",
+            "TRI000009432820",
+            "TRI000009436058",
+            "TRI000009400952",
+            "TRI000009417336",
+            "TRI000009408679",
+            "TRI000009418674",
+            "TRI000009419318",
+            "TRI000009419801",
+            "TRI000009420671",
+            "TRI000009420745",
+            "TRI000009420946",
+            "TRI000009428031",
+            "TRI000009426575",
+            "TRI000009436619",
+            "TRI000009411550"
+        ]
+    },
+    "loopEstimates": {
+        "type": "object",
+        "samples": [
+            [
+                {
+                    "syncStatusBefore": "Down",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "NOT_FOUND",
+                    "lineLengthAccuracy": "NOT_FOUND",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.0",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92132",
+                            "capacityDownAccuracy": "9213",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-01T11:39:54Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "UNKNOWN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "2620",
+                    "lineLengthAccuracy": "270",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "37.6",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "64.7",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "NOT_FOUND",
+                            "capacityDownAccuracy": "NOT_FOUND",
+                            "capacityUp": "NOT_FOUND",
+                            "capacityUpAccuracy": "NOT_FOUND"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "syncStatusBefore": "Down",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "3",
+                    "lineLengthAccuracy": "30",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.1",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92132",
+                            "capacityDownAccuracy": "9213",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "syncStatusBefore": "Down",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "1",
+                    "lineLengthAccuracy": "30",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.0",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92132",
+                            "capacityDownAccuracy": "9213",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-09-26T02:27:00Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "NOT_FOUND",
+                    "lineLengthAccuracy": "NOT_FOUND",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.0",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "0.0",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92132",
+                            "capacityDownAccuracy": "9213",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "syncStatusBefore": "Down",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "19",
+                    "lineLengthAccuracy": "30",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.3",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92128",
+                            "capacityDownAccuracy": "9212",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "syncStatusBefore": "Down",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "11",
+                    "lineLengthAccuracy": "30",
+                    "reliability": "High",
+                    "estimatedAttenuationAt300khzSelt": "0.2",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "92128",
+                            "capacityDownAccuracy": "9212",
+                            "capacityUp": "65496",
+                            "capacityUpAccuracy": "6549"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-10-03T19:22:49Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "OPEN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "150",
+                    "lineLengthAccuracy": "70",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "48.0",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "NOT_FOUND",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "3184",
+                            "capacityDownAccuracy": "244",
+                            "capacityUp": "73",
+                            "capacityUpAccuracy": "5"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-04T05:09:34Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "POWERED_UP_CPE",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "1675",
+                    "lineLengthAccuracy": "170",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "24.2",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "41.4",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "NOT_FOUND",
+                            "capacityDownAccuracy": "NOT_FOUND",
+                            "capacityUp": "NOT_FOUND",
+                            "capacityUpAccuracy": "NOT_FOUND"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-01T11:39:54Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "POWERED_UP_CPE",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "1615",
+                    "lineLengthAccuracy": "170",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "23.3",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "39.9",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "NOT_FOUND",
+                            "capacityDownAccuracy": "NOT_FOUND",
+                            "capacityUp": "NOT_FOUND",
+                            "capacityUpAccuracy": "NOT_FOUND"
+                        }
+                    ],
+                    "bridgeTapDetected": "Yes",
+                    "bridgeTaps": [
+                        {
+                            "unitType": "m",
+                            "distanceFromCo": "-1"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-04T05:09:34Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "UNKNOWN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "3110",
+                    "lineLengthAccuracy": "320",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "44.6",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "76.7",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "NOT_FOUND",
+                            "capacityDownAccuracy": "NOT_FOUND",
+                            "capacityUp": "NOT_FOUND",
+                            "capacityUpAccuracy": "NOT_FOUND"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-04T08:54:27Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "UNKNOWN",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "2985",
+                    "lineLengthAccuracy": "300",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "42.8",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "73.7",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "NOT_FOUND",
+                            "capacityDownAccuracy": "NOT_FOUND",
+                            "capacityUp": "NOT_FOUND",
+                            "capacityUpAccuracy": "NOT_FOUND"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ],
+            [
+                {
+                    "measurementTimestamp": "2019-11-05T05:06:00Z",
+                    "syncStatusBefore": "Up",
+                    "terminationType": "POWERED_UP_CPE",
+                    "lineLengthUnitType": "m",
+                    "lineLength": "557",
+                    "lineLengthAccuracy": "60",
+                    "reliability": "Low",
+                    "estimatedAttenuationAt300khzSelt": "8.1",
+                    "estimatedAttenuationAt300khzSeltUnitType": "dB",
+                    "estimatedAttenuationAt1MhzSelt": "13.7",
+                    "estimatedAttenuationAt1MhzSeltUnitType": "dB",
+                    "capacity": [
+                        {
+                            "profile": "VDSLoPOTS",
+                            "unitType": "kbps",
+                            "capacityDown": "70496",
+                            "capacityDownAccuracy": "7593",
+                            "capacityUp": "40992",
+                            "capacityUpAccuracy": "4415"
+                        }
+                    ],
+                    "bridgeTapDetected": "No Bridge Tap Detected",
+                    "bridgeTaps": []
+                }
+            ]
+        ]
+    },
+    "detectedProblems": {
+        "type": "object",
+        "samples": [
+            [
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-0-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                }
+            ],
+            [],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-3-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-0-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-1-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-0-none found",
+                    "confidenceLevel": "100",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-1-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-19-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-11-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-521-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "CPE_STATE-OFF_OR_NOT_CONNECTED",
+                    "confidenceLevel": "50",
+                    "impact": "No impact specified",
+                    "proposedRepairActions": "Switch on the CPE"
+                },
+                {
+                    "location": "xDSL",
+                    "description": "LOOP_IMPAIRMENT-LOOP_OPEN_CIRCUIT-19-none found",
+                    "confidenceLevel": "50",
+                    "impact": "No connectivity",
+                    "proposedRepairActions": "Fix the open circuit"
+                }
+            ],
+            [
+                {
+                    "location": "xDSL",
+                    "description": "BRIDGE_TAP-YES",
+                    "confidenceLevel": "100",
+                    "impact": "reduced attainable rate",
+                    "proposedRepairActions": "Remove the bridged tap"
+                }
+            ]
+        ]
+    },
+    "resolutions": {
+        "type": "object",
+        "samples": [
+            [
+                "LOOP_IMPAIRMENT_LOOP_OPEN_CIRCUIT",
+                "CPE_STATE_OFF_OR_NOT_CONNECTED"
+            ],
+            [
+                "SELT_SUCCESS"
+            ],
+            [
+                "CPE_STATE_OFF_OR_NOT_CONNECTED",
+                "LOOP_IMPAIRMENT_LOOP_OPEN_CIRCUIT"
+            ],
+            [
+                "LOOP_IMPAIRMENT_LOOP_OPEN_CIRCUIT"
+            ],
+            [
+                "BRIDGE_TAP_YES"
+            ]
+        ]
+    },
+    "imageUrls": {
+        "type": "object",
+        "samples": [
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_05b76209bb03cda45b61ec81e029f95b_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_05b76209bb03cda45b61ec81e029f95b_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_05b76209bb03cda45b61ec81e029f95b_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_731e810b97e54df34637407e7f19025d_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_731e810b97e54df34637407e7f19025d_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_731e810b97e54df34637407e7f19025d_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e80869ddfe0896e2ce13d0c6fee3dd6_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e80869ddfe0896e2ce13d0c6fee3dd6_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e80869ddfe0896e2ce13d0c6fee3dd6_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_29a6256b08044f318e3013539f24f3b7_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_29a6256b08044f318e3013539f24f3b7_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_29a6256b08044f318e3013539f24f3b7_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_63cbeab566c897bf31916345f079b425_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_63cbeab566c897bf31916345f079b425_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_63cbeab566c897bf31916345f079b425_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca7f12d2504b910d25ffe478d94c850e_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca7f12d2504b910d25ffe478d94c850e_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca7f12d2504b910d25ffe478d94c850e_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_5df97ed34caf6b9094a504801592b254_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_5df97ed34caf6b9094a504801592b254_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_5df97ed34caf6b9094a504801592b254_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_078e2f39df907e1f0623d7f2ddc706ac_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_078e2f39df907e1f0623d7f2ddc706ac_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_078e2f39df907e1f0623d7f2ddc706ac_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_7aabca5843b3adaff21d7dd8e0d61e18_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_7aabca5843b3adaff21d7dd8e0d61e18_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_7aabca5843b3adaff21d7dd8e0d61e18_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bc026973cfe060a75fd064698f341c6c_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bc026973cfe060a75fd064698f341c6c_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bc026973cfe060a75fd064698f341c6c_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bbfb5771405d300e1da6f776bd0ce3de_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bbfb5771405d300e1da6f776bd0ce3de_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bbfb5771405d300e1da6f776bd0ce3de_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2a6d0702cd330b377ef9479ed214efb6_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2a6d0702cd330b377ef9479ed214efb6_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2a6d0702cd330b377ef9479ed214efb6_img_SeltQln.png"
+            ],
+            [],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_72b3921d4349e234b42a7666628bc732_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_72b3921d4349e234b42a7666628bc732_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_72b3921d4349e234b42a7666628bc732_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9ef5111353c3e703dcad80c921daef03_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9ef5111353c3e703dcad80c921daef03_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9ef5111353c3e703dcad80c921daef03_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_26b3b012a5ddd8407fce338bda8498b5_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_26b3b012a5ddd8407fce338bda8498b5_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_26b3b012a5ddd8407fce338bda8498b5_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0642b724db3b4052c624a1c4dec0e2df_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0642b724db3b4052c624a1c4dec0e2df_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0642b724db3b4052c624a1c4dec0e2df_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0b28a7ae2719813a62a5e35606d66aaf_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0b28a7ae2719813a62a5e35606d66aaf_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0b28a7ae2719813a62a5e35606d66aaf_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_44fe81adf60e9ea32e3ca35ead08b7bc_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_44fe81adf60e9ea32e3ca35ead08b7bc_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_44fe81adf60e9ea32e3ca35ead08b7bc_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_e73900934b4e2dfffcdac8bef24eeff7_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_e73900934b4e2dfffcdac8bef24eeff7_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_e73900934b4e2dfffcdac8bef24eeff7_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_483ea8807f37167f669bb47e74a436f6_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_483ea8807f37167f669bb47e74a436f6_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_483ea8807f37167f669bb47e74a436f6_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bd83c61e873d8bc13a436d139a3a0c29_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bd83c61e873d8bc13a436d139a3a0c29_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bd83c61e873d8bc13a436d139a3a0c29_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_c67668272b2085ceaa0c09015aea3ff5_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_c67668272b2085ceaa0c09015aea3ff5_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_c67668272b2085ceaa0c09015aea3ff5_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_b51315ae1816488b99b78e9023f8eb3e_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_b51315ae1816488b99b78e9023f8eb3e_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_b51315ae1816488b99b78e9023f8eb3e_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9d3db2bb42019a8886dd3ce60a8f9060_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9d3db2bb42019a8886dd3ce60a8f9060_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_9d3db2bb42019a8886dd3ce60a8f9060_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca4cc7451bae843251ccdf6ca096729c_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca4cc7451bae843251ccdf6ca096729c_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_ca4cc7451bae843251ccdf6ca096729c_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_80527ce33ad08299f00bbc593dada965_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_80527ce33ad08299f00bbc593dada965_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_80527ce33ad08299f00bbc593dada965_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_4ff9d20b1ae4b76ab42662ebca9b2b8f_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_4ff9d20b1ae4b76ab42662ebca9b2b8f_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_4ff9d20b1ae4b76ab42662ebca9b2b8f_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_56473f810f9814bf42b9812f08c1addf_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_56473f810f9814bf42b9812f08c1addf_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_56473f810f9814bf42b9812f08c1addf_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2054a0e59e69e2116c8db7fe02336788_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2054a0e59e69e2116c8db7fe02336788_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2054a0e59e69e2116c8db7fe02336788_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_fc2ce5d7c4195b7944692a5c9ef036c3_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_fc2ce5d7c4195b7944692a5c9ef036c3_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_fc2ce5d7c4195b7944692a5c9ef036c3_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bb7e680359e224a2e3a5058fe261fe13_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bb7e680359e224a2e3a5058fe261fe13_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_bb7e680359e224a2e3a5058fe261fe13_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_825ba5282b2ad46421f6d5997fe05e8e_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_825ba5282b2ad46421f6d5997fe05e8e_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_825ba5282b2ad46421f6d5997fe05e8e_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e923ad58382de67cd431167fd5af0cd_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e923ad58382de67cd431167fd5af0cd_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2e923ad58382de67cd431167fd5af0cd_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2745a03dbbbe06b86233d809e94760ba_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2745a03dbbbe06b86233d809e94760ba_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_2745a03dbbbe06b86233d809e94760ba_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_affdf30b45bf2bd10b47b576e952f639_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_affdf30b45bf2bd10b47b576e952f639_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_affdf30b45bf2bd10b47b576e952f639_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_47ead4e97517e537f1036de2272df581_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_47ead4e97517e537f1036de2272df581_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_47ead4e97517e537f1036de2272df581_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_25b6122c51f36d2c2c17102cd660500e_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_25b6122c51f36d2c2c17102cd660500e_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_25b6122c51f36d2c2c17102cd660500e_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_3fcd6217225c48c406c4fe30917a63ad_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_3fcd6217225c48c406c4fe30917a63ad_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_3fcd6217225c48c406c4fe30917a63ad_img_SeltQln.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0bde1a633f2e6ae2a4bcf8279a569407_img_bitloading-VDSLoPOTS.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0bde1a633f2e6ae2a4bcf8279a569407_img_signals-VDSLoPOTS-estimate.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/Single-End-Line-Test_0bde1a633f2e6ae2a4bcf8279a569407_img_SeltQln.png"
+            ]
+        ]
+    }
+}

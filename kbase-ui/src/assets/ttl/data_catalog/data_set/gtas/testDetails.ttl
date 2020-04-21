@@ -1,0 +1,95 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix test_details: <http://chronos/data-lake/gtas/test_details/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# *****************************************
+# local types
+# *****************************************
+test_details:workflowOutcomeType
+	chrs:hasAttribute
+		test_details:wo_status,
+		test_details:wo_outcome,
+		test_details:wo_description,
+		test_details:wo_deducefaultType
+	.
+
+# *****************************************
+# nested fields
+# *****************************************
+test_details:wo_status
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:wo_outcome
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:wo_description
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:wo_deducefaultType
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+# *****************************************
+# Target schema how it should be exposed from Chronos
+# *****************************************
+test_details:schema_v0
+    a chrs:DataSchema ;
+    .
+
+test_details:schema_v0
+    chrs:hasAttribute
+        test_details:testReferenceId,
+		test_details:status,
+		test_details:role,
+		test_details:channel,
+		test_details:executionTimestamp,
+		test_details:workflowOutcome # local nested type
+		.
+
+# *****************************************
+# first level fields
+# *****************************************
+test_details:testReferenceId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^WRI\\d{12}$" ;
+	.
+
+test_details:status
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:role
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:channel
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_details:executionTimestamp
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:dateTime ;
+	.
+
+test_details:workflowOutcome
+	a chrs:AttributeSpecification ;
+	chrs:type test_details:workflowOutcomeType ;
+	.

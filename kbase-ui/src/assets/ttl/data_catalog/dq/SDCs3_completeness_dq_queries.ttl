@@ -1,0 +1,154 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+
+
+
+sdc:sdcMACpopulatedQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "Mac address should be populated where service is up" ;
+    	chrs:query '''select 100 * avg(missingmac) from
+                                       (
+                                          select
+                                          IF((macaddress is null or macaddress = ''),0,1) as missingmac
+                                          FROM sdc_full
+                                          where dt=date('${dt}')
+                                          and ifoperstatus = 'up'
+                                          and ifadminstatus = 'up'
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:SDCFieldCompleteness ;
+    	chrs:weight 20 ;
+    	.
+
+sdc:sdcDSLAMpopulatedQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "DSLAM address should be populated always" ;
+    	chrs:query '''select 100 * avg(missingdslam) from
+                                       (
+                                          select
+                                          IF(dslam is null or dslam = '',0,1) as missingdslam
+                                          FROM sdc_full
+                                          where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:SDCFieldCompleteness ;
+    	chrs:weight 20 ;
+    	.
+
+sdc:sdcTimestampPopulatedQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "metrics_timestamp address should be populated always" ;
+    	chrs:query '''select 100 * avg(missingtimestamp) from
+                                       (
+                                          select
+                                          IF(metrics_timestamp is null or metrics_timestamp = '',0,1) as missingtimestamp
+                                          FROM sdc_full
+                                          where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:SDCFieldCompleteness ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:sdcAVCidPopulatedQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "missing avcid indicate failure to enrich (lower weight)" ;
+    	chrs:query '''select 100 * avg(missingavc) from
+                                       (
+                                          select
+                                          IF(avcid is null or avcid = '',0,1) as missingavc
+                                          FROM sdc_full
+                                          where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:SDCFieldCompleteness ;
+    	chrs:weight 10 ;
+    	.
+
+sdc:sdcCPIdPopulatedQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "missing CPId indicate failure to enrich (lower weight)" ;
+    	chrs:query '''select 100 * avg(missingcpi) from
+                                       (
+                                          select
+                                          IF(cpid is null or cpid = '',0,1) as missingcpi
+                                          FROM sdc_full
+                                          where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf sdc:SDCFieldCompleteness ;
+    	chrs:weight 10 ;
+    	.
+
+sdc:sdcfullDSLAMQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "missing dslams relative to FLS" ;
+    	chrs:query '''select 100 * (avg(pop) / (
+    	                  select count(distinct(dslam)) from fls_latest
+    	                                       )
+    	                           )
+    	                           from (
+    	                                select count(distinct(dslam)) as pop
+    	                                FROM sdc_full where dt = date('${dt}')
+    	                                group by metrics_timestamp
+    	                                )
+    	            ''';
+    	dqv:isMeasurementOf sdc:SDCRecordLevelCompleteness ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:sdcfullportQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "missing ports relative to AMS" ;
+    	chrs:query '''select 100 * (avg(pop) /
+                                       (
+                                       select count(distinct(object_name))
+                                        from ams_latest
+                                        )
+                                    )
+                      from
+                         (select count(distinct(objectid, dslam)) as pop
+                                  FROM sdc_full
+                                  where dt = date('${dt}')
+                                  and dslam is not null
+                                  and objectid is not null
+                                  group by metrics_timestamp
+                          )
+    	            ''';
+    	dqv:isMeasurementOf sdc:SDCRecordLevelCompleteness ;
+    	chrs:weight 20 ;
+    	.
+
+
+sdc:SDCFieldCompleteness
+	a dqv:Metric ;
+	dqv:inDimension sdc:Completeness ;
+	chrs:weight 20 ;
+	.
+
+sdc:SDCRecordLevelCompleteness
+	a dqv:Metric ;
+	dqv:inDimension sdc:Completeness ;
+	chrs:weight 20 ;
+	.
+
+
+
+sdc:Completeness
+	a dqv:Dimension ;
+	dqv:inCategory sdc:InformationAppropriateness ;
+	chrs:weight 20 ;
+	.
+
+
+sdc:InformationAppropriateness
+	a dqv:Category ;
+	.
+
+

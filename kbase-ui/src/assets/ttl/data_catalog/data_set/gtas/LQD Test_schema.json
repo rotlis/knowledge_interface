@@ -1,0 +1,974 @@
+{
+    "type": {
+        "type": "string",
+        "samples": [
+            "LQD Test"
+        ]
+    },
+    "status": {
+        "type": "string",
+        "samples": [
+            "Cancelled",
+            "Completed"
+        ]
+    },
+    "result": {
+        "type": "string",
+        "samples": [
+            "",
+            "Failed"
+        ]
+    },
+    "testId": {
+        "type": "string",
+        "samples": [
+            "TRI000009413293",
+            "TRI000009406802",
+            "TRI000009408857",
+            "TRI000009421896",
+            "TRI000009416269"
+        ]
+    },
+    "executionTimestamp": {
+        "type": "number",
+        "samples": [
+            1572844174849,
+            1572857754777,
+            1572910759991,
+            1572951234889,
+            1572857667503
+        ]
+    },
+    "state": {
+        "type": "string",
+        "samples": [
+            "FINISHED",
+            "Finished"
+        ]
+    },
+    "userLable": {
+        "type": "string",
+        "samples": [
+            "UNI002000141518",
+            "UNI002000147232",
+            "UNI002000171512"
+        ]
+    },
+    "coexistence": {
+        "type": "string",
+        "samples": [
+            "Yes"
+        ]
+    },
+    "bitSwaps": {
+        "type": "string",
+        "samples": [
+            "0",
+            "1"
+        ]
+    },
+    "spontaneousResyncs": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "disorderlyLeavingEvent": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "robustResync": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "profileSwitch": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "loopAttenuationAverageUpstream": {
+        "type": "string",
+        "samples": [
+            " 1.6",
+            " 2.3"
+        ]
+    },
+    "loopAttenuationAverageDownstream": {
+        "type": "string",
+        "samples": [
+            " 2.1",
+            " 4.2",
+            " 2.0"
+        ]
+    },
+    "loopAttenuationAverageUnitType": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "rtxActualNetDataRateUpstream": {
+        "type": "string",
+        "samples": [
+            "11799.0",
+            "2080.0"
+        ]
+    },
+    "rtxActualNetDataRateDownstream": {
+        "type": "string",
+        "samples": [
+            "28000.0",
+            "13959.0"
+        ]
+    },
+    "rtxActualNetDataRateUnitType": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "rtxAttainableNetDataRateUpstream": {
+        "type": "string",
+        "samples": [
+            "50419.0",
+            "41569.0"
+        ]
+    },
+    "rtxAttainableNetDataRateDownstream": {
+        "type": "string",
+        "samples": [
+            "148994.8",
+            "139984.0",
+            "150320.6"
+        ]
+    },
+    "rtxAttainableNetDataRateUnitType": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "rtxAttainableExpectedThroughputUpstream": {
+        "type": "string",
+        "samples": [
+            "49909.0",
+            "41149.0"
+        ]
+    },
+    "rtxAttainableExpectedThroughputDownstream": {
+        "type": "string",
+        "samples": [
+            "147489.3",
+            "138569.0",
+            "148801.5"
+        ]
+    },
+    "rtxAttainableExpectedThroughputUnit": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "rtxActualExpectedThroughputUpstream": {
+        "type": "string",
+        "samples": [
+            "11680.0",
+            "2059.0"
+        ]
+    },
+    "rtxActualExpectedThroughputDownstream": {
+        "type": "string",
+        "samples": [
+            "27717.0",
+            "13795.0"
+        ]
+    },
+    "rtxActualExpectedThroughputUnit": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "supportedCpeVectoringType": {
+        "type": "object",
+        "samples": [
+            [
+                "legacy",
+                "g.vector capable"
+            ]
+        ]
+    },
+    "cardType": {
+        "type": "string",
+        "samples": [
+            "NDLT-F",
+            "SDLT-E",
+            "SDLT-D"
+        ]
+    },
+    "monitoringPeriod": {
+        "type": "string",
+        "samples": [
+            "360"
+        ]
+    },
+    "cpeType": {
+        "type": "string",
+        "samples": [
+            "Netcomm"
+        ]
+    },
+    "dslType": {
+        "type": "string",
+        "samples": [
+            "VDSL2",
+            "XDSL"
+        ]
+    },
+    "vectoringStatus": {
+        "type": "string",
+        "samples": [
+            "Enabled both US and DS"
+        ]
+    },
+    "actualCpeVectoringType": {
+        "type": "string",
+        "samples": [
+            "g.vector capable",
+            "null"
+        ]
+    },
+    "modemVendorIdHex": {
+        "type": "string",
+        "samples": [
+            "B5004244434D0000",
+            "B5004D4554410000",
+            "NOT_FOUND"
+        ]
+    },
+    "systemVendorIdHex": {
+        "type": "string",
+        "samples": [
+            "B5004244434D0000",
+            "B5004D4554410000",
+            "NOT_FOUND"
+        ]
+    },
+    "systemVendorModelHex": {
+        "type": "string",
+        "samples": [
+            "B5004244434D0000",
+            "B5004D4554417502",
+            "NOT_FOUND"
+        ]
+    },
+    "serialNumber": {
+        "type": "string",
+        "samples": [
+            "NOT_FOUND",
+            "000EAD33445500000000000000000000"
+        ]
+    },
+    "serviceStability": {
+        "type": "string",
+        "samples": [
+            "UNKNOWN"
+        ]
+    },
+    "estimatedDeltDistance": {
+        "type": "string",
+        "samples": [
+            "24",
+            "49",
+            "Unknown: data not available"
+        ]
+    },
+    "electricalLength": {
+        "type": "string",
+        "samples": [
+            "0.5",
+            "1.0",
+            "Not applicable (VDSL2 only)"
+        ]
+    },
+    "attainableBitrateUpstream": {
+        "type": "string",
+        "samples": [
+            "N/A"
+        ]
+    },
+    "attainableBitrateDownstream": {
+        "type": "string",
+        "samples": [
+            "N/A"
+        ]
+    },
+    "attainableBitrateUnitType": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "layer2BitrateUpstream": {
+        "type": "string",
+        "samples": [
+            "11586.0",
+            "2042.0",
+            "N/A"
+        ]
+    },
+    "layer2BitrateDownstream": {
+        "type": "string",
+        "samples": [
+            "26671.0",
+            "13296.0",
+            "N/A"
+        ]
+    },
+    "layer2BitrateUnitType": {
+        "type": "string",
+        "samples": [
+            "kbps"
+        ]
+    },
+    "noiseMarginAverageUpstream": {
+        "type": "string",
+        "samples": [
+            "26.0",
+            "30.0",
+            "N/A"
+        ]
+    },
+    "noiseMarginAverageDownstream": {
+        "type": "string",
+        "samples": [
+            "29.6",
+            "40.3",
+            "N/A",
+            "29.3"
+        ]
+    },
+    "noiseMarginAverageUnitType": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "relativeCapacityOccupationUpstream": {
+        "type": "string",
+        "samples": [
+            "32.0",
+            "15.0",
+            "N/A"
+        ]
+    },
+    "relativeCapacityOccupationDownstream": {
+        "type": "string",
+        "samples": [
+            "29.0",
+            "21.0",
+            "N/A",
+            "29.1"
+        ]
+    },
+    "relativeCapacityOccupationUnitType": {
+        "type": "string",
+        "samples": [
+            "%"
+        ]
+    },
+    "actualPsdUpstream": {
+        "type": "string",
+        "samples": [
+            "-92.6",
+            "-85.0",
+            "N/A",
+            "-92.7"
+        ]
+    },
+    "actualPsdDownstream": {
+        "type": "string",
+        "samples": [
+            "-79.0",
+            "-56.9",
+            "N/A",
+            "-79.1"
+        ]
+    },
+    "actualPsdUnitType": {
+        "type": "string",
+        "samples": [
+            "dBm/Hz"
+        ]
+    },
+    "outputPowerUpstream": {
+        "type": "string",
+        "samples": [
+            "-25.7",
+            "-20.0",
+            "N/A",
+            "-25.8"
+        ]
+    },
+    "outputPowerDownstream": {
+        "type": "string",
+        "samples": [
+            "-8.4",
+            "11.6",
+            "N/A",
+            "-8.5"
+        ]
+    },
+    "outputPowerUnitType": {
+        "type": "string",
+        "samples": [
+            "dBm"
+        ]
+    },
+    "userTrafficUpstream": {
+        "type": "string",
+        "samples": [
+            "0.0",
+            "N/A"
+        ]
+    },
+    "userTrafficDownstream": {
+        "type": "string",
+        "samples": [
+            "0.0",
+            "N/A"
+        ]
+    },
+    "userTrafficUnitType": {
+        "type": "string",
+        "samples": [
+            "Kbits"
+        ]
+    },
+    "physicalProfile": {
+        "type": "string",
+        "samples": [
+            "25/10 Standard 6dB",
+            "12/1 Standard 6dB"
+        ]
+    },
+    "fallbackState": {
+        "type": "string",
+        "samples": [
+            "Not Active",
+            ""
+        ]
+    },
+    "fallbackProfile": {
+        "type": "string",
+        "samples": [
+            "Not Active",
+            ""
+        ]
+    },
+    "lineId": {
+        "type": "string",
+        "samples": [
+            "SWDSL0200110:1-1-1-4",
+            "SWDSL0300116:1-1-1-2",
+            "SWDSL0300121:1-1-1-30",
+            "SWDSL0200110:1-1-2-12"
+        ]
+    },
+    "loopAttenuationAverage": {
+        "type": "object",
+        "samples": [
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "1.5"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "1.0",
+                        "upstream": "0.9"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "1.8",
+                        "upstream": "2.0"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "3.6",
+                        "upstream": "127.0"
+                    }
+                ]
+            },
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "0.8"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "2.6",
+                        "upstream": "1.9"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "3.5",
+                        "upstream": "2.6"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "6.8",
+                        "upstream": "127.0"
+                    }
+                ]
+            },
+            {
+                "bands": []
+            },
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "1.5"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "1.0",
+                        "upstream": "0.9"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "1.8",
+                        "upstream": "2.0"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "3.3",
+                        "upstream": "127.0"
+                    }
+                ]
+            }
+        ]
+    },
+    "attenuationAverage": {
+        "type": "object",
+        "samples": [
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "1.5"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "1.1",
+                        "upstream": "0.6"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "1.8",
+                        "upstream": "1.1"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "3.5",
+                        "upstream": "127.0"
+                    }
+                ]
+            },
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "127.0"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "4.2",
+                        "upstream": "5.3"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "4.0",
+                        "upstream": "3.6"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "7.6",
+                        "upstream": "127.0"
+                    }
+                ]
+            },
+            {
+                "bands": []
+            },
+            {
+                "unitType": "dB",
+                "bands": [
+                    {
+                        "bandId": "0",
+                        "downstream": "127.0",
+                        "upstream": "1.5"
+                    },
+                    {
+                        "bandId": "1",
+                        "downstream": "1.1",
+                        "upstream": "0.5"
+                    },
+                    {
+                        "bandId": "2",
+                        "downstream": "1.8",
+                        "upstream": "1.2"
+                    },
+                    {
+                        "bandId": "3",
+                        "downstream": "3.3",
+                        "upstream": "127.0"
+                    }
+                ]
+            }
+        ]
+    },
+    "classificationHistoryImageUrls": {
+        "type": "object",
+        "samples": [
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_nas_history_plot.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_nas_history_plot.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_nas_history_plot.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_nas_history_plot.png"
+            ]
+        ]
+    },
+    "resolutions": {
+        "type": "object",
+        "samples": [
+            [
+                "ABNORMAL_ATTENUATION_NOK",
+                "PSU_RFI_ERROR"
+            ],
+            [
+                "LOW_SPEED",
+                "PSU_RFI_ERROR"
+            ],
+            [
+                "LQD_SUCCESS"
+            ],
+            [
+                "UNEXPECTED_INSPECTION_TYPE"
+            ]
+        ]
+    },
+    "dbpoFlag": {
+        "type": "string",
+        "samples": [
+            "false ",
+            "true ",
+            " "
+        ]
+    },
+    "actualRtxModeUpstream": {
+        "type": "string",
+        "samples": [
+            "In Use"
+        ]
+    },
+    "actualRtxModeDownstream": {
+        "type": "string",
+        "samples": [
+            "In use"
+        ]
+    },
+    "startTime": {
+        "type": "string",
+        "samples": [
+            "04/11/2019 4:03 PM",
+            "04/11/2019 7:49 PM",
+            "05/11/2019 10:33 AM",
+            "04/11/2019 7:48 PM"
+        ]
+    },
+    "stopTime": {
+        "type": "string",
+        "samples": [
+            "04/11/2019 4:09 PM",
+            "04/11/2019 7:55 PM",
+            "05/11/2019 10:39 AM",
+            "04/11/2019 7:54 PM"
+        ]
+    },
+    "attenuationUpstream": {
+        "type": "string",
+        "samples": [
+            "0.9",
+            "3.7",
+            ""
+        ]
+    },
+    "attenuationDownstream": {
+        "type": "string",
+        "samples": [
+            "2.2",
+            "4.2",
+            "",
+            "2.1"
+        ]
+    },
+    "attenuationUnitType": {
+        "type": "string",
+        "samples": [
+            "db"
+        ]
+    },
+    "collectionFailures": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "failedInit": {
+        "type": "string",
+        "samples": [
+            "0"
+        ]
+    },
+    "noiseMarginMinUpstream": {
+        "type": "string",
+        "samples": [
+            "26.1",
+            "30.0",
+            "N/A"
+        ]
+    },
+    "noiseMarginMinDownstream": {
+        "type": "string",
+        "samples": [
+            "29.6",
+            "40.3",
+            "N/A",
+            "29.4"
+        ]
+    },
+    "noiseMarginMinUnit": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "noiseMarginMaxUpstream": {
+        "type": "string",
+        "samples": [
+            "26.1",
+            "30.0",
+            "N/A"
+        ]
+    },
+    "noiseMarginMaxDownstream": {
+        "type": "string",
+        "samples": [
+            "29.6",
+            "40.3",
+            "N/A",
+            "29.4"
+        ]
+    },
+    "noiseMarginMaxUnit": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "loopAttenuationMinUpstream": {
+        "type": "string",
+        "samples": [
+            "1.6",
+            "2.3"
+        ]
+    },
+    "loopAttenuationMinDownstream": {
+        "type": "string",
+        "samples": [
+            "2.1",
+            "4.2",
+            "2.0"
+        ]
+    },
+    "loopAttenuationMinUnit": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "loopAttenuationMaxUpstream": {
+        "type": "string",
+        "samples": [
+            "1.6",
+            "2.3"
+        ]
+    },
+    "loopAttenuationMaxDownstream": {
+        "type": "string",
+        "samples": [
+            "2.1",
+            "4.2",
+            "2.0"
+        ]
+    },
+    "loopAttenuationMaxUnit": {
+        "type": "string",
+        "samples": [
+            "dB"
+        ]
+    },
+    "imageUrls": {
+        "type": "object",
+        "samples": [
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_contour_bitplot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.bitloading.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.snr.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.qln.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.noise.with.cancellation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_ds_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_us_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.hlog.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.tx.psd.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.fec.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.fec.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.1.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.2.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.1.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.2.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.user.traffic.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.coding.violations.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.fec.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.severely.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.noise.margin.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.noise.margin.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.noise.margin.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.noise.margin.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.leftrs.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.rtx.dtu.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.output.power.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.attenuation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.attenuation.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.loop.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_41a3b0d23fc2ef0dcff1c17ab33d63ad_img_graph.title.loop.attenuation.per.band.us.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_contour_bitplot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.bitloading.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.snr.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.qln.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.noise.with.cancellation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_ds_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_us_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.hlog.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.tx.psd.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.fec.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.fec.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.1.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.2.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.1.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.2.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.user.traffic.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.coding.violations.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.fec.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.severely.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.noise.margin.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.noise.margin.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.noise.margin.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.noise.margin.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.leftrs.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.rtx.dtu.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.output.power.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.attenuation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.attenuation.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.loop.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_cbff8c90040a995bfdf87d174c0829d3_img_graph.title.loop.attenuation.per.band.us.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_contour_bitplot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.bitloading.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.fec.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.fec.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.1.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.2.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.1.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.2.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.user.traffic.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.coding.violations.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.fec.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.severely.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.noise.margin.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.noise.margin.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.leftrs.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.rtx.dtu.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.output.power.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_61afd697da6d5e146cb247dc19119e81_img_graph.title.attenuation.png"
+            ],
+            [
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_contour_bitplot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.bitloading.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.snr.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.qln.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.noise.with.cancellation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_ds_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_us_vector_disturbers_plot.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.hlog.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.tx.psd.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.fec.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.fec.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.1.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.2.title.rtx.bitrate.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.1.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.2.title.rtx.bitrate.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.user.traffic.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.coding.violations.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.fec.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.severely.errored.seconds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.noise.margin.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.noise.margin.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.noise.margin.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.noise.margin.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.leftrs.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.rtx.dtu.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.output.power.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.attenuation.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.attenuation.per.band.us.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.loop.attenuation.per.band.ds.png",
+                "http://assn-ms-gtas.sit1.assn.restest.nbn-aws.local:8080/v1/assn-traas/sit1/graphs/LQD-Test_a6dddfaefaf0f8fe787913b5168954a1_img_graph.title.loop.attenuation.per.band.us.png"
+            ]
+        ]
+    }
+}

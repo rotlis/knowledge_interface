@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix hlog: <http://chronos/data-lake/hlog/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+hlog:hlog_S3
+    a chrs:Distribution ;
+    chrs:conformsToSchema hlog:hlog_schema_v0 ;
+	rdfs:label "hlog@S3" ;
+	rdfs:comment "hlog  in AWS S3 bucket" ;
+    .
+
+hlog:hlog_S3
+	chrs:glueTable "hlog_full" ;
+	chrs:exposedWith chr:athenaProxy ;
+	.
+
+hlog:hlog_S3
+	chrs:coversTimePeriod "7y" ;
+	chrs:lags "1d" ;
+	chrs:updateFrequency "1d" ;
+    .
+

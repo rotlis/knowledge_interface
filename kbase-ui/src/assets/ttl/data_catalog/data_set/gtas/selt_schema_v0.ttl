@@ -1,0 +1,265 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix selt: <http://chronos/data-lake/gtas/selt/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# RANDOM samples
+#
+#<http://example.org/policy/1> a odrl:Policy, odrl:Set ;
+#  odrl:permission [
+#    odrl:target <http://example.com/asset/1> ;
+#    odrl:assignee <http://example.com/party/Alice> ;
+#    odrl:action odrl:use
+#  ] ;
+
+# *****************************************
+# local types
+# *****************************************
+selt:location
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+selt:description
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+selt:confidenceLevel
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string" ;
+	chrs:type xsd:decimal ;
+	.
+selt:impact
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+selt:proposedRepairActions
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+
+selt:detectedProblemType
+		chrs:hasAttribute
+			selt:location, selt:description, selt:confidenceLevel, selt:impact, selt:proposedRepairActions;
+	.
+# *****************************************
+
+selt:measurementTimestamp
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:dateTime ;
+	.
+
+selt:syncStatusBefore
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+selt:terminationType
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+selt:lineLength
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Remove NOT_FOUND";
+	chrs:type xsd:integer ;
+	chrs:unitOfMeasure "m"
+	.
+
+selt:lineLengthAccuracy
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Remove NOT_FOUND. TODO: what is the unit of measure(m or %)?";
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "m"
+	.
+
+selt:reliability
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample 'High'";
+	chrs:type xsd:string ;
+	.
+
+selt:estimatedAttenuationAt300khzSelt
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: Convert from string, remove 'NOT_FOUND'";
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+selt:estimatedAttenuationAt1MhzSelt
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: Convert from string, remove 'NOT_FOUND'";
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+selt:capacity
+	a rdf:Bag ;
+	chrs:type selt:capacityType ;
+	.
+
+# **********************
+
+selt:profile
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample 'VDSLoPOTS'";
+	chrs:type xsd:string ;
+	.
+
+selt:capacityDown
+	a chrs:AttributeSpecification ;
+	rdfs:comment "";
+	chrs:type xsd:integer ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+selt:capacityDownAccuracy
+	a chrs:AttributeSpecification ;
+	rdfs:comment "";
+	chrs:type xsd:integer ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+selt:capacityUp
+	a chrs:AttributeSpecification ;
+	rdfs:comment "";
+	chrs:type xsd:integer ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+selt:capacityUpAccuracy
+	a chrs:AttributeSpecification ;
+	rdfs:comment "";
+	chrs:type xsd:integer ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+selt:capacityType
+	a chrs:AttributeSpecification ;
+	chrs:hasAttribute
+		selt:profile,
+		selt:capacityDown,
+		selt:capacityDownAccuracy,
+		selt:capacityUp,
+		selt:capacityUpAccuracy
+	.
+# **********************
+
+selt:bridgeTapDetected
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: Convert from string 'Yes', 'No Bridge Tap Detected' to boolean?";
+	chrs:type xsd:boolean;
+	.
+
+selt:bridgeTaps
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Array of decimals";
+	a rdf:Bag ;
+	chrs:type xsd:decimal;
+	chrs:unitOfMeasure "m"
+	.
+
+
+selt:loopEstimateType
+	chrs:hasAttribute
+		selt:measurementTimestamp,
+		selt:syncStatusBefore,
+		selt:terminationType,
+		selt:lineLength,
+		selt:lineLengthAccuracy,
+		selt:reliability,
+		selt:estimatedAttenuationAt300khzSelt,
+		selt:estimatedAttenuationAt1MhzSelt,
+		selt:capacity,
+		selt:bridgeTapDetected,
+		selt:bridgeTaps
+		.
+
+# *****************************************
+# Please note this is the target schema how it should be exposed from Chronos
+selt:schema_v0
+    a chrs:DataSchema ;
+    .
+
+selt:schema_v0
+    chrs:hasAttribute
+    	selt:testReferenceId,
+        selt:type,
+		selt:status,
+		selt:result,
+		selt:executionTimestamp,
+		selt:testId,
+		selt:loopEstimates,
+    	selt:detectedProblems,
+		selt:resolutions,
+		selt:imageUrls
+		.
+
+selt:testReferenceId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^WRI\\d{12}$" ;
+	.
+
+selt:type
+	a chrs:AttributeSpecification ;
+	rdfs:comment "test type. Always comes as 'Single End Line Test'" ;
+	chrs:type xsd:string ;
+	.
+
+selt:status
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'Cancelled','Completed'" ;
+	chrs:type xsd:string ;
+	.
+
+selt:result
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Failed, Passed, TODO: remove empty string" ;
+	chrs:type xsd:string ;
+	.
+
+selt:executionTimestamp
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from epoch integer 1572681803925" ;
+	chrs:type xsd:dateTime ;
+	.
+
+selt:testId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string;
+	chrs:hasFormat "^TRI\\d{12}$" ;
+	.
+
+selt:loopEstimates
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	a rdf:Bag ;
+	chrs:type selt:loopEstimateType ;
+	.
+
+selt:detectedProblems
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	a rdf:Bag ;
+	chrs:type selt:detectedProblemType ;
+	.
+
+selt:resolutions
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	a rdf:Bag ;
+	chrs:type xsd:string;
+	.
+
+selt:imageUrls
+	a chrs:AttributeSpecification ;
+	a rdf:Bag ;
+	chrs:type xsd:string
+	.

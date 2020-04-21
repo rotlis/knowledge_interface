@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+sdc:sdcS3
+    a chrs:Distribution ;
+    chrs:conformsToSchema sdc:schema_v0 ;
+	rdfs:label "SDC in AWS S3 bucket" ;
+	rdfs:comment "S3 distribution for SDC feed" ;
+    .
+
+sdc:sdcS3
+	chrs:glueTable "sdc_full" ;
+	chrs:exposedWith chr:athenaProxy ;
+	.
+
+sdc:sdcS3
+	chrs:coversTimePeriod "7y" ;
+	chrs:lags "4h" ;
+	chrs:updateFrequency "1h" ;
+    .
+

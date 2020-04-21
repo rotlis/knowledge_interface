@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix gtas: <http://chronos/data-lake/gtas/> .
+
+gtas:test_summary
+    a chrs:DataSet ;
+	rdfs:label "test_summary" ;
+	rdfs:comment "GTAS test summary" ;
+    chrs:hasDistribution gtas:test_summary_es ;
+    .
+
+gtas:test_details
+    a chrs:DataSet ;
+	rdfs:label "test_details" ;
+	rdfs:comment "GTAS test details" ;
+    chrs:hasDistribution gtas:test_details_es ;
+    .
+
+gtas:lqd
+    a chrs:DataSet ;
+	rdfs:label "lqd" ;
+	rdfs:comment "GTAS LQD test details" ;
+    chrs:hasDistribution gtas:lqd_es ;
+    .
+
+gtas:selt
+    a chrs:DataSet ;
+	rdfs:label "selt" ;
+	rdfs:comment "GTAS SELT test details" ;
+    chrs:hasDistribution gtas:selt_es ;
+    .
+
+gtas:mlt
+    a chrs:DataSet ;
+	rdfs:label "mlt" ;
+	rdfs:comment "GTAS MLT test details" ;
+    chrs:hasDistribution gtas:mlt_es ;
+    .
+
+
+

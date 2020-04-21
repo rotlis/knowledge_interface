@@ -1,0 +1,169 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix test_summary: <http://chronos/data-lake/gtas/test_summary/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# *****************************************
+# local type
+# *****************************************
+test_summary:testDetailsType
+	chrs:hasAttribute
+		test_summary:td_type,
+		test_summary:td_result,
+		test_summary:td_resolutions,
+		test_summary:td_timestamp
+	.
+
+# *****************************************
+# nested fields
+# *****************************************
+test_summary:td_type
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:td_result
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:td_resolutions
+	a chrs:AttributeSpecification ;
+	a rdf:Bag ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:td_timestamp
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:dateTime ;
+	.
+
+# *****************************************
+# local type
+# *****************************************
+test_summary:workflowOutcomeType
+	chrs:hasAttribute
+		test_summary:wo_status,
+		test_summary:wo_outcome,
+		test_summary:wo_description,
+		test_summary:wo_deducefaultType
+	.
+
+# *****************************************
+# nested fields
+# *****************************************
+
+test_summary:wo_status
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:wo_outcome
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:wo_description
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:wo_deducefaultType
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+# *****************************************
+# Target schema how it should be exposed from Chronos
+# *****************************************
+test_summary:schema_v0
+    a chrs:DataSchema ;
+    .
+
+test_summary:schema_v0
+    chrs:hasAttribute
+        test_summary:workflowName,
+		test_summary:worfklowReferenceId,
+		test_summary:role,
+		test_summary:channel,
+		test_summary:workflowType,
+		test_summary:technologyType,
+		test_summary:accessekerId,
+		test_summary:status,
+		test_summary:avcId,
+		test_summary:testDetails, # nested
+		test_summary:timestamp,
+		test_summary:workflowOutcome # nested
+		.
+
+
+
+test_summary:workflowName
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:worfklowReferenceId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^WRI\\d{12}$" ;
+	.
+
+test_summary:role
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:channel
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:workflowType
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:technologyType
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:accessekerId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^ASI\\d{12}$" ;
+	.
+
+test_summary:status
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+test_summary:avcId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^AVC\\d{12}$" ;
+	.
+
+test_summary:testDetails # nested
+	a rdf:Bag ;
+	chrs:type test_summary:testDetailsType ;
+	.
+
+test_summary:timestamp
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:dateTime ;
+	.
+
+test_summary:workflowOutcome # nested
+	a chrs:AttributeSpecification ;
+	chrs:type test_summary:workflowOutcomeType ;
+	.
+

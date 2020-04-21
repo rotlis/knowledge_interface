@@ -1,0 +1,655 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix lqd: <http://chronos/data-lake/gtas/lqd/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# RANDOM samples
+#
+#<http://example.org/policy/1> a odrl:Policy, odrl:Set ;
+#  odrl:permission [
+#    odrl:target <http://example.com/asset/1> ;
+#    odrl:assignee <http://example.com/party/Alice> ;
+#    odrl:action odrl:use
+#  ] ;
+
+
+# *****************************************
+# local types
+# *****************************************
+lqd:bandId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:integer ;
+	.
+lqd:downstream
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB" ;
+	.
+lqd:upstream
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB" ;
+	.
+
+lqd:attenuationBand
+	a chrs:DataSchema ;
+	chrs:hasAttribute
+		lqd:bandId,
+		lqd:downstream,
+		lqd:upstream
+    	.
+
+lqd:bands
+	a rdf:Bag ;
+	chrs:type lqd:attenuationBand ;
+	.
+
+lqd:attenuationBands
+	a chrs:DataSchema ;
+	chrs:hasAttribute
+		lqd:bands
+		.
+
+
+# Please note this is the target schema how it should be exposed from Chronos
+lqd:schema_v0
+    a chrs:DataSchema ;
+    .
+
+lqd:schema_v0
+    chrs:hasAttribute
+    	lqd:testReferenceId,
+    	lqd:type,
+        lqd:status,
+        lqd:result,
+        lqd:testId,
+        lqd:executionTimestamp,
+        lqd:state,
+        lqd:userLable,
+        lqd:coexistence,
+        lqd:bitSwaps,
+        lqd:spontaneousResyncs,
+        lqd:disorderlyLeavingEvent,
+        lqd:robustResync,
+		lqd:profileSwitch,
+		lqd:loopAttenuationAverageUpstream,
+		lqd:loopAttenuationAverageDownstream,
+		lqd:rtxActualNetDataRateUpstream,
+		lqd:rtxActualNetDataRateDownstream,
+		lqd:rtxAttainableNetDataRateUpstream,
+		lqd:rtxAttainableNetDataRateDownstream,
+		lqd:rtxAttainableExpectedThroughputUpstream,
+		lqd:rtxAttainableExpectedThroughputDownstream,
+		lqd:rtxActualExpectedThroughputUpstream,
+		lqd:rtxActualExpectedThroughputDownstream,
+		lqd:supportedCpeVectoringType,
+		lqd:cardType,
+		lqd:monitoringPeriod,
+		lqd:cpeType,
+		lqd:dslType,
+		lqd:vectoringStatus,
+		lqd:actualCpeVectoringType,
+		lqd:modemVendorIdHex,
+		lqd:systemVendorIdHex,
+		lqd:serialNumber,
+		lqd:serviceStability,
+		lqd:estimatedDeltDistance,
+		lqd:electricalLength,
+		lqd:attainableBitrateUpstream,
+		lqd:attainableBitrateDownstream,
+		lqd:layer2BitrateUpstream,
+		lqd:layer2BitrateDownstream,
+		lqd:noiseMarginAverageUpstream,
+		lqd:noiseMarginAverageDownstream,
+		lqd:relativeCapacityOccupationUpstream,
+		lqd:relativeCapacityOccupationDownstream,
+		lqd:actualPsdUpstream,
+		lqd:actualPsdDownstream,
+		lqd:outputPowerUpstream,
+		lqd:outputPowerDownstream,
+		lqd:userTrafficUpstream,
+		lqd:userTrafficDownstream,
+		lqd:physicalProfile,
+		lqd:fallbackState,
+		lqd:fallbackProfile,
+		lqd:lineId,
+		lqd:loopAttenuationAverage,
+		lqd:attenuationAverage,
+		lqd:classificationHistoryImageUrls,
+		lqd:resolutions,
+		lqd:dbpoFlag,
+		lqd:actualRtxModeUpstream,
+		lqd:actualRtxModeDownstream,
+		lqd:startTime,
+		lqd:stopTime,
+		lqd:attenuationUpstream,
+		lqd:attenuationDownstream,
+		lqd:collectionFailures,
+		lqd:failedInit,
+		lqd:noiseMarginMinUpstream,
+		lqd:noiseMarginMinDownstream,
+		lqd:noiseMarginMaxUpstream,
+		lqd:noiseMarginMaxDownstream,
+		lqd:loopAttenuationMinUpstream,
+		lqd:loopAttenuationMinDownstream,
+		lqd:loopAttenuationMaxUpstream,
+		lqd:loopAttenuationMaxDownstream,
+		lqd:imageUrls
+        .
+
+# -----------------------------------------
+
+lqd:testReferenceId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^WRI\\d{12}$" ;
+	.
+
+lqd:type
+	a chrs:AttributeSpecification ;
+	rdfs:comment "test type. Always comes as 'LQD test'" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:status
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'Cancelled', 'Completed'" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:result
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'Failed', ''" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:testId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "test id" ;
+	chrs:type xsd:string ;
+    chrs:hasFormat "^TRI\\d{12}$" ;
+	.
+
+lqd:executionTimestamp
+	a chrs:AttributeSpecification ;
+	rdfs:comment "execution timestamp. TODO: we better of converting it into dateTime" ;
+	chrs:type xsd:dateTime ;
+	.
+
+lqd:state
+	a chrs:AttributeSpecification ;
+	rdfs:comment "state of the test. TODO: normalise to uppercase" ;
+	chrs:type xsd:string ;
+    chrs:hasFormat "^(FINISHED|Finished)$" ;
+	.
+
+lqd:userLable
+	a chrs:AttributeSpecification ;
+	rdfs:comment "user label" ;
+	chrs:type xsd:string ;
+    chrs:hasFormat "^UNI\\d{12}$" ;
+	.
+
+lqd:coexistence
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to boolean?" ;
+	chrs:type xsd:string ;
+    chrs:hasFormat "^Yes$" ;
+	.
+
+lqd:bitSwaps
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to boolean or integer?" ;
+	chrs:type xsd:string ;
+    chrs:hasFormat "^[0-1]$" ;
+	.
+
+lqd:spontaneousResyncs
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to integer?" ;
+	chrs:type xsd:integer ;
+	.
+
+lqd:disorderlyLeavingEvent
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Stringified numeric. TODO: transform to integer?" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:robustResync
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Stringified numeric. TODO: transform to integer?" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:profileSwitch
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Stringified numeric or boolean?. TODO: transform to integer?" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:loopAttenuationAverageUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:loopAttenuationAverageDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:rtxActualNetDataRateUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxActualNetDataRateDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxAttainableNetDataRateUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment " TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxAttainableNetDataRateDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxAttainableExpectedThroughputUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxAttainableExpectedThroughputDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment " TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxActualExpectedThroughputUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:rtxActualExpectedThroughputDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: transform to decimal?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:supportedCpeVectoringType
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'legacy', 'g.vector capable'" ;
+	chrs:type xsd:string
+	.
+
+lqd:cardType
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'NDLT-F', 'SDLT-E', 'SDLT-D'" ;
+	chrs:type xsd:string
+	.
+
+lqd:monitoringPeriod
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to integer or float? What is unit of measure?" ;
+	chrs:type xsd:integer
+	.
+
+lqd:cpeType
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string
+	.
+
+lqd:dslType
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of VDSL2, XDSL" ;
+	chrs:type xsd:string
+	.
+
+lqd:vectoringStatus
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string
+	.
+
+lqd:actualCpeVectoringType
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string
+	.
+
+lqd:modemVendorIdHex
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove NOT_FOUND" ;
+	chrs:type xsd:string
+	.
+
+lqd:systemVendorIdHex
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove NOT_FOUND" ;
+	chrs:type xsd:string
+	.
+
+lqd:systemVendorModelHex
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove NOT_FOUND" ;
+	chrs:type xsd:string
+	.
+
+lqd:serialNumber
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove NOT_FOUND" ;
+	chrs:type xsd:string
+	.
+
+lqd:serviceStability
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove 'UNKNOWN'?" ;
+	chrs:type xsd:string
+	.
+
+lqd:estimatedDeltDistance
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to integer, remove 'Unknown: data not available'?" ;
+	chrs:type xsd:integer
+	.
+
+lqd:electricalLength
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'Not applicable (VDSL2 only)'?" ;
+	chrs:type xsd:decimal
+	.
+
+lqd:attainableBitrateUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove 'N/A'?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:attainableBitrateDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: remove 'N/A'?" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:layer2BitrateUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:layer2BitrateDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kbps"
+	.
+
+lqd:noiseMarginAverageUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:noiseMarginAverageDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:relativeCapacityOccupationUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "%"
+	.
+
+lqd:relativeCapacityOccupationDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "%"
+	.
+
+lqd:actualPsdUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dBm/Hz"
+	.
+
+lqd:actualPsdDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dBm/Hz"
+	.
+
+lqd:outputPowerUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dBm"
+	.
+
+lqd:outputPowerDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dBm"
+	.
+
+lqd:userTrafficUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "Kbits"
+	.
+
+lqd:userTrafficDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert to decimal, remove 'N/A'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "Kbits"
+	.
+
+lqd:physicalProfile
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample '25/10 Standard 6dB'" ;
+	chrs:type xsd:string
+	.
+
+lqd:fallbackState
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample 'Not Active'. TODO: remove empty string" ;
+	chrs:type xsd:string
+	.
+
+lqd:fallbackProfile
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample 'Not Active'. TODO: remove empty string" ;
+	chrs:type xsd:string
+	.
+
+lqd:lineId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^SWDSL\\d{7}:\\d+-\\d+-\\d+-\\d+" ;
+	.
+
+
+lqd:loopAttenuationAverage
+	a chrs:AttributeSpecification ;
+	chrs:type lqd:attenuationBands ;
+	.
+
+lqd:attenuationAverage
+	a chrs:AttributeSpecification ;
+	chrs:type lqd:attenuationBands ;
+	.
+
+lqd:classificationHistoryImageUrls
+	a chrs:AttributeSpecification ;
+	a rdf:Bag ;
+	chrs:type xsd:string ;
+	.
+
+lqd:resolutions
+	a chrs:AttributeSpecification ;
+	a rdf:Bag ;
+	chrs:type xsd:string ;
+	.
+
+lqd:dbpoFlag
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: converto to boolean. Remove empty" ;
+	chrs:type xsd:boolean ;
+	.
+
+lqd:actualRtxModeUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:actualRtxModeDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string ;
+	.
+
+lqd:startTime
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from '04/11/2019 4:03 PM'" ;
+	chrs:type xsd:dateTime ;
+	.
+
+lqd:stopTime
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from '04/11/2019 4:09 PM'" ;
+	chrs:type xsd:dateTime ;
+	.
+
+lqd:attenuationUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove empty'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:attenuationDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove empty'" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:collectionFailures
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String'" ;
+	chrs:type xsd:integer
+	.
+
+lqd:failedInit
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String'" ;
+	chrs:type xsd:integer
+	.
+
+lqd:noiseMarginMinUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove N/A" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:noiseMarginMinDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove N/A" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:noiseMarginMaxUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove N/A" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:noiseMarginMaxDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String, remove N/A" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:loopAttenuationMinUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:loopAttenuationMinDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:loopAttenuationMaxUpstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:loopAttenuationMaxDownstream
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO convert from String" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "dB"
+	.
+
+lqd:imageUrls
+	a chrs:AttributeSpecification ;
+	a rdf:Bag ;
+	chrs:type xsd:string
+	.
+

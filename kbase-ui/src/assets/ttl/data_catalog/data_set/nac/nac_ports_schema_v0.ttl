@@ -1,0 +1,1452 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix nac_ports: <http://chronos/data-lake/nac_ports/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+nac_ports:nac_ports_schema_v0
+    a chrs:DataSchema ;
+    .
+
+nac_ports:nac_ports_schema_v0
+    chrs:hasAttribute nac_ports:xdsl_dpbo_cable_model_param_b,
+        nac_ports:xdsl_line_vect_fallback_state,
+        nac_ports:bonding_group_profile_planned_bitrate_us,
+        nac_ports:vdsl2_rx_psd_shape_upstream,
+        nac_ports:rtx_overrule_min_impulse_noise_protection_rein_ds,
+        nac_ports:latency_path_us,
+        nac_ports:previous_day_unavailable_seconds_ds,
+        nac_ports:rtx_actual_expected_throughput_us,
+        nac_ports:rtx_previous_day_error_free_bits_us,
+        nac_ports:bonding_group_rtx_min_inp_rein_downstream,
+        nac_ports:xdsl_board_fallback_rtx_profile_number,
+        nac_ports:rtx_min_delay_ds,
+        nac_ports:bonding_group_rtx_mode_downstream,
+        nac_ports:target_noise_margin_us,
+        nac_ports:spectrum_profile_index,
+        nac_ports:vdsl2_psd_pbo_param_a_us,
+        nac_ports:xdsl_board_fallback_dpbo_profile_number,
+        nac_ports:vdsl2_psd_shape_downstream,
+        nac_ports:actual_psd_us,
+        nac_ports:overlay_mode,
+        nac_ports:rtx_max_delay_us,
+        nac_ports:dpbo_electrical_length,
+        nac_ports:loop_attenuation_per_band_us,
+        nac_ports:bonding_link_status,
+        nac_ports:electrical_length_estimated,
+        nac_ports:actual_ra_mode_us,
+        nac_ports:xdsl_vect_cpe_type,
+        nac_ports:previous_day_errored_seconds_us,
+        nac_ports:bonding_group_rtx_max_exp_thrpt_upstream,
+        nac_ports:current_day_measured_time_us,
+        nac_ports:bonding_group_ne_actual_bitrate_us,
+        nac_ports:rtx_actual_expected_throughput_ds,
+        nac_ports:spectrum_profile_operational_mode,
+        nac_ports:rtx_overrule_max_expected_throughput_ds,
+        nac_ports:if_last_change,
+        nac_ports:max_bitrate_ds,
+        nac_ports:attenuation_ds,
+        nac_ports:attenuation_per_band_ds,
+        nac_ports:current_day_severely_errored_seconds_ds,
+        nac_ports:actual_bitrate_us,
+        nac_ports:xdsl_dpbo_min_usable_signal_level,
+        nac_ports:current_day_full_init_count,
+        nac_ports:dpbo_max_frequency,
+        nac_ports:xdsl_channel_previous_day_uncorr_dtu_counter_ds,
+        nac_ports:line_actual_operational_mode,
+        nac_ports:electrical_length_per_band_us,
+        nac_ports:max_delay_ds,
+        nac_ports:service_profile_name,
+        nac_ports:actual_impulse_noise_protection_ds,
+        nac_ports:atur_system_serial_number,
+        nac_ports:attainable_bitrate_us,
+        nac_ports:previous_day_spontaneous_resyncs,
+        nac_ports:bonding_group_rtx_plan_exp_thrpt_downstream,
+        nac_ports:previous_day_severely_errored_seconds_ds,
+        nac_ports:max_additional_noise_margin_us,
+        nac_ports:current_day_failed_init,
+        nac_ports:previous_day_forward_error_corrections_us,
+        nac_ports:vect_operating_mode_us,
+        nac_ports:noise_margin_ds,
+        nac_ports:actual_bitrate_ds,
+        nac_ports:noise_margin_us,
+        nac_ports:xdsl_channel_previous_day_corr_dtu_counter_ds,
+        nac_ports:ra_mode_us,
+        nac_ports:bonding_group_rtx_max_net_data_rate_downstream,
+        nac_ports:spectrum_profile_vdsl_start_frequency,
+        nac_ports:bonding_group_rtx_min_exp_thrpt_downstream,
+        nac_ports:spectrum_profile_vdsl_end_frequency,
+        nac_ports:bonding_group_rtx_min_delay_downstream,
+        nac_ports:rtx_overrule_mode_ds,
+        nac_ports:rtx_overrule_min_delay_us,
+        nac_ports:previous_day_reinit_failure_count,
+        nac_ports:previous_day_unavailable_seconds_us,
+        nac_ports:electrical_length_per_band_ds,
+        nac_ports:output_power_us,
+        nac_ports:rtx_min_expected_throughput_us,
+        nac_ports:loop_attenuation_us,
+        nac_ports:bonding_group_profile_min_bitrate_us,
+        nac_ports:min_noise_margin_ds,
+        nac_ports:bonding_group_rtx_max_exp_thrpt_downstream,
+        nac_ports:rtx_min_inp_shine_us,
+        nac_ports:current_day_errored_seconds_ds,
+        nac_ports:attainable_bitrate_ds,
+        nac_ports:yesterdays_coding_violations_ds,
+        nac_ports:bonding_group_profile_name,
+        nac_ports:rtx_attainable_net_data_rate_ds,
+        nac_ports:vdsl_pbo_mode_us,
+        nac_ports:rtx_overrule_shine_ratio_ds,
+        nac_ports:atur_system_vendor_id,
+        nac_ports:max_additional_noise_margin_ds,
+        nac_ports:rtx_min_inp_rein_us,
+        nac_ports:bonding_group_rtx_rein_inter_arr_time_downstream,
+        nac_ports:dpbo_min_frequency,
+        nac_ports:min_impulse_noise_protection_ds,
+        nac_ports:rtx_min_planned_throughput_us,
+        nac_ports:bonding_group_fe_actual_bitrate_ds,
+        nac_ports:bonding_group_profile_max_delay_ds,
+        nac_ports:vdsl2_psd_pbo_param_equal_fext_us,
+        nac_ports:vdsl2_psd_pbo_param_b_us,
+        nac_ports:customer_id,
+        nac_ports:bonding_group_rtx_min_delay_upstream,
+        nac_ports:rtx_previous_day_min_eftrs_ds,
+        nac_ports:xdsl_channel_previous_day_retransmit_dtu_counter_ds,
+        nac_ports:rtx_max_net_data_rate_us,
+        nac_ports:rtx_overrule_max_net_data_rate_us,
+        nac_ports:noise_margin_per_band_us,
+        nac_ports:rtx_max_delay_ds,
+        nac_ports:actual_ra_mode_ds,
+        nac_ports:line_bonding_mode,
+        nac_ports:bonding_group_rtx_max_delay_downstream,
+        nac_ports:xdsl_board_fallback_service_profile_number,
+        nac_ports:line_carrier_data_mode,
+        nac_ports:rtx_max_expected_throughput_us,
+        nac_ports:actual_interleaving_delay_us,
+        nac_ports:xdsl_board_fallback_spectrum_profile_number,
+        nac_ports:dpbo_custom_psd_mask_downstream,
+        nac_ports:aele_conf_mode,
+        nac_ports:rtx_overrule_min_delay_ds,
+        nac_ports:xdsl_vect_enable_ds,
+        nac_ports:xdsl_channel_previous_day_uncorr_dtu_counter_us,
+        nac_ports:rtx_min_delay_us,
+        nac_ports:loop_attenuation_per_band_ds,
+        nac_ports:rtx_max_expected_throughput_ds,
+        nac_ports:max_psd_ds,
+        nac_ports:noise_margin_per_band_ds,
+        nac_ports:xdsl_channel_previous_day_corr_dtu_counter_us,
+        nac_ports:min_impulse_noise_protection_us,
+        nac_ports:atur_modem_vendor_id,
+        nac_ports:current_day_errored_seconds_us,
+        nac_ports:rtx_overrule_max_expected_throughput_us,
+        nac_ports:bonding_group_vect_fallback_state,
+        nac_ports:xdsl_channel_previous_day_retransmit_dtu_counter_us,
+        nac_ports:rtx_shine_ratio_us,
+        nac_ports:dpbo_profile_name,
+        nac_ports:bonding_group_rtx_shine_ratio_downstream,
+        nac_ports:dpbo_profile_index,
+        nac_ports:attenuation_us,
+        nac_ports:bonding_group_rtx_rein_inter_arr_time_upstream,
+        nac_ports:yesterdays_coding_violations_us,
+        nac_ports:current_day_severely_errored_seconds_us,
+        nac_ports:max_delay_us,
+        nac_ports:rtx_actual_net_data_rate_ds,
+        nac_ports:rtx_mode_ds,
+        nac_ports:xdsl_vect_profile_name,
+        nac_ports:bonding_group_profile_planned_bitrate_ds,
+        nac_ports:rtx_overrule_min_impulse_noise_protection_shine_ds,
+        nac_ports:line_rfi_bands,
+        nac_ports:previous_day_errored_seconds_ds,
+        nac_ports:max_bitrate_us,
+        nac_ports:min_noise_margin_us,
+        nac_ports:current_day_forward_error_corrections_us,
+        nac_ports:rtx_profile_index,
+        nac_ports:bonding_group_rtx_max_delay_upstream,
+        nac_ports:bonding_link_group_index_address,
+        nac_ports:dsl_port_provisioned,
+        nac_ports:bonding_group_rtx_min_inp_shine_downstream,
+        nac_ports:loop_attenuation_ds,
+        nac_ports:current_day_measured_time_ds,
+        nac_ports:rtx_previous_day_leftrs_ds,
+        nac_ports:spectrum_profile_vdsl_band_plan,
+        nac_ports:bonding_group_rtx_max_net_data_rate_upstream,
+        nac_ports:rtx_min_expected_throughput_ds,
+        nac_ports:bonding_group_rtx_profile_name,
+        nac_ports:min_bitrate_ds,
+        nac_ports:rtx_attainable_expected_throughput_us,
+        nac_ports:xdsl_dpbo_cable_model_param_a,
+        nac_ports:current_day_coding_violations_us,
+        nac_ports:min_bitrate_us,
+        nac_ports:bonding_group_profile_min_bitrate_ds,
+        nac_ports:rtx_mode_us,
+        nac_ports:rtx_shine_ratio_ds,
+        nac_ports:ra_mode_ds,
+        nac_ports:previous_day_severely_errored_seconds_us,
+        nac_ports:xdsl_vect_enable_us,
+        nac_ports:if_oper_status,
+        nac_ports:rtx_overrule_max_delay_us,
+        nac_ports:bonding_group_profile_max_bitrate_us,
+        nac_ports:rtx_actual_mode_ds,
+        nac_ports:rtx_min_inp_shine_ds,
+        nac_ports:bonding_group_rtx_plan_exp_thrpt_upstream,
+        nac_ports:rtx_overrule_min_impulse_noise_protection_shine_us,
+        nac_ports:bonding_group_rtx_min_inp_rein_upstream,
+        nac_ports:xdsl_dpbo_cable_model_param_c,
+        nac_ports:rtx_previous_day_min_eftrs_us,
+        nac_ports:spectrum_profile_vdsl_opt_band_usage,
+        nac_ports:previous_day_forward_error_corrections_ds,
+        nac_ports:rtx_overrule_max_net_data_rate_ds,
+        nac_ports:rtx_attainable_net_data_rate_us,
+        nac_ports:current_day_coding_violations_ds,
+        nac_ports:service_profile_index,
+        nac_ports:bonding_group_rtx_min_exp_thrpt_upstream,
+        nac_ports:bonding_group_rtx_leftr_threshold_downstream,
+        nac_ports:bonding_group_rtx_min_inp_shine_upstream,
+        nac_ports:bonding_group_ne_actual_net_data_rate_us,
+        nac_ports:bonding_group_rtx_mode_upstream,
+        nac_ports:bonding_group_fe_actual_net_data_rate_ds,
+        nac_ports:rtx_profile_name,
+        nac_ports:actual_psd_ds,
+        nac_ports:rtx_min_inp_rein_ds,
+        nac_ports:rtx_actual_net_data_rate_us,
+        nac_ports:bonding_group_rtx_shine_ratio_upstream,
+        nac_ports:planned_bitrate_ds,
+        nac_ports:current_day_spontaneous_resyncs,
+        nac_ports:rtx_previous_day_error_free_bits_ds,
+        nac_ports:max_agg_power_ds,
+        nac_ports:electrical_length_derived,
+        nac_ports:spectrum_profile_name,
+        nac_ports:rtx_min_planned_throughput_ds,
+        nac_ports:rtx_overrule_shine_ratio_us,
+        nac_ports:rtx_overrule_max_delay_ds,
+        nac_ports:rtx_overrule_mode_us,
+        nac_ports:xdsl_dpbo_assumed_exchange_psd_mask,
+        nac_ports:rtx_actual_mode_us,
+        nac_ports:bonding_group_profile_max_bitrate_ds,
+        nac_ports:plug_in_unit_current_type,
+        nac_ports:latency_path_ds,
+        nac_ports:bonding_group_profile_min_impulse_noise_protection_ds,
+        nac_ports:max_psd_us,
+        nac_ports:actual_interleaving_delay_ds,
+        nac_ports:planned_bitrate_us,
+        nac_ports:attenuation_per_band_us,
+        nac_ports:rtx_attainable_expected_throughput_ds,
+        nac_ports:rtx_overrule_min_impulse_noise_protection_rein_us,
+        nac_ports:aele_actual_mode,
+        nac_ports:bonding_group_profile_number,
+        nac_ports:current_day_forward_error_corrections_ds,
+        nac_ports:output_power_ds,
+        nac_ports:atur_system_version_number,
+        nac_ports:actual_impulse_noise_protection_us,
+        nac_ports:previous_day_full_init_count,
+        nac_ports:bonding_group_rtx_leftr_threshold_upstream,
+        nac_ports:rtx_max_net_data_rate_ds,
+        nac_ports:yesterdays_measured_time_ds,
+        nac_ports:rtx_previous_day_leftrs_us,
+        nac_ports:vect_operating_mode_ds,
+        nac_ports:bonding_group_rtx_profile_nbr,
+        nac_ports:target_noise_margin_ds,
+        nac_ports:technology_type,
+        nac_ports:xdsl_vect_line_profile_number,
+        nac_ports:management_type ;
+        .
+
+
+    nac_ports:xdsl_dpbo_cable_model_param_b a chrs:AttributeSpecification ;
+		rdfs:label "xdsl_dpbo_cable_model_param_b" ;
+		rdfs:comment "xdsl_dpbo_cable_model_param_b" ;
+		.
+
+    nac_ports:xdsl_line_vect_fallback_state a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_line_vect_fallback_state" ;
+        rdfs:comment "xdsl_line_vect_fallback_state" ;
+        .
+
+    nac_ports:bonding_group_profile_planned_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_planned_bitrate_us" ;
+        rdfs:comment "bonding_group_profile_planned_bitrate_us" ;
+        .
+
+    nac_ports:vdsl2_rx_psd_shape_upstream a chrs:AttributeSpecification ;
+        rdfs:label "vdsl2_rx_psd_shape_upstream" ;
+        rdfs:comment "vdsl2_rx_psd_shape_upstream" ;
+        .
+
+    nac_ports:rtx_overrule_min_impulse_noise_protection_rein_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_impulse_noise_protection_rein_ds" ;
+        rdfs:comment "rtx_overrule_min_impulse_noise_protection_rein_ds" ;
+        .
+
+    nac_ports:latency_path_us a chrs:AttributeSpecification ;
+        rdfs:label "latency_path_us" ;
+        rdfs:comment "latency_path_us" ;
+        .
+
+    nac_ports:previous_day_unavailable_seconds_ds a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_unavailable_seconds_ds" ;
+        rdfs:comment "previous_day_unavailable_seconds_ds" ;
+        .
+
+    nac_ports:rtx_actual_expected_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_expected_throughput_us" ;
+        rdfs:comment "rtx_actual_expected_throughput_us" ;
+        .
+
+    nac_ports:rtx_previous_day_error_free_bits_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_error_free_bits_us" ;
+        rdfs:comment "rtx_previous_day_error_free_bits_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_inp_rein_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_inp_rein_downstream" ;
+        rdfs:comment "bonding_group_rtx_min_inp_rein_downstream" ;
+        .
+
+    nac_ports:xdsl_board_fallback_rtx_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_board_fallback_rtx_profile_number" ;
+        rdfs:comment "xdsl_board_fallback_rtx_profile_number" ;
+        .
+
+    nac_ports:rtx_min_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_delay_ds" ;
+        rdfs:comment "rtx_min_delay_ds" ;
+        .
+
+    nac_ports:bonding_group_rtx_mode_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_mode_downstream" ;
+        rdfs:comment "bonding_group_rtx_mode_downstream" ;
+        .
+
+    nac_ports:target_noise_margin_us a chrs:AttributeSpecification ;
+        rdfs:label "target_noise_margin_us" ;
+        rdfs:comment "target_noise_margin_us" ;
+        .
+
+    nac_ports:spectrum_profile_index a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_index" ;
+        rdfs:comment "spectrum_profile_index" ;
+        .
+
+    nac_ports:vdsl2_psd_pbo_param_a_us a chrs:AttributeSpecification ;
+        rdfs:label "vdsl2_psd_pbo_param_a_us" ;
+        rdfs:comment "vdsl2_psd_pbo_param_a_us" ;
+        .
+
+    nac_ports:xdsl_board_fallback_dpbo_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_board_fallback_dpbo_profile_number" ;
+        rdfs:comment "xdsl_board_fallback_dpbo_profile_number" ;
+        .
+
+    nac_ports:vdsl2_psd_shape_downstream a chrs:AttributeSpecification ;
+        rdfs:label "vdsl2_psd_shape_downstream" ;
+        rdfs:comment "vdsl2_psd_shape_downstream" ;
+        .
+
+    nac_ports:actual_psd_us a chrs:AttributeSpecification ;
+        rdfs:label "actual_psd_us" ;
+        rdfs:comment "actual_psd_us" ;
+        .
+
+    nac_ports:overlay_mode a chrs:AttributeSpecification ;
+        rdfs:label "overlay_mode" ;
+        rdfs:comment "overlay_mode" ;
+        .
+
+    nac_ports:rtx_max_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_delay_us" ;
+        rdfs:comment "rtx_max_delay_us" ;
+        .
+
+    nac_ports:dpbo_electrical_length a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_electrical_length" ;
+        rdfs:comment "dpbo_electrical_length" ;
+        .
+
+    nac_ports:loop_attenuation_per_band_us a chrs:AttributeSpecification ;
+        rdfs:label "loop_attenuation_per_band_us" ;
+        rdfs:comment "loop_attenuation_per_band_us" ;
+        .
+
+    nac_ports:bonding_link_status a chrs:AttributeSpecification ;
+        rdfs:label "bonding_link_status" ;
+        rdfs:comment "bonding_link_status" ;
+        .
+
+    nac_ports:electrical_length_estimated a chrs:AttributeSpecification ;
+        rdfs:label "electrical_length_estimated" ;
+        rdfs:comment "electrical_length_estimated" ;
+        .
+
+    nac_ports:actual_ra_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "actual_ra_mode_us" ;
+        rdfs:comment "actual_ra_mode_us" ;
+        .
+
+    nac_ports:xdsl_vect_cpe_type a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_vect_cpe_type" ;
+        rdfs:comment "xdsl_vect_cpe_type" ;
+        .
+
+    nac_ports:previous_day_errored_seconds_us a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_errored_seconds_us" ;
+        rdfs:comment "previous_day_errored_seconds_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_exp_thrpt_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_exp_thrpt_upstream" ;
+        rdfs:comment "bonding_group_rtx_max_exp_thrpt_upstream" ;
+        .
+
+    nac_ports:current_day_measured_time_us a chrs:AttributeSpecification ;
+        rdfs:label "current_day_measured_time_us" ;
+        rdfs:comment "current_day_measured_time_us" ;
+        .
+
+    nac_ports:bonding_group_ne_actual_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_ne_actual_bitrate_us" ;
+        rdfs:comment "bonding_group_ne_actual_bitrate_us" ;
+        .
+
+    nac_ports:rtx_actual_expected_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_expected_throughput_ds" ;
+        rdfs:comment "rtx_actual_expected_throughput_ds" ;
+        .
+
+    nac_ports:spectrum_profile_operational_mode a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_operational_mode" ;
+        rdfs:comment "spectrum_profile_operational_mode" ;
+        .
+
+    nac_ports:rtx_overrule_max_expected_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_expected_throughput_ds" ;
+        rdfs:comment "rtx_overrule_max_expected_throughput_ds" ;
+        .
+
+    nac_ports:if_last_change a chrs:AttributeSpecification ;
+        rdfs:label "if_last_change" ;
+        rdfs:comment "if_last_change" ;
+        .
+
+    nac_ports:max_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "max_bitrate_ds" ;
+        rdfs:comment "max_bitrate_ds" ;
+        .
+
+    nac_ports:attenuation_ds a chrs:AttributeSpecification ;
+        rdfs:label "attenuation_ds" ;
+        rdfs:comment "attenuation_ds" ;
+        .
+
+    nac_ports:attenuation_per_band_ds a chrs:AttributeSpecification ;
+        rdfs:label "attenuation_per_band_ds" ;
+        rdfs:comment "attenuation_per_band_ds" ;
+        .
+
+    nac_ports:current_day_severely_errored_seconds_ds a chrs:AttributeSpecification ;
+        rdfs:label "current_day_severely_errored_seconds_ds" ;
+        rdfs:comment "current_day_severely_errored_seconds_ds" ;
+        .
+
+    nac_ports:actual_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "actual_bitrate_us" ;
+        rdfs:comment "actual_bitrate_us" ;
+        .
+
+    nac_ports:xdsl_dpbo_min_usable_signal_level a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_dpbo_min_usable_signal_level" ;
+        rdfs:comment "xdsl_dpbo_min_usable_signal_level" ;
+        .
+
+    nac_ports:current_day_full_init_count a chrs:AttributeSpecification ;
+        rdfs:label "current_day_full_init_count" ;
+        rdfs:comment "current_day_full_init_count" ;
+        .
+
+    nac_ports:dpbo_max_frequency a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_max_frequency" ;
+        rdfs:comment "dpbo_max_frequency" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_uncorr_dtu_counter_ds a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_uncorr_dtu_counter_ds" ;
+        rdfs:comment "xdsl_channel_previous_day_uncorr_dtu_counter_ds" ;
+        .
+
+    nac_ports:line_actual_operational_mode a chrs:AttributeSpecification ;
+        rdfs:label "line_actual_operational_mode" ;
+        rdfs:comment "line_actual_operational_mode" ;
+        .
+
+    nac_ports:electrical_length_per_band_us a chrs:AttributeSpecification ;
+        rdfs:label "electrical_length_per_band_us" ;
+        rdfs:comment "electrical_length_per_band_us" ;
+        .
+
+    nac_ports:max_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "max_delay_ds" ;
+        rdfs:comment "max_delay_ds" ;
+        .
+
+    nac_ports:service_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "service_profile_name" ;
+        rdfs:comment "service_profile_name" ;
+        .
+
+    nac_ports:actual_impulse_noise_protection_ds a chrs:AttributeSpecification ;
+        rdfs:label "actual_impulse_noise_protection_ds" ;
+        rdfs:comment "actual_impulse_noise_protection_ds" ;
+        .
+
+    nac_ports:atur_system_serial_number a chrs:AttributeSpecification ;
+        rdfs:label "atur_system_serial_number" ;
+        rdfs:comment "atur_system_serial_number" ;
+        .
+
+    nac_ports:attainable_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "attainable_bitrate_us" ;
+        rdfs:comment "attainable_bitrate_us" ;
+        .
+
+    nac_ports:previous_day_spontaneous_resyncs a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_spontaneous_resyncs" ;
+        rdfs:comment "previous_day_spontaneous_resyncs" ;
+        .
+
+    nac_ports:bonding_group_rtx_plan_exp_thrpt_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_plan_exp_thrpt_downstream" ;
+        rdfs:comment "bonding_group_rtx_plan_exp_thrpt_downstream" ;
+        .
+
+    nac_ports:previous_day_severely_errored_seconds_ds a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_severely_errored_seconds_ds" ;
+        rdfs:comment "previous_day_severely_errored_seconds_ds" ;
+        .
+
+    nac_ports:max_additional_noise_margin_us a chrs:AttributeSpecification ;
+        rdfs:label "max_additional_noise_margin_us" ;
+        rdfs:comment "max_additional_noise_margin_us" ;
+        .
+
+    nac_ports:current_day_failed_init a chrs:AttributeSpecification ;
+        rdfs:label "current_day_failed_init" ;
+        rdfs:comment "current_day_failed_init" ;
+        .
+
+    nac_ports:previous_day_forward_error_corrections_us a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_forward_error_corrections_us" ;
+        rdfs:comment "previous_day_forward_error_corrections_us" ;
+        .
+
+    nac_ports:vect_operating_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "vect_operating_mode_us" ;
+        rdfs:comment "vect_operating_mode_us" ;
+        .
+
+    nac_ports:noise_margin_ds a chrs:AttributeSpecification ;
+        rdfs:label "noise_margin_ds" ;
+        rdfs:comment "noise_margin_ds" ;
+        .
+
+    nac_ports:actual_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "actual_bitrate_ds" ;
+        rdfs:comment "actual_bitrate_ds" ;
+        .
+
+    nac_ports:noise_margin_us a chrs:AttributeSpecification ;
+        rdfs:label "noise_margin_us" ;
+        rdfs:comment "noise_margin_us" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_corr_dtu_counter_ds a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_corr_dtu_counter_ds" ;
+        rdfs:comment "xdsl_channel_previous_day_corr_dtu_counter_ds" ;
+        .
+
+    nac_ports:ra_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "ra_mode_us" ;
+        rdfs:comment "ra_mode_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_net_data_rate_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_net_data_rate_downstream" ;
+        rdfs:comment "bonding_group_rtx_max_net_data_rate_downstream" ;
+        .
+
+    nac_ports:spectrum_profile_vdsl_start_frequency a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_vdsl_start_frequency" ;
+        rdfs:comment "spectrum_profile_vdsl_start_frequency" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_exp_thrpt_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_exp_thrpt_downstream" ;
+        rdfs:comment "bonding_group_rtx_min_exp_thrpt_downstream" ;
+        .
+
+    nac_ports:spectrum_profile_vdsl_end_frequency a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_vdsl_end_frequency" ;
+        rdfs:comment "spectrum_profile_vdsl_end_frequency" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_delay_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_delay_downstream" ;
+        rdfs:comment "bonding_group_rtx_min_delay_downstream" ;
+        .
+
+    nac_ports:rtx_overrule_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_mode_ds" ;
+        rdfs:comment "rtx_overrule_mode_ds" ;
+        .
+
+    nac_ports:rtx_overrule_min_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_delay_us" ;
+        rdfs:comment "rtx_overrule_min_delay_us" ;
+        .
+
+    nac_ports:previous_day_reinit_failure_count a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_reinit_failure_count" ;
+        rdfs:comment "previous_day_reinit_failure_count" ;
+        .
+
+    nac_ports:previous_day_unavailable_seconds_us a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_unavailable_seconds_us" ;
+        rdfs:comment "previous_day_unavailable_seconds_us" ;
+        .
+
+    nac_ports:electrical_length_per_band_ds a chrs:AttributeSpecification ;
+        rdfs:label "electrical_length_per_band_ds" ;
+        rdfs:comment "electrical_length_per_band_ds" ;
+        .
+
+    nac_ports:output_power_us a chrs:AttributeSpecification ;
+        rdfs:label "output_power_us" ;
+        rdfs:comment "output_power_us" ;
+        .
+
+    nac_ports:rtx_min_expected_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_expected_throughput_us" ;
+        rdfs:comment "rtx_min_expected_throughput_us" ;
+        .
+
+    nac_ports:loop_attenuation_us a chrs:AttributeSpecification ;
+        rdfs:label "loop_attenuation_us" ;
+        rdfs:comment "loop_attenuation_us" ;
+        .
+
+    nac_ports:bonding_group_profile_min_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_min_bitrate_us" ;
+        rdfs:comment "bonding_group_profile_min_bitrate_us" ;
+        .
+
+    nac_ports:min_noise_margin_ds a chrs:AttributeSpecification ;
+        rdfs:label "min_noise_margin_ds" ;
+        rdfs:comment "min_noise_margin_ds" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_exp_thrpt_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_exp_thrpt_downstream" ;
+        rdfs:comment "bonding_group_rtx_max_exp_thrpt_downstream" ;
+        .
+
+    nac_ports:rtx_min_inp_shine_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_inp_shine_us" ;
+        rdfs:comment "rtx_min_inp_shine_us" ;
+        .
+
+    nac_ports:current_day_errored_seconds_ds a chrs:AttributeSpecification ;
+        rdfs:label "current_day_errored_seconds_ds" ;
+        rdfs:comment "current_day_errored_seconds_ds" ;
+        .
+
+    nac_ports:attainable_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "attainable_bitrate_ds" ;
+        rdfs:comment "attainable_bitrate_ds" ;
+        .
+
+    nac_ports:yesterdays_coding_violations_ds a chrs:AttributeSpecification ;
+        rdfs:label "yesterdays_coding_violations_ds" ;
+        rdfs:comment "yesterdays_coding_violations_ds" ;
+        .
+
+    nac_ports:bonding_group_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_name" ;
+        rdfs:comment "bonding_group_profile_name" ;
+        .
+
+    nac_ports:rtx_attainable_net_data_rate_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_attainable_net_data_rate_ds" ;
+        rdfs:comment "rtx_attainable_net_data_rate_ds" ;
+        .
+
+    nac_ports:vdsl_pbo_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "vdsl_pbo_mode_us" ;
+        rdfs:comment "vdsl_pbo_mode_us" ;
+        .
+
+    nac_ports:rtx_overrule_shine_ratio_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_shine_ratio_ds" ;
+        rdfs:comment "rtx_overrule_shine_ratio_ds" ;
+        .
+
+    nac_ports:atur_system_vendor_id a chrs:AttributeSpecification ;
+        rdfs:label "atur_system_vendor_id" ;
+        rdfs:comment "atur_system_vendor_id" ;
+        .
+
+    nac_ports:max_additional_noise_margin_ds a chrs:AttributeSpecification ;
+        rdfs:label "max_additional_noise_margin_ds" ;
+        rdfs:comment "max_additional_noise_margin_ds" ;
+        .
+
+    nac_ports:rtx_min_inp_rein_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_inp_rein_us" ;
+        rdfs:comment "rtx_min_inp_rein_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_rein_inter_arr_time_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_rein_inter_arr_time_downstream" ;
+        rdfs:comment "bonding_group_rtx_rein_inter_arr_time_downstream" ;
+        .
+
+    nac_ports:dpbo_min_frequency a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_min_frequency" ;
+        rdfs:comment "dpbo_min_frequency" ;
+        .
+
+    nac_ports:min_impulse_noise_protection_ds a chrs:AttributeSpecification ;
+        rdfs:label "min_impulse_noise_protection_ds" ;
+        rdfs:comment "min_impulse_noise_protection_ds" ;
+        .
+
+    nac_ports:rtx_min_planned_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_planned_throughput_us" ;
+        rdfs:comment "rtx_min_planned_throughput_us" ;
+        .
+
+    nac_ports:bonding_group_fe_actual_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_fe_actual_bitrate_ds" ;
+        rdfs:comment "bonding_group_fe_actual_bitrate_ds" ;
+        .
+
+    nac_ports:bonding_group_profile_max_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_max_delay_ds" ;
+        rdfs:comment "bonding_group_profile_max_delay_ds" ;
+        .
+
+    nac_ports:vdsl2_psd_pbo_param_equal_fext_us a chrs:AttributeSpecification ;
+        rdfs:label "vdsl2_psd_pbo_param_equal_fext_us" ;
+        rdfs:comment "vdsl2_psd_pbo_param_equal_fext_us" ;
+        .
+
+    nac_ports:vdsl2_psd_pbo_param_b_us a chrs:AttributeSpecification ;
+        rdfs:label "vdsl2_psd_pbo_param_b_us" ;
+        rdfs:comment "vdsl2_psd_pbo_param_b_us" ;
+        .
+
+    nac_ports:customer_id a chrs:AttributeSpecification ;
+        rdfs:label "customer_id" ;
+        rdfs:comment "customer_id" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_delay_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_delay_upstream" ;
+        rdfs:comment "bonding_group_rtx_min_delay_upstream" ;
+        .
+
+    nac_ports:rtx_previous_day_min_eftrs_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_min_eftrs_ds" ;
+        rdfs:comment "rtx_previous_day_min_eftrs_ds" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_retransmit_dtu_counter_ds a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_retransmit_dtu_counter_ds" ;
+        rdfs:comment "xdsl_channel_previous_day_retransmit_dtu_counter_ds" ;
+        .
+
+    nac_ports:rtx_max_net_data_rate_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_net_data_rate_us" ;
+        rdfs:comment "rtx_max_net_data_rate_us" ;
+        .
+
+    nac_ports:rtx_overrule_max_net_data_rate_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_net_data_rate_us" ;
+        rdfs:comment "rtx_overrule_max_net_data_rate_us" ;
+        .
+
+    nac_ports:noise_margin_per_band_us a chrs:AttributeSpecification ;
+        rdfs:label "noise_margin_per_band_us" ;
+        rdfs:comment "noise_margin_per_band_us" ;
+        .
+
+    nac_ports:rtx_max_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_delay_ds" ;
+        rdfs:comment "rtx_max_delay_ds" ;
+        .
+
+    nac_ports:actual_ra_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "actual_ra_mode_ds" ;
+        rdfs:comment "actual_ra_mode_ds" ;
+        .
+
+    nac_ports:line_bonding_mode a chrs:AttributeSpecification ;
+        rdfs:label "line_bonding_mode" ;
+        rdfs:comment "line_bonding_mode" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_delay_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_delay_downstream" ;
+        rdfs:comment "bonding_group_rtx_max_delay_downstream" ;
+        .
+
+    nac_ports:xdsl_board_fallback_service_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_board_fallback_service_profile_number" ;
+        rdfs:comment "xdsl_board_fallback_service_profile_number" ;
+        .
+
+    nac_ports:line_carrier_data_mode a chrs:AttributeSpecification ;
+        rdfs:label "line_carrier_data_mode" ;
+        rdfs:comment "line_carrier_data_mode" ;
+        .
+
+    nac_ports:rtx_max_expected_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_expected_throughput_us" ;
+        rdfs:comment "rtx_max_expected_throughput_us" ;
+        .
+
+    nac_ports:actual_interleaving_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "actual_interleaving_delay_us" ;
+        rdfs:comment "actual_interleaving_delay_us" ;
+        .
+
+    nac_ports:xdsl_board_fallback_spectrum_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_board_fallback_spectrum_profile_number" ;
+        rdfs:comment "xdsl_board_fallback_spectrum_profile_number" ;
+        .
+
+    nac_ports:dpbo_custom_psd_mask_downstream a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_custom_psd_mask_downstream" ;
+        rdfs:comment "dpbo_custom_psd_mask_downstream" ;
+        .
+
+    nac_ports:aele_conf_mode a chrs:AttributeSpecification ;
+        rdfs:label "aele_conf_mode" ;
+        rdfs:comment "aele_conf_mode" ;
+        .
+
+    nac_ports:rtx_overrule_min_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_delay_ds" ;
+        rdfs:comment "rtx_overrule_min_delay_ds" ;
+        .
+
+    nac_ports:xdsl_vect_enable_ds a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_vect_enable_ds" ;
+        rdfs:comment "xdsl_vect_enable_ds" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_uncorr_dtu_counter_us a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_uncorr_dtu_counter_us" ;
+        rdfs:comment "xdsl_channel_previous_day_uncorr_dtu_counter_us" ;
+        .
+
+    nac_ports:rtx_min_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_delay_us" ;
+        rdfs:comment "rtx_min_delay_us" ;
+        .
+
+    nac_ports:loop_attenuation_per_band_ds a chrs:AttributeSpecification ;
+        rdfs:label "loop_attenuation_per_band_ds" ;
+        rdfs:comment "loop_attenuation_per_band_ds" ;
+        .
+
+    nac_ports:rtx_max_expected_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_expected_throughput_ds" ;
+        rdfs:comment "rtx_max_expected_throughput_ds" ;
+        .
+
+    nac_ports:max_psd_ds a chrs:AttributeSpecification ;
+        rdfs:label "max_psd_ds" ;
+        rdfs:comment "max_psd_ds" ;
+        .
+
+    nac_ports:noise_margin_per_band_ds a chrs:AttributeSpecification ;
+        rdfs:label "noise_margin_per_band_ds" ;
+        rdfs:comment "noise_margin_per_band_ds" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_corr_dtu_counter_us a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_corr_dtu_counter_us" ;
+        rdfs:comment "xdsl_channel_previous_day_corr_dtu_counter_us" ;
+        .
+
+    nac_ports:min_impulse_noise_protection_us a chrs:AttributeSpecification ;
+        rdfs:label "min_impulse_noise_protection_us" ;
+        rdfs:comment "min_impulse_noise_protection_us" ;
+        .
+
+    nac_ports:atur_modem_vendor_id a chrs:AttributeSpecification ;
+        rdfs:label "atur_modem_vendor_id" ;
+        rdfs:comment "atur_modem_vendor_id" ;
+        .
+
+    nac_ports:current_day_errored_seconds_us a chrs:AttributeSpecification ;
+        rdfs:label "current_day_errored_seconds_us" ;
+        rdfs:comment "current_day_errored_seconds_us" ;
+        .
+
+    nac_ports:rtx_overrule_max_expected_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_expected_throughput_us" ;
+        rdfs:comment "rtx_overrule_max_expected_throughput_us" ;
+        .
+
+    nac_ports:bonding_group_vect_fallback_state a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_vect_fallback_state" ;
+        rdfs:comment "bonding_group_vect_fallback_state" ;
+        .
+
+    nac_ports:xdsl_channel_previous_day_retransmit_dtu_counter_us a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_channel_previous_day_retransmit_dtu_counter_us" ;
+        rdfs:comment "xdsl_channel_previous_day_retransmit_dtu_counter_us" ;
+        .
+
+    nac_ports:rtx_shine_ratio_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_shine_ratio_us" ;
+        rdfs:comment "rtx_shine_ratio_us" ;
+        .
+
+    nac_ports:dpbo_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_profile_name" ;
+        rdfs:comment "dpbo_profile_name" ;
+        .
+
+    nac_ports:bonding_group_rtx_shine_ratio_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_shine_ratio_downstream" ;
+        rdfs:comment "bonding_group_rtx_shine_ratio_downstream" ;
+        .
+
+    nac_ports:dpbo_profile_index a chrs:AttributeSpecification ;
+        rdfs:label "dpbo_profile_index" ;
+        rdfs:comment "dpbo_profile_index" ;
+        .
+
+    nac_ports:attenuation_us a chrs:AttributeSpecification ;
+        rdfs:label "attenuation_us" ;
+        rdfs:comment "attenuation_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_rein_inter_arr_time_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_rein_inter_arr_time_upstream" ;
+        rdfs:comment "bonding_group_rtx_rein_inter_arr_time_upstream" ;
+        .
+
+    nac_ports:yesterdays_coding_violations_us a chrs:AttributeSpecification ;
+        rdfs:label "yesterdays_coding_violations_us" ;
+        rdfs:comment "yesterdays_coding_violations_us" ;
+        .
+
+    nac_ports:current_day_severely_errored_seconds_us a chrs:AttributeSpecification ;
+        rdfs:label "current_day_severely_errored_seconds_us" ;
+        rdfs:comment "current_day_severely_errored_seconds_us" ;
+        .
+
+    nac_ports:max_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "max_delay_us" ;
+        rdfs:comment "max_delay_us" ;
+        .
+
+    nac_ports:rtx_actual_net_data_rate_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_net_data_rate_ds" ;
+        rdfs:comment "rtx_actual_net_data_rate_ds" ;
+        .
+
+    nac_ports:rtx_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_mode_ds" ;
+        rdfs:comment "rtx_mode_ds" ;
+        .
+
+    nac_ports:xdsl_vect_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_vect_profile_name" ;
+        rdfs:comment "xdsl_vect_profile_name" ;
+        .
+
+    nac_ports:bonding_group_profile_planned_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_planned_bitrate_ds" ;
+        rdfs:comment "bonding_group_profile_planned_bitrate_ds" ;
+        .
+
+    nac_ports:rtx_overrule_min_impulse_noise_protection_shine_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_impulse_noise_protection_shine_ds" ;
+        rdfs:comment "rtx_overrule_min_impulse_noise_protection_shine_ds" ;
+        .
+
+    nac_ports:line_rfi_bands a chrs:AttributeSpecification ;
+        rdfs:label "line_rfi_bands" ;
+        rdfs:comment "line_rfi_bands" ;
+        .
+
+    nac_ports:previous_day_errored_seconds_ds a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_errored_seconds_ds" ;
+        rdfs:comment "previous_day_errored_seconds_ds" ;
+        .
+
+    nac_ports:max_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "max_bitrate_us" ;
+        rdfs:comment "max_bitrate_us" ;
+        .
+
+    nac_ports:min_noise_margin_us a chrs:AttributeSpecification ;
+        rdfs:label "min_noise_margin_us" ;
+        rdfs:comment "min_noise_margin_us" ;
+        .
+
+    nac_ports:current_day_forward_error_corrections_us a chrs:AttributeSpecification ;
+        rdfs:label "current_day_forward_error_corrections_us" ;
+        rdfs:comment "current_day_forward_error_corrections_us" ;
+        .
+
+    nac_ports:rtx_profile_index a chrs:AttributeSpecification ;
+        rdfs:label "rtx_profile_index" ;
+        rdfs:comment "rtx_profile_index" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_delay_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_delay_upstream" ;
+        rdfs:comment "bonding_group_rtx_max_delay_upstream" ;
+        .
+
+    nac_ports:bonding_link_group_index_address a chrs:AttributeSpecification ;
+        rdfs:label "bonding_link_group_index_address" ;
+        rdfs:comment "bonding_link_group_index_address" ;
+        .
+
+    nac_ports:dsl_port_provisioned a chrs:AttributeSpecification ;
+        rdfs:label "dsl_port_provisioned" ;
+        rdfs:comment "dsl_port_provisioned" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_inp_shine_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_inp_shine_downstream" ;
+        rdfs:comment "bonding_group_rtx_min_inp_shine_downstream" ;
+        .
+
+    nac_ports:loop_attenuation_ds a chrs:AttributeSpecification ;
+        rdfs:label "loop_attenuation_ds" ;
+        rdfs:comment "loop_attenuation_ds" ;
+        .
+
+    nac_ports:current_day_measured_time_ds a chrs:AttributeSpecification ;
+        rdfs:label "current_day_measured_time_ds" ;
+        rdfs:comment "current_day_measured_time_ds" ;
+        .
+
+    nac_ports:rtx_previous_day_leftrs_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_leftrs_ds" ;
+        rdfs:comment "rtx_previous_day_leftrs_ds" ;
+        .
+
+    nac_ports:spectrum_profile_vdsl_band_plan a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_vdsl_band_plan" ;
+        rdfs:comment "spectrum_profile_vdsl_band_plan" ;
+        .
+
+    nac_ports:bonding_group_rtx_max_net_data_rate_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_max_net_data_rate_upstream" ;
+        rdfs:comment "bonding_group_rtx_max_net_data_rate_upstream" ;
+        .
+
+    nac_ports:rtx_min_expected_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_expected_throughput_ds" ;
+        rdfs:comment "rtx_min_expected_throughput_ds" ;
+        .
+
+    nac_ports:bonding_group_rtx_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_profile_name" ;
+        rdfs:comment "bonding_group_rtx_profile_name" ;
+        .
+
+    nac_ports:min_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "min_bitrate_ds" ;
+        rdfs:comment "min_bitrate_ds" ;
+        .
+
+    nac_ports:rtx_attainable_expected_throughput_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_attainable_expected_throughput_us" ;
+        rdfs:comment "rtx_attainable_expected_throughput_us" ;
+        .
+
+    nac_ports:xdsl_dpbo_cable_model_param_a a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_dpbo_cable_model_param_a" ;
+        rdfs:comment "xdsl_dpbo_cable_model_param_a" ;
+        .
+
+    nac_ports:current_day_coding_violations_us a chrs:AttributeSpecification ;
+        rdfs:label "current_day_coding_violations_us" ;
+        rdfs:comment "current_day_coding_violations_us" ;
+        .
+
+    nac_ports:min_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "min_bitrate_us" ;
+        rdfs:comment "min_bitrate_us" ;
+        .
+
+    nac_ports:bonding_group_profile_min_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_min_bitrate_ds" ;
+        rdfs:comment "bonding_group_profile_min_bitrate_ds" ;
+        .
+
+    nac_ports:rtx_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_mode_us" ;
+        rdfs:comment "rtx_mode_us" ;
+        .
+
+    nac_ports:rtx_shine_ratio_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_shine_ratio_ds" ;
+        rdfs:comment "rtx_shine_ratio_ds" ;
+        .
+
+    nac_ports:ra_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "ra_mode_ds" ;
+        rdfs:comment "ra_mode_ds" ;
+        .
+
+    nac_ports:previous_day_severely_errored_seconds_us a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_severely_errored_seconds_us" ;
+        rdfs:comment "previous_day_severely_errored_seconds_us" ;
+        .
+
+    nac_ports:xdsl_vect_enable_us a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_vect_enable_us" ;
+        rdfs:comment "xdsl_vect_enable_us" ;
+        .
+
+    nac_ports:if_oper_status a chrs:AttributeSpecification ;
+        rdfs:label "if_oper_status" ;
+        rdfs:comment "if_oper_status" ;
+        .
+
+    nac_ports:rtx_overrule_max_delay_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_delay_us" ;
+        rdfs:comment "rtx_overrule_max_delay_us" ;
+        .
+
+    nac_ports:bonding_group_profile_max_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_max_bitrate_us" ;
+        rdfs:comment "bonding_group_profile_max_bitrate_us" ;
+        .
+
+    nac_ports:rtx_actual_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_mode_ds" ;
+        rdfs:comment "rtx_actual_mode_ds" ;
+        .
+
+    nac_ports:rtx_min_inp_shine_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_inp_shine_ds" ;
+        rdfs:comment "rtx_min_inp_shine_ds" ;
+        .
+
+    nac_ports:bonding_group_rtx_plan_exp_thrpt_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_plan_exp_thrpt_upstream" ;
+        rdfs:comment "bonding_group_rtx_plan_exp_thrpt_upstream" ;
+        .
+
+    nac_ports:rtx_overrule_min_impulse_noise_protection_shine_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_impulse_noise_protection_shine_us" ;
+        rdfs:comment "rtx_overrule_min_impulse_noise_protection_shine_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_inp_rein_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_inp_rein_upstream" ;
+        rdfs:comment "bonding_group_rtx_min_inp_rein_upstream" ;
+        .
+
+    nac_ports:xdsl_dpbo_cable_model_param_c a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_dpbo_cable_model_param_c" ;
+        rdfs:comment "xdsl_dpbo_cable_model_param_c" ;
+        .
+
+    nac_ports:rtx_previous_day_min_eftrs_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_min_eftrs_us" ;
+        rdfs:comment "rtx_previous_day_min_eftrs_us" ;
+        .
+
+    nac_ports:spectrum_profile_vdsl_opt_band_usage a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_vdsl_opt_band_usage" ;
+        rdfs:comment "spectrum_profile_vdsl_opt_band_usage" ;
+        .
+
+    nac_ports:previous_day_forward_error_corrections_ds a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_forward_error_corrections_ds" ;
+        rdfs:comment "previous_day_forward_error_corrections_ds" ;
+        .
+
+    nac_ports:rtx_overrule_max_net_data_rate_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_net_data_rate_ds" ;
+        rdfs:comment "rtx_overrule_max_net_data_rate_ds" ;
+        .
+
+    nac_ports:rtx_attainable_net_data_rate_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_attainable_net_data_rate_us" ;
+        rdfs:comment "rtx_attainable_net_data_rate_us" ;
+        .
+
+    nac_ports:current_day_coding_violations_ds a chrs:AttributeSpecification ;
+        rdfs:label "current_day_coding_violations_ds" ;
+        rdfs:comment "current_day_coding_violations_ds" ;
+        .
+
+    nac_ports:service_profile_index a chrs:AttributeSpecification ;
+        rdfs:label "service_profile_index" ;
+        rdfs:comment "service_profile_index" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_exp_thrpt_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_exp_thrpt_upstream" ;
+        rdfs:comment "bonding_group_rtx_min_exp_thrpt_upstream" ;
+        .
+
+    nac_ports:bonding_group_rtx_leftr_threshold_downstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_leftr_threshold_downstream" ;
+        rdfs:comment "bonding_group_rtx_leftr_threshold_downstream" ;
+        .
+
+    nac_ports:bonding_group_rtx_min_inp_shine_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_min_inp_shine_upstream" ;
+        rdfs:comment "bonding_group_rtx_min_inp_shine_upstream" ;
+        .
+
+    nac_ports:bonding_group_ne_actual_net_data_rate_us a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_ne_actual_net_data_rate_us" ;
+        rdfs:comment "bonding_group_ne_actual_net_data_rate_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_mode_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_mode_upstream" ;
+        rdfs:comment "bonding_group_rtx_mode_upstream" ;
+        .
+
+    nac_ports:bonding_group_fe_actual_net_data_rate_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_fe_actual_net_data_rate_ds" ;
+        rdfs:comment "bonding_group_fe_actual_net_data_rate_ds" ;
+        .
+
+    nac_ports:rtx_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "rtx_profile_name" ;
+        rdfs:comment "rtx_profile_name" ;
+        .
+
+    nac_ports:actual_psd_ds a chrs:AttributeSpecification ;
+        rdfs:label "actual_psd_ds" ;
+        rdfs:comment "actual_psd_ds" ;
+        .
+
+    nac_ports:rtx_min_inp_rein_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_inp_rein_ds" ;
+        rdfs:comment "rtx_min_inp_rein_ds" ;
+        .
+
+    nac_ports:rtx_actual_net_data_rate_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_net_data_rate_us" ;
+        rdfs:comment "rtx_actual_net_data_rate_us" ;
+        .
+
+    nac_ports:bonding_group_rtx_shine_ratio_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_shine_ratio_upstream" ;
+        rdfs:comment "bonding_group_rtx_shine_ratio_upstream" ;
+        .
+
+    nac_ports:planned_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "planned_bitrate_ds" ;
+        rdfs:comment "planned_bitrate_ds" ;
+        .
+
+    nac_ports:current_day_spontaneous_resyncs a chrs:AttributeSpecification ;
+        rdfs:label "current_day_spontaneous_resyncs" ;
+        rdfs:comment "current_day_spontaneous_resyncs" ;
+        .
+
+    nac_ports:rtx_previous_day_error_free_bits_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_error_free_bits_ds" ;
+        rdfs:comment "rtx_previous_day_error_free_bits_ds" ;
+        .
+
+    nac_ports:max_agg_power_ds a chrs:AttributeSpecification ;
+        rdfs:label "max_agg_power_ds" ;
+        rdfs:comment "max_agg_power_ds" ;
+        .
+
+    nac_ports:electrical_length_derived a chrs:AttributeSpecification ;
+        rdfs:label "electrical_length_derived" ;
+        rdfs:comment "electrical_length_derived" ;
+        .
+
+    nac_ports:spectrum_profile_name a chrs:AttributeSpecification ;
+        rdfs:label "spectrum_profile_name" ;
+        rdfs:comment "spectrum_profile_name" ;
+        .
+
+    nac_ports:rtx_min_planned_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_min_planned_throughput_ds" ;
+        rdfs:comment "rtx_min_planned_throughput_ds" ;
+        .
+
+    nac_ports:rtx_overrule_shine_ratio_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_shine_ratio_us" ;
+        rdfs:comment "rtx_overrule_shine_ratio_us" ;
+        .
+
+    nac_ports:rtx_overrule_max_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_max_delay_ds" ;
+        rdfs:comment "rtx_overrule_max_delay_ds" ;
+        .
+
+    nac_ports:rtx_overrule_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_mode_us" ;
+        rdfs:comment "rtx_overrule_mode_us" ;
+        .
+
+    nac_ports:xdsl_dpbo_assumed_exchange_psd_mask a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_dpbo_assumed_exchange_psd_mask" ;
+        rdfs:comment "xdsl_dpbo_assumed_exchange_psd_mask" ;
+        .
+
+    nac_ports:rtx_actual_mode_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_actual_mode_us" ;
+        rdfs:comment "rtx_actual_mode_us" ;
+        .
+
+    nac_ports:bonding_group_profile_max_bitrate_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_max_bitrate_ds" ;
+        rdfs:comment "bonding_group_profile_max_bitrate_ds" ;
+        .
+
+    nac_ports:plug_in_unit_current_type a chrs:AttributeSpecification ;
+        rdfs:label "plug_in_unit_current_type" ;
+        rdfs:comment "plug_in_unit_current_type" ;
+        .
+
+    nac_ports:latency_path_ds a chrs:AttributeSpecification ;
+        rdfs:label "latency_path_ds" ;
+        rdfs:comment "latency_path_ds" ;
+        .
+
+    nac_ports:bonding_group_profile_min_impulse_noise_protection_ds a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_min_impulse_noise_protection_ds" ;
+        rdfs:comment "bonding_group_profile_min_impulse_noise_protection_ds" ;
+        .
+
+    nac_ports:max_psd_us a chrs:AttributeSpecification ;
+        rdfs:label "max_psd_us" ;
+        rdfs:comment "max_psd_us" ;
+        .
+
+    nac_ports:actual_interleaving_delay_ds a chrs:AttributeSpecification ;
+        rdfs:label "actual_interleaving_delay_ds" ;
+        rdfs:comment "actual_interleaving_delay_ds" ;
+        .
+
+    nac_ports:planned_bitrate_us a chrs:AttributeSpecification ;
+        rdfs:label "planned_bitrate_us" ;
+        rdfs:comment "planned_bitrate_us" ;
+        .
+
+    nac_ports:attenuation_per_band_us a chrs:AttributeSpecification ;
+        rdfs:label "attenuation_per_band_us" ;
+        rdfs:comment "attenuation_per_band_us" ;
+        .
+
+    nac_ports:rtx_attainable_expected_throughput_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_attainable_expected_throughput_ds" ;
+        rdfs:comment "rtx_attainable_expected_throughput_ds" ;
+        .
+
+    nac_ports:rtx_overrule_min_impulse_noise_protection_rein_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_overrule_min_impulse_noise_protection_rein_us" ;
+        rdfs:comment "rtx_overrule_min_impulse_noise_protection_rein_us" ;
+        .
+
+    nac_ports:aele_actual_mode a chrs:AttributeSpecification ;
+        rdfs:label "aele_actual_mode" ;
+        rdfs:comment "aele_actual_mode" ;
+        .
+
+    nac_ports:bonding_group_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_profile_number" ;
+        rdfs:comment "bonding_group_profile_number" ;
+        .
+
+    nac_ports:current_day_forward_error_corrections_ds a chrs:AttributeSpecification ;
+        rdfs:label "current_day_forward_error_corrections_ds" ;
+        rdfs:comment "current_day_forward_error_corrections_ds" ;
+        .
+
+    nac_ports:output_power_ds a chrs:AttributeSpecification ;
+        rdfs:label "output_power_ds" ;
+        rdfs:comment "output_power_ds" ;
+        .
+
+    nac_ports:atur_system_version_number a chrs:AttributeSpecification ;
+        rdfs:label "atur_system_version_number" ;
+        rdfs:comment "atur_system_version_number" ;
+        .
+
+    nac_ports:actual_impulse_noise_protection_us a chrs:AttributeSpecification ;
+        rdfs:label "actual_impulse_noise_protection_us" ;
+        rdfs:comment "actual_impulse_noise_protection_us" ;
+        .
+
+    nac_ports:previous_day_full_init_count a chrs:AttributeSpecification ;
+        rdfs:label "previous_day_full_init_count" ;
+        rdfs:comment "previous_day_full_init_count" ;
+        .
+
+    nac_ports:bonding_group_rtx_leftr_threshold_upstream a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_leftr_threshold_upstream" ;
+        rdfs:comment "bonding_group_rtx_leftr_threshold_upstream" ;
+        .
+
+    nac_ports:rtx_max_net_data_rate_ds a chrs:AttributeSpecification ;
+        rdfs:label "rtx_max_net_data_rate_ds" ;
+        rdfs:comment "rtx_max_net_data_rate_ds" ;
+        .
+
+    nac_ports:yesterdays_measured_time_ds a chrs:AttributeSpecification ;
+        rdfs:label "yesterdays_measured_time_ds" ;
+        rdfs:comment "yesterdays_measured_time_ds" ;
+        .
+
+    nac_ports:rtx_previous_day_leftrs_us a chrs:AttributeSpecification ;
+        rdfs:label "rtx_previous_day_leftrs_us" ;
+        rdfs:comment "rtx_previous_day_leftrs_us" ;
+        .
+
+    nac_ports:vect_operating_mode_ds a chrs:AttributeSpecification ;
+        rdfs:label "vect_operating_mode_ds" ;
+        rdfs:comment "vect_operating_mode_ds" ;
+        .
+
+    nac_ports:bonding_group_rtx_profile_nbr a chrs:AttributeSpecification ;
+        rdfs:label "bonding_group_rtx_profile_nbr" ;
+        rdfs:comment "bonding_group_rtx_profile_nbr" ;
+        .
+
+    nac_ports:target_noise_margin_ds a chrs:AttributeSpecification ;
+        rdfs:label "target_noise_margin_ds" ;
+        rdfs:comment "target_noise_margin_ds" ;
+        .
+
+    nac_ports:technology_type a chrs:AttributeSpecification ;
+        rdfs:label "technology_type" ;
+        rdfs:comment "technology_type" ;
+        .
+
+    nac_ports:xdsl_vect_line_profile_number a chrs:AttributeSpecification ;
+        rdfs:label "xdsl_vect_line_profile_number" ;
+        rdfs:comment "xdsl_vect_line_profile_number" ;
+        .
+
+    nac_ports:management_type a chrs:AttributeSpecification ;
+		rdfs:label "management_type" ;
+		rdfs:comment "management_type" ;
+		.

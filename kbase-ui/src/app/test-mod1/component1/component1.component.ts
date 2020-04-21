@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {type} from "os";
 
 declare var $rdf: any;
 
@@ -11,9 +12,10 @@ export class Component1Component implements OnInit {
 
   store = $rdf.graph();
   fetcher = new $rdf.Fetcher(this.store, 5000);
-  ttl_url = "http://localhost:4200/assets/ttl/";
+  ttl_url = "http://localhost:4200/assets/ttl/people/";
   ttls = ["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl"];
 
+  current_node = "";
   triples = [];
   combined_triples = [];
   incoming_triples = [];
@@ -34,7 +36,11 @@ export class Component1Component implements OnInit {
         }
       });
     });
+    setTimeout(()=>{
+      this.onNodeClick(this.store.sym("http://example/knowledge-base/marilena"));
+    }, 300);
   }
+
 
   showAllTriples() {
     this.triples = this.store.match();
@@ -70,6 +76,7 @@ export class Component1Component implements OnInit {
 
   onNodeClick(node){
     this.triples=[];
+    this.current_node = node;
     this.incoming_triples = this.store.match(undefined, undefined, node);
 
     this.outgoing_triples = this.store.match(node, undefined, undefined)
@@ -102,5 +109,11 @@ export class Component1Component implements OnInit {
 
   getShortValuesAndDirection(links){
     return links.map((link)=>this.getShortValue(link.predicate) + " " + this.replaceDirectionWithArrow(link.direction)).join(", ");
+  }
+
+  getTypeOrEmptyString(node){
+    let typeNodes = this.store.match(node, this.store.sym("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), undefined);
+    return typeNodes.map(node=>this.getShortValue(node.object)).join(", ");
+
   }
 }

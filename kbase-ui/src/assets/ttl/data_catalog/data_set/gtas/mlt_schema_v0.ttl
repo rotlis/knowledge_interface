@@ -1,0 +1,295 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix mlt: <http://chronos/data-lake/gtas/mlt/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# RANDOM samples
+#
+#<http://example.org/policy/1> a odrl:Policy,
+#  odrl:Set ;
+#  odrl:permission [
+#    odrl:target <http://example.com/asset/1> ;
+#    odrl:assignee <http://example.com/party/Alice> ;
+#    odrl:action odrl:use
+#  ] ;
+
+# *****************************************
+# local types
+# *****************************************
+mlt:description
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+mlt:proposedRepairActions
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	.
+
+mlt:detectedProblemType chrs:hasAttribute
+		mlt:description,
+		mlt:proposedRepairActions;
+    .
+
+# *****************************************
+# Please note this is the target schema how it should be exposed from Chronos
+mlt:schema_v0
+    a chrs:DataSchema ;
+    .
+
+mlt:schema_v0
+    chrs:hasAttribute
+    	mlt:testReferenceId,
+        mlt:type,
+        mlt:status,
+        mlt:result,
+        mlt:executionTimestamp,
+
+        mlt:abDcVoltageMeasureValue,
+        mlt:baDcVoltageMeasureValue,
+        mlt:aearthDcVoltageMeasureValue,
+        mlt:bearthDcVoltageMeasureValue,
+
+        mlt:abAcVoltageMeasureValue,
+		mlt:baAcVoltageMeasureValue,
+		mlt:aearthAcVoltageMeasureValue,
+		mlt:bearthAcVoltageMeasureValue,
+
+		mlt:abResistanceValue,
+		mlt:baResistanceValue,
+		mlt:aearthResistanceValue,
+		mlt:bearthResistanceValue,
+
+		mlt:abCapacitanceValue,
+		mlt:baCapacitanceValue,
+		mlt:aearthCapacitanceValue,
+		mlt:bearthCapacitanceValue,
+
+		mlt:detectedProblems,
+		mlt:resolutions,
+
+		mlt:testId,
+		mlt:measurementStartTime,
+
+		mlt:loopTermination,
+		mlt:loopLength,
+
+		mlt:impedanceTestVoltage,
+		mlt:lineId,
+		mlt:inspectionId
+		.
+
+mlt:testReferenceId
+	a chrs:AttributeSpecification ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^WRI\\d{12}$" ;
+	.
+
+mlt:type
+	a chrs:AttributeSpecification ;
+	rdfs:comment "test type. Always comes as 'Metallic Line Test'" ;
+	chrs:type xsd:string ;
+	.
+
+mlt:status
+	a chrs:AttributeSpecification ;
+	rdfs:comment "One of 'Cancelled',.." ;
+	chrs:type xsd:string ;
+	.
+
+mlt:result
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string ;
+	.
+
+mlt:executionTimestamp
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from epoch integer 1572651926906" ;
+	chrs:type xsd:dateTime ;
+	.
+
+mlt:abDcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '-0.109', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:baDcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string , remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:aearthDcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '-0.341', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:bearthDcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '-0.341', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:abAcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '-0.341', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:baAcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '-0.341', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:aearthAcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '0.341', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:bearthAcVoltageMeasureValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string '0.041', remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:abResistanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, replace '5000+' with 5000, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kohms"
+	.
+
+mlt:baResistanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, replace '5000+' with 5000, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kohms"
+	.
+
+mlt:aearthResistanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, replace '5000+' with 5000, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kohms"
+	.
+
+mlt:bearthResistanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, replace '5000+' with 5000, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "kohms"
+	.
+
+mlt:abCapacitanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "nF"
+	.
+
+mlt:baCapacitanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "nF"
+	.
+
+mlt:aearthCapacitanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "nF"
+	.
+
+mlt:bearthCapacitanceValue
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, remove empty strings ''" ;
+	chrs:type xsd:decimal ;
+	chrs:unitOfMeasure "nF"
+	.
+
+mlt:detectedProblems
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	a rdf:Bag ;
+	chrs:type mlt:detectedProblemType ;
+	.
+
+mlt:resolutions
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	a rdf:Bag ;
+	chrs:type xsd:string;
+	.
+
+mlt:testId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string;
+	 chrs:hasFormat "^TRI\\d{12}$" ;
+	.
+
+mlt:measurementStartTime
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample 2019-11-02T03:39:28Z" ;
+	chrs:type xsd:dateTime;
+	.
+
+mlt:loopTermination
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: replace 'UNKNOWN' with null" ;
+	chrs:type xsd:string;
+	.
+
+mlt:loopLength
+	a chrs:AttributeSpecification ;
+	rdfs:comment "TODO: convert from string, replace 'N/A' with null" ;
+	chrs:type xsd:integer;
+	.
+
+
+mlt:impedanceTestVoltage
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Sample in source '20V', TODO: remove 'V', convert from string" ;
+	chrs:type xsd:integer;
+	chrs:unitOfMeasure "V"
+	.
+
+mlt:lineId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "" ;
+	chrs:type xsd:string ;
+	chrs:hasFormat "^SWDSL\\d{7}:\\d+-\\d+-\\d+-\\d+" ;
+	.
+
+mlt:inspectionId
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Looks like integer but will stay as string as we dont do any arithmetic" ;
+	chrs:type xsd:string ;
+	.
+
+mlt:potsServicePresent
+	a chrs:AttributeSpecification ;
+	rdfs:comment "Remove 'UNKNOWN'" ;
+	chrs:type xsd:string ;
+	.

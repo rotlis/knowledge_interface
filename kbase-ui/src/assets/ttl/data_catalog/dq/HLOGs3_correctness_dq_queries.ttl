@@ -1,0 +1,100 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix hlog: <http://chronos/data-lake/hlog/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+
+
+hlog:hlogS3DslamValidationQuery
+    a dqv:QualityMeasurement ;
+    rdfs:comment "Percentage where dslam name is not like SWDSL1234567.  Note that both 'null' and '' are possible outliers " ;
+	chrs:query '''select 100.0 * avg(dslam_is_valid) from
+                  (
+                    select
+                     dt, dslam,
+                     IF(regexp_like(dslam, 'SWDSL\\d{7}'),1,0) AS dslam_is_valid
+                    FROM hlog_carrier_data_full
+                    where dt=date('${dt}')
+                  )
+''' ;
+	dqv:isMeasurementOf hlog:hlogFieldFormatValidation ;
+	chrs:weight 20 ;
+	.
+
+# there is an argument that a null DSLAM field will never be found but this should never happen
+hlog:hlogS3DslamNotNullQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "DSLAM should never be null" ;
+    	chrs:query '''select 100 * avg(dslam_is_null) from
+                                       (
+                                         select
+                                            dt, dslam,
+                                            IF(dslam is not null,0,1) AS dslam_is_null
+                                            FROM hlog_carrier_data_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf hlog:hlogFieldFormatValidation ;
+    	chrs:weight 40 ;
+    	.
+
+hlog:hlogPortisValidQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "port should look like 1-1-1-31" ;
+    	chrs:query '''select 100.0 * avg(port_is_valid) from
+                                       (
+                                         select
+                                         IF(regexp_like(port, '\\d+-\\d+-\\d+-\\d+'),1,0) AS port_is_valid
+                                            FROM hlog_carrier_data_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf hlog:hlogFieldFormatValidation ;
+    	chrs:weight 20 ;
+    	.
+
+# there is an argument that a null port field will never be found but this should never happen
+hlog:hlogS3PortNotNullQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "PORT should never be null" ;
+    	chrs:query '''select 100 * avg(port_is_null) from
+                                       (
+                                         select
+                                            dt, port,
+                                            IF(port is not null,0,1) AS port_is_null
+                                            FROM hlog_carrier_data_full
+                                            where dt=date('${dt}')
+                                       )''' ;
+    	dqv:isMeasurementOf hlog:hlogFieldFormatValidation ;
+    	chrs:weight 40 ;
+    	.
+
+
+hlog:hlogFieldFormatValidation
+	a dqv:Metric ;
+	dqv:inDimension hlog:Correctness ;
+	chrs:weight 20 ;
+	.
+
+hlog:hlogFieldValidValue
+	a dqv:Metric ;
+	dqv:inDimension hlog:Correctness ;
+	chrs:weight 20 ;
+	.
+
+hlog:Correctness
+	a dqv:Dimension ;
+	dqv:inCategory hlog:Accuracy ;
+	chrs:weight 50 ;
+	.
+
+
+hlog:Accuracy
+	a dqv:Category ;
+	.
+
+
+
+

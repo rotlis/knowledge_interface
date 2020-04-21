@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nac: <http://chronos/data-lake/nac/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+
+
+
+nac:nacFullCountQuery
+        a dqv:QualityMeasurement ;
+        rdfs:comment "count of last day as a ratio against max count from the last ten days" ;
+    	chrs:query '''select 100 * (select daycount from(
+                      SELECT distinct dt, count(dt) as daycount from
+                      nac_ports_full
+                      group by dt
+                      order by dt desc
+                      limit 1))/(select max(daycount) from (
+                      SELECT distinct dt, count(dt) as daycount  from
+                      nac_ports_full
+                      group by dt
+                      order by dt desc
+                      limit 10 ))''' ;
+    	dqv:isMeasurementOf nac:NACRecordLevelCompleteness  ;
+    	chrs:weight 100 ;
+    	.
+
+
+nac:NACRecordLevelCompleteness
+	a dqv:Metric ;
+	dqv:inDimension nac:Completeness ;
+	chrs:weight 100 ;
+	.
+
+
+
+nac:Completeness
+	a dqv:Dimension ;
+	dqv:inCategory nac:InformationAppropriateness ;
+	chrs:weight 20 ;
+	.
+
+
+nac:InformationAppropriateness
+	a dqv:Category ;
+	.
+
+

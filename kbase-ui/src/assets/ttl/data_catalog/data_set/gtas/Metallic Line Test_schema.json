@@ -1,0 +1,360 @@
+{
+    "type": {
+        "type": "string",
+        "samples": [
+            "Metallic Line Test"
+        ]
+    },
+    "status": {
+        "type": "string",
+        "samples": [
+            "Cancelled"
+        ]
+    },
+    "result": {
+        "type": "string",
+        "samples": [
+            ""
+        ]
+    },
+    "executionTimestamp": {
+        "type": "number",
+        "samples": [
+            1572651926906,
+            1572666003457,
+            1572848262155,
+            1572857071343,
+            1572865659793,
+            1573104683034,
+            1572844936926
+        ]
+    },
+    "abDcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "-0.109",
+            "-0.098",
+            "-0.05",
+            "-0.045",
+            "-0.063",
+            "-0.047"
+        ]
+    },
+    "baDcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            ""
+        ]
+    },
+    "aearthDcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "-0.341",
+            "-0.312",
+            "-0.094",
+            "-0.097",
+            "-0.113",
+            "-0.093"
+        ]
+    },
+    "bearthDcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "-0.232",
+            "-0.215",
+            "-0.044",
+            "-0.052",
+            "-0.05",
+            "-0.047"
+        ]
+    },
+    "abAcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "0.012",
+            "0.011"
+        ]
+    },
+    "baAcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            ""
+        ]
+    },
+    "aearthAcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "0.111",
+            "0.109",
+            "0.032",
+            "0.035",
+            "0.033"
+        ]
+    },
+    "bearthAcVoltageMeasureValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "0.11",
+            "0.112",
+            "0.033",
+            "0.032",
+            "0.034"
+        ]
+    },
+    "abResistanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "5000+"
+        ]
+    },
+    "baResistanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "5000+"
+        ]
+    },
+    "aearthResistanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "5000+"
+        ]
+    },
+    "bearthResistanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "5000+"
+        ]
+    },
+    "abCapacitanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "40.7",
+            "41",
+            "33.2"
+        ]
+    },
+    "baCapacitanceValue": {
+        "type": "string",
+        "samples": [
+            ""
+        ]
+    },
+    "aearthCapacitanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "13.6",
+            "13.9",
+            "0.9",
+            "1"
+        ]
+    },
+    "bearthCapacitanceValue": {
+        "type": "string",
+        "samples": [
+            "",
+            "13.8",
+            "0.9",
+            "0.8"
+        ]
+    },
+    "detectedProblems": {
+        "type": "object",
+        "samples": [
+            [],
+            [
+                {
+                    "description": "The line is either too short or the cable is not shielded or the cable shield is not correctly connected to earth.\n Loop length estimation and termination detection might not be reliable.",
+                    "proposedRepairActions": "Check cable shielding and grounding"
+                }
+            ]
+        ]
+    },
+    "resolutions": {
+        "type": "object",
+        "samples": [
+            [
+                "DSLAM_PORT_ASSOCIATION_WITH_BASEBAND_PSTN_SERVICE"
+            ],
+            [
+                "MLT_SUCCESS"
+            ]
+        ]
+    },
+    "testId": {
+        "type": "string",
+        "samples": [
+            "TRI000009403555",
+            "TRI000009406181",
+            "TRI000009416248",
+            "TRI000009417452",
+            "TRI000009455366",
+            "TRI000009405450"
+        ]
+    },
+    "measurementStartTime": {
+        "type": "string",
+        "samples": [
+            "2019-11-02T03:39:28Z",
+            "2019-11-04T06:15:10Z",
+            "2019-11-04T08:43:58Z",
+            "2019-11-04T11:07:05Z",
+            "2019-11-07T05:30:50Z",
+            "2019-11-04T05:21:44Z"
+        ]
+    },
+    "loopTermination": {
+        "type": "string",
+        "samples": [
+            "termination.by.cpe",
+            "UNKNOWN"
+        ]
+    },
+    "loopLength": {
+        "type": "string",
+        "samples": [
+            "274",
+            "277",
+            "18",
+            "N/A"
+        ]
+    },
+    "impedanceTestVoltage": {
+        "type": "string",
+        "samples": [
+            "20V"
+        ]
+    },
+    "abDcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "baDcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "aearthDcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "bearthDcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "abAcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "baAcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "aearthAcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "bearthAcVoltageMeasureUnitType": {
+        "type": "string",
+        "samples": [
+            "V"
+        ]
+    },
+    "abResistanceUnitType": {
+        "type": "string",
+        "samples": [
+            "kohms"
+        ]
+    },
+    "baResistanceUnitType": {
+        "type": "string",
+        "samples": [
+            "kohms"
+        ]
+    },
+    "aearthResistanceUnitType": {
+        "type": "string",
+        "samples": [
+            "kohms"
+        ]
+    },
+    "bearthResistanceUnitType": {
+        "type": "string",
+        "samples": [
+            "kohms"
+        ]
+    },
+    "abCapacitanceUnitType": {
+        "type": "string",
+        "samples": [
+            "nF"
+        ]
+    },
+    "baCapacitanceUnitType": {
+        "type": "string",
+        "samples": [
+            "nF"
+        ]
+    },
+    "aearthCapacitanceUnitType": {
+        "type": "string",
+        "samples": [
+            "nF"
+        ]
+    },
+    "bearthCapacitanceUnitType": {
+        "type": "string",
+        "samples": [
+            "nF"
+        ]
+    },
+    "lineId": {
+        "type": "string",
+        "samples": [
+            "SWDSL0200104:1-1-3-1",
+            "SWDSL0200104:1-1-1-4",
+            "SWDSL0200110:1-1-1-4"
+        ]
+    },
+    "inspectionId": {
+        "type": "string",
+        "samples": [
+            "151192",
+            "151246",
+            "151256",
+            "151272",
+            "151418",
+            "151235"
+        ]
+    },
+    "potsServicePresent": {
+        "type": "string",
+        "samples": [
+            "UNKNOWN"
+        ]
+    }
+}

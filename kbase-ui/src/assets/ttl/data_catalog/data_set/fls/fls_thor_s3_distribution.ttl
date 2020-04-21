@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix fls: <http://chronos/data-lake/fls/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+fls:fls_thor_s3
+    a chrs:Distribution ;
+    chrs:conformsToSchema fls:fls_schema_v0 ;
+	rdfs:label "fls_thor@S3" ;
+	rdfs:comment "FLS from THOR S3 bucket" ;
+    .
+
+fls:fls_thor_s3
+	chrs:glueTable "fls_full" ;
+	chrs:exposedWith chr:athenaProxy ;
+	.
+
+fls:fls_thor_s3
+	chrs:coversTimePeriod "7y" ;
+	chrs:lags "1d" ;
+	chrs:updateFrequency "1d" ;
+    .
+

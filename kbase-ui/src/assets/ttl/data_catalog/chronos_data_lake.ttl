@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix sdc: <http://chronos/data-lake/sdc/> .
+@prefix nac_ports: <http://chronos/data-lake/nac_ports/> .
+@prefix hlog: <http://chronos/data-lake/hlog/> .
+@prefix fls: <http://chronos/data-lake/fls/> .
+@prefix gtas: <http://chronos/data-lake/gtas/> .
+
+
+chr:chronosDataLake
+    a chrs:DataLake ;
+    rdfs:label "Chronos data lake" ;
+    rdfs:comment "DataLake controlled by CS&A owned platform for NBN telemetry & analytics" ;
+    .
+
+chr:chronosDataLake
+    chrs:hasDataSet sdc:sdc, nac_ports:nac_ports, hlog:hlog, fls:fls,
+    gtas:test_summary, gtas:test_details, gtas:lqd, gtas:mlt, gtas:selt ;
+    .
+
+chr:chronosDataLake
+    chrs:hasServices chr:esProxy, chr:athenaProxy ;
+    .
+

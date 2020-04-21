@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix hlog: <http://chronos/data-lake/hlog/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+hlog:hlog_schema_v0
+    a chrs:DataSchema ;
+    .
+
+hlog:hlog_schema_v0
+    chrs:hasAttribute hlog:dslam,
+        hlog:portAddress ,
+        hlog:hlog_group_size_ds ,
+        hlog:hlog_group_size_us ,
+        hlog:hlog_ds ,
+        hlog:hlog_us ,
+        hlog:last_updated ,
+        hlog:dt ;
+        .
+
+hlog:dslam
+    a chrs:AttributeSpecification ;
+    rdfs:label "DSLAM" ;
+    rdfs:comment "unique name of physical dslam converting fiber into copper" ;
+    chrs:hasFormat "SWDSL\\d{7}" ;
+    .
+
+hlog:portAddress
+    a chrs:AttributeSpecification ;
+	rdfs:label "port" ;
+    rdfs:comment "port id on dslam" ;
+    chrs:hasFormat "\.*" ;
+    .
+
+hlog:hlog_group_size_ds
+    a chrs:AttributeSpecification ;
+	rdfs:label "hlog_group_size_ds" ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+hlog:hlog_group_size_us
+    a chrs:AttributeSpecification ;
+	rdfs:label "hlog_group_size_us" ;
+    rdfs:comment "" ;
+    chrs:type xsd:integer ;
+    .
+
+
+hlog:hlog_ds
+    a chrs:AttributeSpecification ;
+	rdfs:label "hlog_ds" ;
+    rdfs:comment "" ;
+    .
+
+hlog:hlog_us
+    a chrs:AttributeSpecification ;
+	rdfs:label "hlog_us" ;
+    rdfs:comment "" ;
+    .
+
+hlog:last_updated
+    a chrs:AttributeSpecification ;
+    rdfs:label "last_updated" ;
+    chrs:type xsd:dateTime ;
+    .
+
+hlog:dt
+    a chrs:AttributeSpecification ;
+    rdfs:label "dt" ;
+    chrs:type xsd:date ;
+    .
+

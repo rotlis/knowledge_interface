@@ -1,0 +1,373 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix fls: <http://chronos/data-lake/fls/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+fls:fls_schema_v0
+    a chrs:DataSchema ;
+    .
+
+fls:fls_schema_v0
+    chrs:hasAttribute
+    	fls:product_instance_id ,
+		fls:access_seeker_id ,
+		fls:product_template_name ,
+		fls:access_service_tech_type ,
+		fls:priority_assist ,
+		fls:connection_type ,
+		fls:avc_id ,
+		fls:alk_id ,
+		fls:cvc_id ,
+		fls:avcd_enhanced_reporting ,
+		fls:avcd_response_time_option ,
+		fls:avcd_restoration_time_option ,
+		fls:avc_bandwidth_profile ,
+		fls:inni_cvlan ,
+		fls:enni_cvlan ,
+		fls:avc_service_state ,
+		fls:sam_service_id ,
+		fls:olt_lag_id ,
+		fls:uni_prid ,
+		fls:uni_port_id ,
+		fls:unid_speed_and_duplex ,
+		fls:unid_vlan_mode ,
+		fls:ntd_id ,
+		fls:location_id ,
+		fls:ntd_csa_id ,
+		fls:ntd_end_user_premises_cabling ,
+		fls:ntd_serial_number ,
+		fls:olt_chassis_name ,
+		fls:ntd_pon_id ,
+		fls:ntd_region ,
+		fls:lt_port ,
+		fls:avc_access_loop_identification ,
+		fls:ntd_backup_power_monitoring ,
+		fls:ntd_backup_power_unit ,
+		fls:ntd_location ,
+		fls:ntd_power_type ,
+		fls:ipact_record_created_date ,
+		fls:ipact_dl_process_id ,
+		fls:sat_beam_id ,
+		fls:sat_id ,
+		fls:sat_beam_ch_id ,
+		fls:metrics_date ,
+		fls:source_file ,
+		fls:dt ;
+    .
+
+
+fls:product_instance_id a chrs:AttributeSpecification ;
+	rdfs:label "product_instance_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:access_seeker_id a chrs:AttributeSpecification ;
+	rdfs:label "access_seeker_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:product_template_name a chrs:AttributeSpecification ;
+	rdfs:label "product_template_name" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:access_service_tech_type a chrs:AttributeSpecification ;
+	rdfs:label "access_service_tech_type" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:priority_assist a chrs:AttributeSpecification ;
+	rdfs:label "priority_assist" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:connection_type a chrs:AttributeSpecification ;
+	rdfs:label "connection_type" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avc_id a chrs:AttributeSpecification ;
+	rdfs:label "avc_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:alk_id a chrs:AttributeSpecification ;
+	rdfs:label "alk_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:cvc_id a chrs:AttributeSpecification ;
+	rdfs:label "cvc_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avcd_enhanced_reporting a chrs:AttributeSpecification ;
+	rdfs:label "avcd_enhanced_reporting" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avcd_response_time_option a chrs:AttributeSpecification ;
+	rdfs:label "avcd_response_time_option" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avcd_restoration_time_option a chrs:AttributeSpecification ;
+	rdfs:label "avcd_restoration_time_option" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avc_bandwidth_profile a chrs:AttributeSpecification ;
+	rdfs:label "avc_bandwidth_profile" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:inni_cvlan a chrs:AttributeSpecification ;
+	rdfs:label "inni_cvlan" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:enni_cvlan a chrs:AttributeSpecification ;
+	rdfs:label "enni_cvlan" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avc_service_state a chrs:AttributeSpecification ;
+	rdfs:label "avc_service_state" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:sam_service_id a chrs:AttributeSpecification ;
+	rdfs:label "sam_service_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:olt_lag_id a chrs:AttributeSpecification ;
+	rdfs:label "olt_lag_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:uni_prid a chrs:AttributeSpecification ;
+	rdfs:label "uni_prid" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:uni_port_id a chrs:AttributeSpecification ;
+	rdfs:label "uni_port_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:unid_speed_and_duplex a chrs:AttributeSpecification ;
+	rdfs:label "unid_speed_and_duplex" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:unid_vlan_mode a chrs:AttributeSpecification ;
+	rdfs:label "unid_vlan_mode" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_id a chrs:AttributeSpecification ;
+	rdfs:label "ntd_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:location_id a chrs:AttributeSpecification ;
+	rdfs:label "location_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_csa_id a chrs:AttributeSpecification ;
+	rdfs:label "ntd_csa_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_end_user_premises_cabling a chrs:AttributeSpecification ;
+	rdfs:label "ntd_end_user_premises_cabling" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_serial_number a chrs:AttributeSpecification ;
+	rdfs:label "ntd_serial_number" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:olt_chassis_name a chrs:AttributeSpecification ;
+	rdfs:label "olt_chassis_name" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_pon_id a chrs:AttributeSpecification ;
+	rdfs:label "ntd_pon_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_region a chrs:AttributeSpecification ;
+	rdfs:label "ntd_region" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:lt_port a chrs:AttributeSpecification ;
+	rdfs:label "lt_port" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:avc_access_loop_identification a chrs:AttributeSpecification ;
+	rdfs:label "avc_access_loop_identification" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_backup_power_monitoring a chrs:AttributeSpecification ;
+	rdfs:label "ntd_backup_power_monitoring" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_backup_power_unit a chrs:AttributeSpecification ;
+	rdfs:label "ntd_backup_power_unit" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_location a chrs:AttributeSpecification ;
+	rdfs:label "ntd_location" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ntd_power_type a chrs:AttributeSpecification ;
+	rdfs:label "ntd_power_type" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ipact_record_created_date a chrs:AttributeSpecification ;
+	rdfs:label "ipact_record_created_date" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:ipact_dl_process_id a chrs:AttributeSpecification ;
+	rdfs:label "ipact_dl_process_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:sat_beam_id a chrs:AttributeSpecification ;
+	rdfs:label "sat_beam_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:integer ;
+ 	.
+
+
+fls:sat_id a chrs:AttributeSpecification ;
+	rdfs:label "sat_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:sat_beam_ch_id a chrs:AttributeSpecification ;
+	rdfs:label "sat_beam_ch_id" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:integer ;
+ 	.
+
+
+fls:metrics_date a chrs:AttributeSpecification ;
+	rdfs:label "metrics_date" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:dateTime ;
+ 	.
+
+
+fls:source_file a chrs:AttributeSpecification ;
+	rdfs:label "source_file" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:string ;
+ 	.
+
+
+fls:dt a chrs:AttributeSpecification ;
+	rdfs:label "dt" ;
+ 	rdfs:comment "" ;
+	chrs:type xsd:date ;
+ 	.
+
+
+

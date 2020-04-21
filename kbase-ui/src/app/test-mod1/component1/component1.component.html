@@ -9,18 +9,13 @@ All triples
     <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
   </tr>
 </table>
-Navigable triples
-Own props
+
+
+<h1>{{current_node}} ({{getTypeOrEmptyString(current_node)}})</h1>
 <table border="1">
-  <tr>
-    <th>Subject</th>
-    <th>Predicate</th>
-    <th>Object</th>
-  </tr>
   <tr *ngFor="let triple of own_triples">
-    <th >{{triple.subject}}</th>
-    <th >{{getShortValue(triple.predicate)}}</th>
-    <th >{{triple.object}}</th>
+    <td >{{getShortValue(triple.predicate)}}</td>
+    <td >{{triple.object}}</td>
   </tr>
 </table>
 

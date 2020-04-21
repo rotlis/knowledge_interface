@@ -1,0 +1,67 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix chrs: <http://chronos/rdf-schema#> .
+@prefix chr: <http://chronos/data-lake/> .
+
+@prefix gtas: <http://chronos/data-lake/gtas/> .
+@prefix test_summary: <http://chronos/data-lake/gtas/test_summary/> .
+@prefix test_details: <http://chronos/data-lake/gtas/test_details/> .
+
+@prefix lqd: <http://chronos/data-lake/gtas/lqd/> .
+@prefix selt: <http://chronos/data-lake/gtas/selt/> .
+@prefix mlt: <http://chronos/data-lake/gtas/mlt/> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+gtas:test_summary_es
+    a chrs:Distribution ;
+    chrs:conformsToSchema test_summary:schema_v0 ;
+	rdfs:label "gtas_test_summary@ES" ;
+	rdfs:comment "GTAS test summary in ES" ;
+	chrs:coversTimePeriod "30d" ;
+	chrs:lags "1h" ;
+	chrs:updateFrequency "1h" ;
+    .
+
+
+gtas:test_details_es
+    a chrs:Distribution ;
+    chrs:conformsToSchema test_details:schema_v0 ;
+	rdfs:label "gtas_test_details@ES" ;
+	rdfs:comment "GTAS test details in ES" ;
+	chrs:coversTimePeriod "30d" ;
+	chrs:lags "1h" ;
+	chrs:updateFrequency "1h" ;
+    .
+
+gtas:lqd_es
+    a chrs:Distribution ;
+    chrs:conformsToSchema lqd:schema_v0 ;
+	rdfs:label "gtas_lqd@ES" ;
+	rdfs:comment "GTAS LQD in ES" ;
+	chrs:coversTimePeriod "30d" ;
+	chrs:lags "1h" ;
+	chrs:updateFrequency "1h" ;
+    .
+
+gtas:selt_es
+    a chrs:Distribution ;
+    chrs:conformsToSchema selt:schema_v0 ;
+	rdfs:label "gtas_selt@ES" ;
+	rdfs:comment "GTAS SELT in ES" ;
+	chrs:coversTimePeriod "30d" ;
+	chrs:lags "1h" ;
+	chrs:updateFrequency "1h" ;
+    .
+
+gtas:mlt_es
+    a chrs:Distribution ;
+    chrs:conformsToSchema mlt:schema_v0 ;
+	rdfs:label "gtas_mlt@ES" ;
+	rdfs:comment "GTAS MLT in ES" ;
+	chrs:coversTimePeriod "30d" ;
+	chrs:lags "1h" ;
+	chrs:updateFrequency "1h" ;
+    .
