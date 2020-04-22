@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {type} from "os";
+// import {type} from "os";
 
 declare var $rdf: any;
 declare var d3: any;
