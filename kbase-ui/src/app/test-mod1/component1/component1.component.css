@@ -33,6 +33,11 @@ marker {
   fill:grey;
 }
 
+.clickable{
+  color: blue;
+  text-decoration: underline;
+}
+
 svg{
   border:1px solid black;
 }

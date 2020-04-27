@@ -1,4 +1,7 @@
+<button (click)= "load_ttl(0)">load people</button>
+<button (click)= "load_ttl(1)">load data catalog</button>
 <button (click)= "showAllTriples()">show all triples</button>
+
 <table border="1">
   <tr *ngFor="let triple of triples">
     <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
@@ -6,7 +9,6 @@
     <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
   </tr>
 </table>
-
 
 <h1>{{getShortValue(current_node)}} ({{getTypeOrEmptyString(current_node)}})</h1>
 {{current_node}}
@@ -20,13 +22,45 @@
 </table>
 
 <hr>
-Combined triples
 
+Outgoing triples
 <table border="1">
-  <tr *ngFor="let triple of combined_triples">
-    <td (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
-    <td >{{getShortValuesAndDirection(triple.links)}}</td>
-    <td (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>
+  <tr *ngFor="let triple of outgoing_triples">
+    <td class='clickable' (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
+    <td >{{getShortValue(triple.predicate)}}</td>
+<!--    <td  class='clickable' (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>-->
+    <td class="clickable">
+        <a  *ngIf="triple.object" (click)="onNodeClick(triple.object)">
+            {{getShortValue(triple.object)}}
+        </a>
+        <span *ngFor="let object of triple.objects">
+          <a (click)="onNodeClick(object)">
+            {{getShortValue(object)}},
+          </a>
+        </span>
+    </td>
+
+  </tr>
+</table>
+<br/>
+<br/>
+Incoming triples
+<table border="1">
+  <tr *ngFor="let triple of incoming_triples">
+    <td class='clickable' (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
+    <td >{{getShortValue(triple.predicate)}}</td>
+<!--    <td  class='clickable' (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>-->
+    <td class="clickable">
+      <a  *ngIf="triple.object" (click)="onNodeClick(triple.object)">
+        {{getShortValue(triple.object)}}
+      </a>
+      <span *ngFor="let object of triple.objects">
+          <a (click)="onNodeClick(object)">
+            {{getShortValue(object)}},
+          </a>
+        </span>
+    </td>
+
   </tr>
 </table>
 

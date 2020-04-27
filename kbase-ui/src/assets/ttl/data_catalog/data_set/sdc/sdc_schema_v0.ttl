@@ -66,7 +66,7 @@ sdc:dslam
 
 sdc:ifAdminStatus
     a chrs:AttributeSpecification ;
-    rdfs:comment '''
+    rdfs:comment """
 up(1),       -- ready to pass packets\n
 down(2),\n
 testing(3)   -- in some test mode\n\n
@@ -79,13 +79,13 @@ explicit management action or per configuration information
 retained by the managed system, ifAdminStatus is then
 changed to either the up(1) or testing(3) states (or remains
 in the down(2) state)
-     ''';
+     """;
     chrs:hasFormat "" ;
     .
 
 sdc:ifOperStatus
     a chrs:AttributeSpecification ;
-    rdfs:comment '''
+    rdfs:comment """
 up(1),        -- ready to pass packets
 down(2),
 testing(3),   -- in some test mode
@@ -105,7 +105,7 @@ external actions (such as a serial line waiting for an
 incoming connection); it should remain in the down(2) state
 if and only if there is a fault that prevents it from going
 to the up(1) state;
-    ''' ;
+    """ ;
     chrs:hasFormat "" ;
     .
 

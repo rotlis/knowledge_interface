@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import {type} from "os";
 
 declare var $rdf: any;
 declare var d3: any;
@@ -13,12 +12,100 @@ export class Component1Component implements OnInit {
 
   store = $rdf.graph();
   fetcher = new $rdf.Fetcher(this.store, 5000);
-  ttl_url = "http://localhost:4200/assets/ttl/people/";
-  ttls = ["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl"];
+  ttl_urls= [
+    "http://localhost:4200/assets/ttl/people/",
+    "http://localhost:4200/assets/ttl/data_catalog/"
+  ];
 
-  svg = null;
-  force = null;
-  graph = null;
+  ttls = [["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl"],
+    [
+    "data_set/chronos_data_lake.ttl",
+
+    "data_set/fls/fls_schema_v0.ttl",
+    "data_set/fls/fls_thor.ttl",
+    "data_set/fls/fls_thor_s3_distribution.ttl",
+
+    "data_set/fls_sharp/fls_sharp.ttl",
+    "data_set/fls_sharp/fls_sharp_s3_distribution.ttl",
+    "data_set/fls_sharp/fls_sharp_schema_v0.ttl",
+
+    "data_set/gtas/gtas.ttl",
+    "data_set/gtas/gtas_es_distributions.ttl",
+    "data_set/gtas/lqd_schema_v0.ttl",
+    "data_set/gtas/mlt_schema_v0.ttl",
+    "data_set/gtas/selt_schema_v0.ttl",
+    "data_set/gtas/testDetails.ttl",
+    "data_set/gtas/testSummary.ttl",
+
+    "data_set/hlog/hlog.ttl",
+    "data_set/hlog/hlog_s3_distribution.ttl",
+    "data_set/hlog/hlog_schema_v0.ttl",
+
+    "data_set/nac/nac_ports.ttl",
+    "data_set/nac/nac_ports_s3_distribution.ttl",
+    "data_set/nac/nac_ports_schema_v0.ttl",
+    "data_set/nac/nac_ports_schema_v1.ttl",
+
+    "data_set/sdc/sdc.ttl",
+    "data_set/sdc/sdcEsCache_distribution.ttl",
+    "data_set/sdc/sdcS3_distribution.ttl",
+    "data_set/sdc/sdc_schema_v0.ttl",
+
+    "data_set/services/athena_proxy_service.ttl",
+    "data_set/services/es_proxy_service.ttl",
+
+    // "dq/HLOGs3_correctness_dq_queries.ttl",
+    // "dq/NAC_correctness_DQ_Queries.ttl",
+    // "dq/NACs3_completeness_dq_queries.ttl",
+    // "dq/SDCs3_completeness_dq_queries.ttl",
+    // "dq/sdcS3_correctness_dq_queries.ttl",
+    // "dq/sdcS3_distribution_dq.ttl",
+
+    "services/athena_proxy_service.ttl",
+    "services/es_proxy_service.ttl"
+  ]
+  ];
+
+  starting_points=["http://example/knowledge-base/marilena","http://chronos/data-lake/chronosDataLake"];
+
+  predicate_sort_order = [
+    //people
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+
+    "http://xmlns.com/foaf/spec/firstName",
+    "http://xmlns.com/foaf/spec/lastName",
+    "http://xmlns.com/foaf/spec/nick",
+    "http://xmlns.com/foaf/spec/gender",
+    "http://xmlns.com/foaf/spec/age",
+    "http://xmlns.com/foaf/spec/mbox",
+    "http://xmlns.com/foaf/spec/myersBriggs",
+    "http://xmlns.com/foaf/spec/topic_interest",
+
+    "http://www.perceive.net/schemas/20021119/relationship/spouseOf",
+    "http://www.perceive.net/schemas/20021119/relationship/parentOf",
+    "http://www.perceive.net/schemas/20021119/relationship/childOf",
+    "http://www.perceive.net/schemas/20021119/relationship/siblingOf",
+
+    "http://www.perceive.net/schemas/20021119/relationship/friendOf",
+
+    "http://example/rdf-schema#hasPet",
+
+    // catalog
+    "http://www.w3.org/2000/01/rdf-schema#label",
+    "http://www.w3.org/2000/01/rdf-schema#comment",
+    "http://chronos/rdf-schema#unitOfMeasure",
+    "http://chronos/rdf-schema#hasFormat",
+    "http://chronos/rdf-schema#glueTable",
+
+    "http://chronos/rdf-schema#hasDataSet",
+    "http://chronos/rdf-schema#hasServices",
+    "http://chronos/rdf-schema#hasDistribution",
+    "http://chronos/rdf-schema#conformsToSchema",
+
+    "http://chronos/rdf-schema#exposedWith",
+
+    "http://chronos/rdf-schema#hasAttribute"
+  ];
 
   current_node = null;
   triples = [];
@@ -31,49 +118,35 @@ export class Component1Component implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  load_ttl(setNdx){
+    this.store = $rdf.graph();
+    this.fetcher = new $rdf.Fetcher(this.store, 5000);
+
     console.log("Loading turtles");
-    this.ttls.forEach((ttl)=>{
+    this.ttls[setNdx].forEach((ttl)=>{
       console.log(ttl);
-      this.fetcher.nowOrWhenFetched(this.ttl_url + ttl, function(isOk, body, xhr) {
+      this.fetcher.nowOrWhenFetched(this.ttl_urls[setNdx] + ttl, function(isOk, body, xhr) {
         if (!isOk) {
           alert("Oops, something happened and couldn't fetch data");
         }
       });
     });
 
-    this.svg = d3.select("#svg-body").append("svg")
-      .attr("width", 800)
-      .attr("height", 600)
-    ;
-
     setTimeout(()=>{
-      this.onNodeClick(this.store.sym("http://example/knowledge-base/marilena"));
+      this.onNodeClick(this.store.sym(this.starting_points[setNdx]));
     }, 500);
+  }
+
+  ngOnInit(): void {
+    this.load_ttl(0);
   }
 
 
   showAllTriples() {
     this.triples = this.store.match();
-
-    this.force = d3.layout.force().size([800, 600]);
-
-    this.graph = this.triplesToGraph(this.triples.map((triple)=> {
-      return {
-        subject: this.getShortValue(triple.subject),
-        predicate: this.getShortValue(triple.predicate),
-        object: this.getShortValue(triple.object)
-      }
-    }));
-
-    this.update();
-
   }
 
-    // termType == "NameNode"
-    // termType == "Literal"
-    // termType == "BlankNode"
-
+    // termType == "NameNode", "Literal", "BlankNode"
 
   addTriplesIntoNet(combined_triples, triples_to_add) {
     triples_to_add.forEach((triple)=>{
@@ -98,44 +171,57 @@ export class Component1Component implements OnInit {
     return combined_triples;
   }
 
+  filterTripleWithLiteralObject = (triple) => triple.object && triple.object.termType === "Literal";
+  filterNavigableNodes = (triple) => triple.object &&  (triple.object.termType === "NamedNode" || triple.object.termType === "BlankNode");
+
+  reducerGroupByPredicate = (accumulator, currentTriple, currentIndex, array) => {
+    let existingPredicateNdx = accumulator.findIndex((triple)=>triple.predicate.value==currentTriple.predicate.value);
+    if (existingPredicateNdx >= 0){
+      accumulator[existingPredicateNdx].object += (", "+ currentTriple.object);
+    }else{
+      accumulator.push(currentTriple);
+    }
+    return accumulator;
+  };
+  reducerGroupByPredicateForLinkableObjects = (accumulator, currentTriple, currentIndex, array) => {
+    let existingPredicateNdx = accumulator.findIndex((triple)=>triple.predicate.value==currentTriple.predicate.value);
+    if (existingPredicateNdx >= 0){
+      if (!accumulator[existingPredicateNdx].objects){
+        accumulator[existingPredicateNdx].objects = [accumulator[existingPredicateNdx].object];
+        accumulator[existingPredicateNdx].object = null;
+      }
+      accumulator[existingPredicateNdx].objects.push(currentTriple.object);
+    }else{
+      accumulator.push(currentTriple);
+    }
+    return accumulator;
+  };
+
+  sortByPredicateImportance = (a,b)=> this.predicate_sort_order.indexOf(a.predicate.value) - this.predicate_sort_order.indexOf(b.predicate.value);
+
+
   onNodeClick(node){
     this.triples=[];
     this.current_node = node;
-    this.incoming_triples = this.store.match(undefined, undefined, node);
+    let outgoing_and_owned_triples=this.store.match(node, undefined, undefined);
 
-    this.outgoing_triples = this.store.match(node, undefined, undefined)
-      .filter((triple)=>{
-        return triple.object.termType === "NamedNode" || triple.object.termType === "BlankNode"
-    });
+    this.own_triples = outgoing_and_owned_triples
+      .filter(this.filterTripleWithLiteralObject)
+      .reduce(this.reducerGroupByPredicate, [])
+      .sort(this.sortByPredicateImportance)
+    ;
+    this.outgoing_triples = outgoing_and_owned_triples
+      .filter(this.filterNavigableNodes)
+      .reduce(this.reducerGroupByPredicateForLinkableObjects, [])
+      .sort(this.sortByPredicateImportance)
 
-    this.own_triples = this.store.match(node, undefined, undefined)
-      .filter((triple)=>{
-        return triple.object.termType === "Literal"
-    });
-
-    this.combined_triples = [];
-    this.combined_triples = this.addTriplesIntoNet(this.combined_triples, this.outgoing_triples);
-    this.combined_triples = this.addTriplesIntoNet(this.combined_triples, this.incoming_triples);
-
-
-    // ---
-
-    this.force = d3.layout.force().size([800, 600]);
-
-    this.graph = this.triplesToGraph(this.incoming_triples.concat(this.outgoing_triples).map((triple)=> {
-      return {
-        subject: this.getShortValue(triple.subject),
-        predicate: this.getShortValue(triple.predicate),
-        object: this.getShortValue(triple.object)
-      }
-    }));
-
-    this.update();
+    this.incoming_triples = this.store.match(undefined, undefined, node)
+      .sort(this.sortByPredicateImportance);
 
   }
 
    getShortValue(node){
-      if (!node) {
+      if (!node || !node.value) {
         return "";
       }
       return node.value.split(/\/|#/).pop().replace( /([A-Z])/g, " $1" ).toLowerCase();
@@ -160,166 +246,6 @@ export class Component1Component implements OnInit {
     let typeNodes = this.store.match(node, this.store.sym("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), undefined);
     return typeNodes.map(node=>this.getShortValue(node.object)).join(", ");
 
-  }
-
-
-
-  // --------------------------------------------
-  // --------------------------------------------
-  // --------------------------------------------
-  filterNodesById(nodes,id){
-    return nodes.filter(function(n) { return n.id === id; });
-  }
-
-  filterNodesByType(nodes,value){
-    return nodes.filter(function(n) { return n.type === value; });
-  }
-
-  triplesToGraph(triples){
-
-    this.svg.html("");
-    //Graph
-    this.graph={nodes:[], links:[], triples:[]};
-
-    //Initial Graph from triples
-    triples.forEach((triple)=>{
-      var subjId = triple.subject;
-      var predId = triple.predicate;
-      var objId = triple.object;
-
-      var subjNode = this.filterNodesById(this.graph.nodes, subjId)[0];
-      var objNode  = this.filterNodesById(this.graph.nodes, objId)[0];
-
-      if(subjNode==null){
-        subjNode = {id:subjId, label:subjId, weight:1, type:"node"};
-        this.graph.nodes.push(subjNode);
-      }
-
-      if(objNode==null){
-        objNode = {id:objId, label:objId, weight:1, type:"node"};
-        this.graph.nodes.push(objNode);
-      }
-
-      var predNode = {id:predId, label:predId, weight:1, type:"pred"} ;
-      this.graph.nodes.push(predNode);
-
-      var blankLabel = "";
-
-      this.graph.links.push({source:subjNode, target:predNode, predicate:blankLabel, weight:1});
-      this.graph.links.push({source:predNode, target:objNode, predicate:blankLabel, weight:1});
-
-      this.graph.triples.push({s:subjNode, p:predNode, o:objNode});
-
-    });
-
-    return this.graph;
-  }
-
-  //  addNewTriple(){
-  //   var subj = $("#subject").val();
-  //   var pred = $("#predicate").val();
-  //   var obj  = $("#object").val();
-  //
-  //   triples.push({ subject:subj , 	predicate:pred , 	object:obj });
-  //   graph = triplesToGraph(triples);
-  //   update();
-  // }
-
-
-  update(){
-    // ==================== Add Marker ====================
-    this.svg.append("svg:defs").selectAll("marker")
-      .data(["end"])
-      .enter().append("svg:marker")
-      .attr("id", String)
-      .attr("viewBox", "0 -5 10 10")
-      .attr("refX", 30)
-      .attr("refY", -0.5)
-      .attr("markerWidth", 6)
-      .attr("markerHeight", 6)
-      .attr("orient", "auto")
-      .append("svg:polyline")
-      .attr("points", "0,-5 10,0 0,5")
-    ;
-
-    // ==================== Add Links ====================
-    var links = this.svg.selectAll(".link")
-      .data(this.graph.triples)
-      .enter()
-      .append("path")
-      .attr("marker-end", "url(#end)")
-      .attr("class", "link")
-    ;
-
-    // ==================== Add Link Names =====================
-    var linkTexts = this.svg.selectAll(".link-text")
-      .data(this.graph.triples)
-      .enter()
-      .append("text")
-      .attr("class", "link-text")
-      .text( function (d) { return d.p.label; })
-    ;
-
-    // linkTexts.append("title")
-    // 		.text(function(d) { return d.predicate; });
-
-    // ==================== Add Node Names =====================
-    var nodeTexts = this.svg.selectAll(".node-text")
-      .data(this.filterNodesByType(this.graph.nodes, "node"))
-      .enter()
-      .append("text")
-      .attr("class", "node-text")
-      .text( function (d) { return d.label; })
-    ;
-
-    //nodeTexts.append("title")
-    //		.text(function(d) { return d.label; });
-
-    // ==================== Add Node =====================
-    var nodes = this.svg.selectAll(".node")
-      .data(this.filterNodesByType(this.graph.nodes, "node"))
-      .enter()
-      .append("circle")
-      .attr("class", "node")
-      .attr("r", 8)
-      .call(this.force.drag)
-    ;//nodes
-
-    // ==================== Force ====================
-    this.force.on("tick", function() {
-      nodes
-        .attr("cx", function(d){ return d.x; })
-        .attr("cy", function(d){ return d.y; })
-      ;
-
-      links
-        .attr("d", function(d) {
-          return "M" 	+ d.s.x + "," + d.s.y
-            + "S" + d.p.x + "," + d.p.y
-            + " " + d.o.x + "," + d.o.y;
-        })
-      ;
-
-      nodeTexts
-        .attr("x", function(d) { return d.x + 12 ; })
-        .attr("y", function(d) { return d.y + 3; })
-      ;
-
-
-      linkTexts
-        .attr("x", function(d) { return 4 + (d.s.x + d.p.x + d.o.x)/3  ; })
-        .attr("y", function(d) { return 4 + (d.s.y + d.p.y + d.o.y)/3 ; })
-      ;
-    });
-
-    // ==================== Run ====================
-    this.force
-      .nodes(this.graph.nodes)
-      .links(this.graph.links)
-      .charge(-500)
-      .linkDistance(50)
-      .start()
-    ;
   }
 
 
