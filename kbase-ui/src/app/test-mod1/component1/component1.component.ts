@@ -134,7 +134,7 @@ export class Component1Component implements OnInit {
 
     setTimeout(()=>{
       this.onNodeClick(this.store.sym(this.starting_points[setNdx]));
-    }, 500);
+    }, 1000);
   }
 
   ngOnInit(): void {
@@ -197,6 +197,20 @@ export class Component1Component implements OnInit {
     return accumulator;
   };
 
+  reducerGroupByPredicateForLinkableSubjects = (accumulator, currentTriple, currentIndex, array) => {
+    let existingPredicateNdx = accumulator.findIndex((triple)=>triple.predicate.value==currentTriple.predicate.value);
+    if (existingPredicateNdx >= 0){
+      if (!accumulator[existingPredicateNdx].subjects){
+        accumulator[existingPredicateNdx].subjects = [accumulator[existingPredicateNdx].subject];
+        accumulator[existingPredicateNdx].subject = null;
+      }
+      accumulator[existingPredicateNdx].subjects.push(currentTriple.subject);
+    }else{
+      accumulator.push(currentTriple);
+    }
+    return accumulator;
+  };
+
   sortByPredicateImportance = (a,b)=> this.predicate_sort_order.indexOf(a.predicate.value) - this.predicate_sort_order.indexOf(b.predicate.value);
 
 
@@ -216,8 +230,8 @@ export class Component1Component implements OnInit {
       .sort(this.sortByPredicateImportance)
 
     this.incoming_triples = this.store.match(undefined, undefined, node)
+      .reduce(this.reducerGroupByPredicateForLinkableSubjects, [])
       .sort(this.sortByPredicateImportance);
-
   }
 
    getShortValue(node){

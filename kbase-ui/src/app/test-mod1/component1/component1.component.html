@@ -47,9 +47,19 @@ Outgoing triples
 Incoming triples
 <table border="1">
   <tr *ngFor="let triple of incoming_triples">
-    <td class='clickable' (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
+    <td class='clickable'>
+      <a  *ngIf="triple.subject" (click)="onNodeClick(triple.subject)">
+        {{getShortValue(triple.subject)}}
+      </a>
+      <span *ngFor="let subject of triple.subjects">
+          <a (click)="onNodeClick(subject)">
+            {{getShortValue(subject)}},
+          </a><br/>
+        </span>
+    </td>
+
     <td >{{getShortValue(triple.predicate)}}</td>
-<!--    <td  class='clickable' (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>-->
+
     <td class="clickable">
       <a  *ngIf="triple.object" (click)="onNodeClick(triple.object)">
         {{getShortValue(triple.object)}}
