@@ -10,7 +10,7 @@
   </tr>
 </table>
 
-<h1>{{getShortValue(current_node)}} ({{getTypeOrEmptyString(current_node)}})</h1>
+<h1>{{getShortValue(current_node)}} (type: {{getTypeOrEmptyString(current_node)}})</h1>
 {{current_node}}
 <br/>
 <br/>
@@ -26,17 +26,15 @@
 Outgoing triples
 <table border="1">
   <tr *ngFor="let triple of outgoing_triples">
-    <td class='clickable' (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>
+<!--    <td class='clickable' (click)="onNodeClick(triple.subject)">{{getShortValue(triple.subject)}}</td>-->
     <td >{{getShortValue(triple.predicate)}}</td>
 <!--    <td  class='clickable' (click)="onNodeClick(triple.object)">{{getShortValue(triple.object)}}</td>-->
-    <td class="clickable">
+    <td >
         <a  *ngIf="triple.object" (click)="onNodeClick(triple.object)">
             {{getShortValue(triple.object)}}
         </a>
         <span *ngFor="let object of triple.objects">
-          <a (click)="onNodeClick(object)">
-            {{getShortValue(object)}},
-          </a><br/>
+          <a class="clickable" (click)="onNodeClick(object)">{{getShortValue(object)}}</a>&nbsp;&nbsp;
         </span>
     </td>
 

@@ -9,6 +9,7 @@ declare var d3: any;
   styleUrls: ['./component1.component.css']
 })
 export class Component1Component implements OnInit {
+  RDF_TYPE_PREDICATE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
   store = null;
   fetcher = null;
@@ -177,6 +178,7 @@ export class Component1Component implements OnInit {
 
   filterTripleWithLiteralObject = (triple) => triple.object && triple.object.termType === "Literal";
   filterNavigableNodes = (triple) => triple.object && (triple.object.termType === "NamedNode" || triple.object.termType === "BlankNode");
+  filterOutType = (triple) => triple.predicate.value != this.RDF_TYPE_PREDICATE;
 
   reducerGroupByPredicate = (accumulator, currentTriple, currentIndex, array) => {
     let existingPredicateNdx = accumulator.findIndex((triple) => triple.predicate.value == currentTriple.predicate.value);
@@ -238,6 +240,7 @@ export class Component1Component implements OnInit {
     ;
     this.outgoing_triples = Array.from(outgoing_and_owned_triples)
       .filter(this.filterNavigableNodes)
+      .filter(this.filterOutType)
       .map(this.deepCopyTriple)
       .reduce(this.reducerGroupByPredicateForLinkableObjects, [])
       .sort(this.sortByPredicateImportance)
@@ -271,7 +274,7 @@ export class Component1Component implements OnInit {
     if (!node) {
       return ""
     }
-    let typeNodes = this.store.match(node, this.store.sym("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), undefined);
+    let typeNodes = this.store.match(node, this.store.sym(this.RDF_TYPE_PREDICATE), undefined);
     return typeNodes.map(node => this.getShortValue(node.object)).join(", ");
 
   }
