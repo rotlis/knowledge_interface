@@ -109,6 +109,8 @@ export class Component1Component implements OnInit {
   ];
 
   bread_crumbs = [];
+  bread_history = [];
+
   current_node = null;
   triples = [];
   combined_triples = [];
@@ -124,6 +126,7 @@ export class Component1Component implements OnInit {
     this.store = $rdf.graph();
     this.fetcher = new $rdf.Fetcher(this.store, 1000);
     this.bread_crumbs = [];
+    this.bread_history = [];
 
     console.log("Loading turtles");
     this.ttls[setNdx].forEach((ttl) => {
@@ -232,6 +235,12 @@ export class Component1Component implements OnInit {
   onNodeClick(node) {
     this.triples = [];
     this.current_node = node;
+
+
+    this.bread_history.push(node);
+    if (this.bread_history.length > 7){
+      this.bread_history = this.bread_history.slice(1);
+    }
 
     let existingCrumbIndex = this.bread_crumbs.findIndex((crumb)=>crumb.value==node.value);
     if (existingCrumbIndex>=0){

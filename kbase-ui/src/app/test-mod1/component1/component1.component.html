@@ -2,7 +2,10 @@
 <button (click)= "load_ttl(1)">load data catalog</button>
 <button (click)= "showAllTriples()">show all triples</button>
 
-Breadcrumbs: /<span *ngFor="let crumb of bread_crumbs"><a class="clickable" (click)="onNodeClick(crumb)">{{getShortValue(crumb)}}</a>/</span>
+<br/>
+Breadcrumbs from landing: /<span *ngFor="let crumb of bread_crumbs"><a class="clickable" (click)="onNodeClick(crumb)">{{getShortValue(crumb)}}</a>/</span>
+<br/>
+Breadcrumbs history: /<span *ngFor="let crumb of bread_history"><a class="clickable" (click)="onNodeClick(crumb)">{{getShortValue(crumb)}}</a>/</span>
 
 <table border="1">
   <tr *ngFor="let triple of triples">
