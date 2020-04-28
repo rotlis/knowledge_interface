@@ -36,7 +36,7 @@ Outgoing triples
         <span *ngFor="let object of triple.objects">
           <a (click)="onNodeClick(object)">
             {{getShortValue(object)}},
-          </a>
+          </a><br/>
         </span>
     </td>
 
@@ -57,7 +57,7 @@ Incoming triples
       <span *ngFor="let object of triple.objects">
           <a (click)="onNodeClick(object)">
             {{getShortValue(object)}},
-          </a>
+          </a><br/>
         </span>
     </td>
 
