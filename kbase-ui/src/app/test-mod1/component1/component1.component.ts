@@ -108,6 +108,7 @@ export class Component1Component implements OnInit {
     "http://chronos/rdf-schema#hasAttribute"
   ];
 
+  bread_crumbs = [];
   current_node = null;
   triples = [];
   combined_triples = [];
@@ -122,6 +123,7 @@ export class Component1Component implements OnInit {
   load_ttl(setNdx) {
     this.store = $rdf.graph();
     this.fetcher = new $rdf.Fetcher(this.store, 1000);
+    this.bread_crumbs = [];
 
     console.log("Loading turtles");
     this.ttls[setNdx].forEach((ttl) => {
@@ -230,6 +232,13 @@ export class Component1Component implements OnInit {
   onNodeClick(node) {
     this.triples = [];
     this.current_node = node;
+
+    let existingCrumbIndex = this.bread_crumbs.findIndex((crumb)=>crumb.value==node.value);
+    if (existingCrumbIndex>=0){
+      this.bread_crumbs = this.bread_crumbs.slice(0, existingCrumbIndex+1);
+    }else{
+      this.bread_crumbs.push(node);
+    }
     let outgoing_and_owned_triples = this.store.match(node, undefined, undefined);
 
     this.own_triples = Array.from(outgoing_and_owned_triples)
