@@ -232,23 +232,24 @@ export class Component1Component implements OnInit {
     }
   };
 
-  onNodeClick(node) {
+  onNodeClick(node, predicateTraversed?, direction?) {
     this.triples = [];
     this.current_node = node;
 
 
-    this.bread_history.push(node);
+    this.bread_history.push({node:node, predicate:predicateTraversed, direction:direction});
     if (this.bread_history.length > 7){
       this.bread_history = this.bread_history.slice(1);
     }
 
-    let existingCrumbIndex = this.bread_crumbs.findIndex((crumb)=>crumb.value==node.value);
+    let existingCrumbIndex = this.bread_crumbs.findIndex((crumb)=>crumb.node.value==node.value);
     if (existingCrumbIndex>=0){
       this.bread_crumbs = this.bread_crumbs.slice(0, existingCrumbIndex+1);
     }else{
-      this.bread_crumbs.push(node);
+      this.bread_crumbs.push({node:node, predicate:predicateTraversed, direction:direction});
     }
     let outgoing_and_owned_triples = this.store.match(node, undefined, undefined);
+
 
     this.own_triples = Array.from(outgoing_and_owned_triples)
       .filter(this.filterTripleWithLiteralObject)

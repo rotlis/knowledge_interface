@@ -1,19 +1,34 @@
-<button (click)= "load_ttl(0)">load people</button>
-<button (click)= "load_ttl(1)">load data catalog</button>
-<button (click)= "showAllTriples()">show all triples</button>
+<button (click)="load_ttl(0)">load people</button>
+<button (click)="load_ttl(1)">load data catalog</button>
+<button (click)="showAllTriples()">show all triples</button>
 
 <br/>
-Breadcrumbs from landing: /<span *ngFor="let crumb of bread_crumbs"><a class="clickable" (click)="onNodeClick(crumb)">{{getShortValue(crumb)}}</a>/</span>
+Breadcrumbs from landing:
+<span *ngFor="let crumb of bread_crumbs">
+  <span>
+  <span *ngIf="crumb.direction==='IN'"><-</span>
+    {{getShortValue(crumb.predicate)}}
+    <span *ngIf="crumb.direction==='OUT'">-></span>
+  </span>
+  <button class="clickable" (click)="onNodeClick(crumb.node)">{{getShortValue(crumb.node)}}</button>
+</span>
 <br/>
-Breadcrumbs history: /<span *ngFor="let crumb of bread_history"><a class="clickable" (click)="onNodeClick(crumb)">{{getShortValue(crumb)}}</a>/</span>
+Breadcrumbs history:
+<span *ngFor="let crumb of bread_history">
+  <span *ngIf="crumb.direction==='IN'"><-</span>
+  {{getShortValue(crumb.predicate)}}
+  <span *ngIf="crumb.direction==='OUT'">-></span>
+  <button class="clickable" (click)="onNodeClick(crumb.node)">{{getShortValue(crumb.node)}}</button>
+</span>
 
-<table border="1">
-  <tr *ngFor="let triple of triples">
-    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
-    <td >{{triple.predicate}}</td>
-    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
-  </tr>
-</table>
+
+<!--<table border="1">-->
+<!--  <tr *ngFor="let triple of triples">-->
+<!--    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>-->
+<!--    <td >{{triple.predicate}}</td>-->
+<!--    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>-->
+<!--  </tr>-->
+<!--</table>-->
 
 <h1>{{getShortValue(current_node)}} (type: {{getTypeOrEmptyString(current_node)}})</h1>
 {{current_node}}
@@ -22,7 +37,7 @@ Breadcrumbs history: /<span *ngFor="let crumb of bread_history"><a class="clicka
 <table border="1">
   <tr *ngFor="let triple of own_triples">
     <td title="{{triple.predicate}}">{{getShortValue(triple.predicate)}}</td>
-    <td >{{triple.object}}</td>
+    <td>{{triple.object}}</td>
   </tr>
 </table>
 
@@ -32,14 +47,16 @@ Outgoing triples
 <table border="1">
   <tr *ngFor="let triple of outgoing_triples">
     <td title="{{triple.predicate}}">{{getShortValue(triple.predicate)}}</td>
-    <td >
-        <a  class="clickable" *ngIf="triple.object" (click)="onNodeClick(triple.object)"  title="{{triple.object}}">
-            {{getShortValue(triple.object)}}
-        </a>
-        <span *ngFor="let object of triple.objects">
-          <a class="clickable" (click)="onNodeClick(object)" title="{{object}}">{{getShortValue(object)}}</a>&nbsp;&nbsp;
+    <td>
+      <a class="clickable" *ngIf="triple.object" (click)="onNodeClick(triple.object, triple.predicate, 'OUT')"
+         title="{{triple.object}}">
+        {{getShortValue(triple.object)}}
+      </a>
+      <span *ngFor="let object of triple.objects">
+          <a class="clickable" (click)="onNodeClick(object, triple.predicate, 'OUT')"
+             title="{{object}}">{{getShortValue(object)}}</a>&nbsp;&nbsp;
         </span>
-        <a *ngIf="triple.objects?.length > 3">(show all {{triple.objects.length}} objects)</a>
+      <a *ngIf="triple.objects?.length > 3">(show all {{triple.objects.length}} objects)</a>
     </td>
 
   </tr>
@@ -50,11 +67,12 @@ Incoming triples
 <table border="1">
   <tr *ngFor="let triple of incoming_triples">
     <td class='clickable'>
-      <a  *ngIf="triple.subject" (click)="onNodeClick(triple.subject)" title="{{triple.subject}}">
+      <a *ngIf="triple.subject" (click)="onNodeClick(triple.subject, triple.predicate, 'IN')"
+         title="{{triple.subject}}">
         {{getShortValue(triple.subject)}}
       </a>
       <span *ngFor="let subject of triple.subjects">
-          <a (click)="onNodeClick(subject)"  title="{{subject}}">
+          <a (click)="onNodeClick(subject, triple.predicate, 'IN')" title="{{subject}}">
             {{getShortValue(subject)}},
           </a><br/>
         </span>
@@ -63,7 +81,7 @@ Incoming triples
     <td title="{{triple.predicate}}">{{getShortValue(triple.predicate)}}</td>
 
     <td class="clickable">
-      <a  *ngIf="triple.object" (click)="onNodeClick(triple.object)">
+      <a *ngIf="triple.object" (click)="onNodeClick(triple.object)">
         {{getShortValue(triple.object)}}
       </a>
       <span *ngFor="let object of triple.objects">
