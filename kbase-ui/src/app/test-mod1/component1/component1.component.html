@@ -16,9 +16,14 @@ Breadcrumbs from landing:
 Breadcrumbs history:
 <span *ngFor="let crumb of bread_history">
   <span *ngIf="crumb.direction==='IN'"><</span>
-  -{{getShortValue(crumb.predicate)}}-
+  <span *ngIf="crumb.predicate">
+    -{{getShortValue(crumb.predicate)}}-
+  </span>
+  <span *ngIf="!crumb.predicate">
+    &nbsp;~&nbsp;
+  </span>
   <span *ngIf="crumb.direction==='OUT'">></span>
-  <button class="clickable" (click)="onNodeClick(crumb.node)">{{getShortValue(crumb.node)}}</button>
+  <button >{{getShortValue(crumb.node)}}</button>
 </span>
 
 <hr/>
