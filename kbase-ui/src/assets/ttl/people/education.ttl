@@ -31,7 +31,6 @@ kb:marilena
           part:startDate 2016-3-22;
           part:endDate 2021-9-22;
   ]
-  .
 
  kb:celine
   todo.educationat [
