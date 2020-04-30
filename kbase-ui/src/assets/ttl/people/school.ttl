@@ -1,0 +1,33 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+@prefix kbs: <http://example/rdf-schema#>.
+@prefix kb: <http://example/knowledge-base/>.
+@prefix foaf: <http://xmlns.com/foaf/spec/>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#>.
+
+
+kb:GymeaTech
+    a foaf:Organization, aiiso:School;
+    rdfs:label "Gymea Technology Highschool";
+    rdfs:comment "GTHS";
+    vcard:street-address "490-492 Princes Hwy, Gymea NSW 2227";
+    .
+
+kb:Bradfield
+    a foaf:Organization, aiiso:College;
+    rdfs:label "Bradfield Senior College";
+    rdfs:comment "BSC";
+    vcard:street-address "Building A/213 Pacific Hwy, St Leonards NSW 2065";
+    .
+
+kb:SydneyGirls
+  a foaf:Organization, aiiso:School;
+  rdfs:label "Sydney Girls Highschool"
+  rdfs:comment "SGH"
+  vcard:street-address "Cnr Anzac Parade and, Cleveland St, Surry Hills NSW 2010";
+  .
+
+
+

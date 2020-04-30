@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+@prefix kbs: <http://example/rdf-schema#>.
+@prefix kb: <http://example/knowledge-base/>.
+@prefix foaf: <http://xmlns.com/foaf/spec/>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+@prefix part: <http://purl.org/vocab/participation/schema#>.
+
+kb:marilena
+  todo.educationat [
+        tdo:at kb:GymeaTech;
+        part:startDate 2016-3-22;
+        part:endDate 2019-9-22;
+
+  ]
+  .
+
+  kb:marilena
+   todo.educationat [
+         tdo:at kb:Bradfield;
+         part:startDate 2020-3-22;
+         part:endDate 2021-9-22;
+
+   ]
+  .
+
+ kb:emma,kb:karina,kb:sophia,kb:janalie,kb:matthew,kb:jamie,kb:charlie,kb:evie
+   todo.educationat [
+          tdo:at kb:GymeaTech;
+          part:startDate 2016-3-22;
+          part:endDate 2021-9-22;
+  ]
+  .
+
+ kb:celine
+  todo.educationat [
+        tdo:at kb:SydneyGirls;
+        part:startDate 2016-3-22;
+        part:endDate 2021-9-22;
+
+  ]
+  .
+
