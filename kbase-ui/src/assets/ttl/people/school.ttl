@@ -9,25 +9,26 @@
 
 
 kb:GymeaTech
-    a foaf:Organization, aiiso:School;
-    rdfs:label "Gymea Technology Highschool";
-    rdfs:comment "GTHS";
-    vcard:street-address "490-492 Princes Hwy, Gymea NSW 2227";
-    .
+  a foaf:Organization, aiiso:School;
+  rdfs:label "Gymea Technology Highschool";
+  rdfs:comment "GTHS";
+  vcard:street-address "490-492 Princes Hwy, Gymea NSW 2227";
+  .
 
 kb:Bradfield
-    a foaf:Organization, aiiso:College;
-    rdfs:label "Bradfield Senior College";
-    rdfs:comment "BSC";
-    vcard:street-address "Building A/213 Pacific Hwy, St Leonards NSW 2065";
-    .
+  a foaf:Organization, aiiso:College;
+  rdfs:label "Bradfield Senior College";
+  rdfs:comment "BSC";
+  vcard:street-address "Building A/213 Pacific Hwy, St Leonards NSW 2065";
+  .
 
 kb:SydneyGirls
   a foaf:Organization, aiiso:School;
-  rdfs:label "Sydney Girls Highschool"
-  rdfs:comment "SGH"
+  rdfs:label "Sydney Girls Highschool";
+  rdfs:comment "SGH";
   vcard:street-address "Cnr Anzac Parade and, Cleveland St, Surry Hills NSW 2010";
   .
+
 
 
 

@@ -28,13 +28,13 @@ Breadcrumbs history:
 
 <hr/>
 <!--All triples in graph-->
-<!--<table border="1">-->
-<!--  <tr *ngFor="let triple of triples">-->
-<!--    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>-->
-<!--    <td >{{triple.predicate}}</td>-->
-<!--    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>-->
-<!--  </tr>-->
-<!--</table>-->
+<table border="1">
+  <tr *ngFor="let triple of triples">
+    <td (click)="onNodeClick(triple.subject)">{{triple.subject}}</td>
+    <td >{{triple.predicate}}</td>
+    <td (click)="onNodeClick(triple.object)">{{triple.object}}</td>
+  </tr>
+</table>
 
 <table>
   <tr>

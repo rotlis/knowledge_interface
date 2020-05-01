@@ -6,38 +6,93 @@
 @prefix foaf: <http://xmlns.com/foaf/spec/>.
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
 @prefix part: <http://purl.org/vocab/participation/schema#>.
+@prefix edu: <http://www.todo_education.com/ns#>.
 
 kb:marilena
-  todo.educationat [
-        tdo:at kb:GymeaTech;
-        part:startDate 2016-3-22;
-        part:endDate 2019-9-22;
-
+  edu:hasEducation [
+    edu:educationAt kb:GymeaTech;
+    part:startDate "2016-03-22";
+    part:endDate "2019-9-22";
   ]
   .
 
-  kb:marilena
-   todo.educationat [
-         tdo:at kb:Bradfield;
-         part:startDate 2020-3-22;
-         part:endDate 2021-9-22;
+kb:marilena
+ edu:hasEducation [
+   edu:educationAt kb:Bradfield;
+   part:startDate "2020-3-22";
+   part:endDate "2021-9-22";
+ ]
+ .
 
-   ]
+ kb:emma
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
   .
 
- kb:emma,kb:karina,kb:sophia,kb:janalie,kb:matthew,kb:jamie,kb:charlie,kb:evie
-   todo.educationat [
-          tdo:at kb:GymeaTech;
-          part:startDate 2016-3-22;
-          part:endDate 2021-9-22;
+  kb:karina
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
   ]
+  .
+
+  kb:sophia
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
+
+  kb:janalie
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
+
+  kb:matthew
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
+
+  kb:jamie
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
+
+  kb:charlie
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
+
+  kb:evie
+   edu:hasEducation [
+      edu:educationAt kb:GymeaTech;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
+  ]
+  .
 
  kb:celine
-  todo.educationat [
-        tdo:at kb:SydneyGirls;
-        part:startDate 2016-3-22;
-        part:endDate 2021-9-22;
-
+  edu:hasEducation [
+      edu:educationAt kb:SydneyGirls;
+      part:startDate "2016-3-22";
+      part:endDate "2021-9-22";
   ]
   .
 

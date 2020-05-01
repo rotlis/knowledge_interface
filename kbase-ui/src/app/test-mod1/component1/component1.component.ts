@@ -18,7 +18,9 @@ export class Component1Component implements OnInit {
     "http://localhost:4200/assets/ttl/data_catalog/"
   ];
 
-  ttls = [["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl"],
+  ttls = [["llama.ttl", "marilena.ttl", "marta.ttl", "people.ttl", "relationship.ttl", "robert.ttl", "maya.ttl", "sample.ttl",
+    "education.ttl", "school.ttl"
+  ],
     [
       "data_set/chronos_data_lake.ttl",
 
@@ -194,6 +196,7 @@ export class Component1Component implements OnInit {
     }
     return accumulator;
   };
+
   reducerGroupByPredicateForLinkableObjects = (accumulator, currentTriple, currentIndex, array) => {
     let existingPredicateNdx = accumulator.findIndex((triple) => triple.predicate.value == currentTriple.predicate.value);
     if (existingPredicateNdx >= 0) {
@@ -224,11 +227,25 @@ export class Component1Component implements OnInit {
 
   sortByPredicateImportance = (a, b) => this.predicate_sort_order.indexOf(a.predicate.value) - this.predicate_sort_order.indexOf(b.predicate.value);
 
+  cloneNode(node) {
+    console.debug("Node", node);
+    if (node.termType === "Literal") {
+      return this.store.literal(node.value);
+    }
+    if (node.termType === "NamedNode") {
+      return this.store.sym(node.value);
+    }
+    if (node.isBlank) {
+      console.debug("BlankNode", node);
+      return this.store.bnode(node.value);
+    }
+  }
+
   deepCopyTriple = (src) => {
     return {
-      subject: this.store.sym(src.subject.value),
+      subject: this.cloneNode(src.subject),
       predicate: this.store.sym(src.predicate.value),
-      object: src.object.termType === "Literal"? this.store.literal(src.object.value) : this.store.sym(src.object.value)
+      object: this.cloneNode(src.object)
     }
   };
 
@@ -237,16 +254,16 @@ export class Component1Component implements OnInit {
     this.current_node = node;
 
 
-    this.bread_history.push({node:node, predicate:predicateTraversed, direction:direction});
-    if (this.bread_history.length > 7){
+    this.bread_history.push({node: node, predicate: predicateTraversed, direction: direction});
+    if (this.bread_history.length > 7) {
       this.bread_history = this.bread_history.slice(1);
     }
 
-    let existingCrumbIndex = this.bread_crumbs.findIndex((crumb)=>crumb.node.value==node.value);
-    if (existingCrumbIndex>=0){
-      this.bread_crumbs = this.bread_crumbs.slice(0, existingCrumbIndex+1);
-    }else{
-      this.bread_crumbs.push({node:node, predicate:predicateTraversed, direction:direction});
+    let existingCrumbIndex = this.bread_crumbs.findIndex((crumb) => crumb.node.value == node.value);
+    if (existingCrumbIndex >= 0) {
+      this.bread_crumbs = this.bread_crumbs.slice(0, existingCrumbIndex + 1);
+    } else {
+      this.bread_crumbs.push({node: node, predicate: predicateTraversed, direction: direction});
     }
     let outgoing_and_owned_triples = this.store.match(node, undefined, undefined);
 
