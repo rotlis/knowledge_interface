@@ -39,7 +39,7 @@ Breadcrumbs history:
 <table>
   <tr>
     <th>Incoming triples</th>
-    <th>{{getShortValue(current_node)}} (type: {{getTypeOrEmptyString(current_node)}})</th>
+    <th>{{getPreviewForNode(current_node)}} (type: {{getTypeOrEmptyString(current_node)}})</th>
     <th>Outgoing triples</th>
   </tr>
   <tr>
@@ -81,11 +81,11 @@ Breadcrumbs history:
           <td>
             <a class="clickable" *ngIf="triple.object" (click)="onNodeClick(triple.object, triple.predicate, 'OUT')"
                title="{{triple.object}}">
-              {{getShortValue(triple.object)}}
+              {{getPreviewForNode(triple.object)}}
             </a>
             <span *ngFor="let object of triple.objects">
           <a class="clickable" (click)="onNodeClick(object, triple.predicate, 'OUT')"
-             title="{{object}}">{{getShortValue(object)}}</a>&nbsp;&nbsp;
+             title="{{object}}">{{getPreviewForNode(object)}}</a>&nbsp;&nbsp;
         </span>
             <a *ngIf="triple.objects?.length > 3">(show all {{triple.objects.length}} objects)</a>
           </td>

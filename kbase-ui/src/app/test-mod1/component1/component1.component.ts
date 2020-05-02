@@ -287,12 +287,6 @@ export class Component1Component implements OnInit {
       .sort(this.sortByPredicateImportance);
   }
 
-  getShortValue(node) {
-    if (!node || !node.value) {
-      return "";
-    }
-    return node.value.split(/\/|#/).pop().replace(/([A-Z])/g, " $1").toLowerCase();
-  }
 
   // replaceDirectionWithArrow(direction){
   //   switch(direction){
@@ -313,6 +307,34 @@ export class Component1Component implements OnInit {
     let typeNodes = this.store.match(node, this.store.sym(this.RDF_TYPE_PREDICATE), undefined);
     return typeNodes.map(node => this.getShortValue(node.object)).join(", ");
 
+  }
+
+  getShortValue(node) {
+    if (!node || !node.value) {
+      return "";
+    }
+    return node.value.split(/\/|#/).pop().replace(/([A-Z])/g, " $1").toLowerCase();
+  }
+  getObjectForPredicate(subjectNode, predicateValue){
+    let objNodes = this.store.match(subjectNode, this.store.sym(predicateValue), undefined);
+    return (objNodes && objNodes.length>0) ? objNodes[0].object : {value:"NA"};
+  }
+
+  getPreviewForNode(node){
+    let typeNodes = this.store.match(node, this.store.sym(this.RDF_TYPE_PREDICATE), undefined);
+    // console.log
+    if (!typeNodes || typeNodes.length == 0){
+      return this.getShortValue(node);
+    }
+    switch(typeNodes[0].object.value){
+      case "http://www.todo_education.com/ns#Education":
+        return ""
+          +this.getShortValue(this.getObjectForPredicate(node, "http://www.todo_education.com/ns#educationAt")) + "("
+          +this.getObjectForPredicate(node, "http://purl.org/vocab/participation/schema#startDate").value + " - "
+          +this.getObjectForPredicate(node, "http://purl.org/vocab/participation/schema#endDate").value + ")";
+
+    }
+    return this.getShortValue(node);
   }
 
 
